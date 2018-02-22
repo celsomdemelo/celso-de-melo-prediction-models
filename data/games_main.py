@@ -14,9 +14,9 @@ print('Adding game stats...')
 features.add_game_stats(df)
 
 print('Adding season stats...')
-features.add_season_stats(df)
+df = features.add_season_stats(df)
 
 print('Adding both team stats...')
 features.add_both_teams_game_stats(df)
 
-df.to_csv('games_wide_3points.csv', index=False)
+df.to_csv('games_.csv', index=False)

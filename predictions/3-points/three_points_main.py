@@ -11,6 +11,8 @@ import pandas as pd
 import numpy as np
 
 import predictions.labels
+import predictions.models.glm_ols
+import predictions.feature_sets
 
 if not os.path.isfile('games_3_points.csv'):
     df = pd.read_csv('../../data/games.csv')
@@ -24,6 +26,7 @@ else:
     df = pd.read_csv('games_3_points.csv')
 
 if not os.path.isfile('train_eval.csv'):
+    print('Creating CSV files...')
     # Split into train+evaluation and test sets
     df_train_eval, df_test = np.split(df.sample(frac=1), [int(.8 * len(df))])
 
@@ -48,4 +51,12 @@ if not os.path.isfile('train_eval.csv'):
     df_train.to_csv('train.csv', index=False)
     df_eval.to_csv('eval.csv', index=False)
     df_test.to_csv('test.csv', index=False)
-    print('Done.')
+else:
+    print('Reading CSV files...')
+    df_train_eval = pd.read_csv('train_eval.csv')
+    df_train = pd.read_csv('train.csv')
+    df_eval = pd.read_csv('eval.csv')
+    df_test = pd.read_csv('test.csv')
+print('Done.')
+
+predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_1, 'total_three_points', df_train, df_eval)

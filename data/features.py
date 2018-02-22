@@ -241,6 +241,8 @@ def add_season_stats(df):
             set_rankings(table_stats, 'avg_' + v)
     save_table_stats('season_stats_' + str(season) + '.pkl', table_stats)
 
+    return df
+
 
 def add_both_teams_game_stats(df):
     vars = []
