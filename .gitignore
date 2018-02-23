@@ -1,6 +1,6 @@
 /.idea
 *.csv
 *.pyc
-*.pkl
+/data/*.pkl
 *.arff
 /insights/teams_games_wide/*.sav

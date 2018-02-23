@@ -67,3 +67,4 @@ def score_on_test_set(features, label, df_train_eval, df_test, normalize=False, 
     print('Intercept: ' + str(regr.intercept_))
     for index, val in enumerate(regr.coef_):
         print(features[index] + ':\t' + str(val))
+

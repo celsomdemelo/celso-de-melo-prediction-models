@@ -59,4 +59,29 @@ else:
     df_test = pd.read_csv('test.csv')
 print('Done.')
 
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('TRAINING')
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('BOTH teams: Full-time 3-pointers (NO half-time measures)')
 predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_1, 'total_three_points', df_train, df_eval)
+
+print('\nBOTH teams: Full-time 3-pointers (WITH half-time measures)')
+predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1, 'total_three_points', df_train, df_eval)
+
+print('\nBOTH teams: 2nd-half 3-pointers')
+predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1, 'total_three_points', df_train, df_eval)
+
+print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('SCORE ON TEST SET')
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('BOTH teams: Full-time 3-pointers (NO half-time measures)')
+predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_1, 'total_three_points', df_train_eval,
+                                             df_test, path='full_time_3_pts_model.pkl')
+
+print(' \nBOTH teams: Full-time 3-pointers (WITH half-time measures)')
+predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1, 'total_three_points', df_train_eval,
+                                             df_test, path='full_time_ht_3_pts_model.pkl')
+
+print('\nBOTH teams: 2nd-half 3-pointers')
+predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1, 'both_h2_three', df_train_eval,
+                                             df_test, path='2nd_half_3_pts_model.pkl')
