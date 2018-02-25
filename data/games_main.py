@@ -19,4 +19,4 @@ df = features.add_season_stats(df)
 print('Adding both team stats...')
 features.add_both_teams_game_stats(df)
 
-df.to_csv('games_.csv', index=False)
+df.to_csv('games.csv', index=False)

@@ -25,39 +25,69 @@ def make_prediction(home_name, away_name, path, season_stats_names, extra_featur
 
 
 games = [
-    {'away': 'Purdue', 'home': 'Illinois',
-     'half_time_stats': {'both_h1_points': 81, 'both_h1_three_att': 25, 'both_h1_three': 12, 'both_h1_two_att': 60,
-                         'both_h1_two': 32, 'both_h1_free_att': 7, 'both_h1_free': 5, 'both_h1_off_rebounds': 9}},
-    {'away': 'Gonzaga', 'home': 'San Diego',
-     'half_time_stats': {'both_h1_points': 71, 'both_h1_three_att': 19, 'both_h1_three': 9, 'both_h1_two_att': 40,
-                         'both_h1_two': 17, 'both_h1_free_att': 13, 'both_h1_free': 10, 'both_h1_off_rebounds': 14}},
-    {'away': 'Connecticut', 'home': 'Cincinnati',
-     'half_time_stats': {'both_h1_points': 63, 'both_h1_three_att': 24, 'both_h1_three': 8, 'both_h1_two_att': 35,
-                         'both_h1_two': 17, 'both_h1_free_att': 9, 'both_h1_free': 5, 'both_h1_off_rebounds': 12}},
+    {'away': 'Gonzaga', 'home': 'BYU',
+     'half_time_stats': {'both_h1_points': 0, 'both_h1_three_att': 0, 'both_h1_three': 0, 'both_h1_two_att': 0,
+                         'both_h1_two': 0, 'both_h1_free_att': 0, 'both_h1_free': 0, 'both_h1_off_rebounds': 0}},
+    {'away': 'Auburn', 'home': 'Florida',
+     'half_time_stats': {'both_h1_points': 0, 'both_h1_three_att': 0, 'both_h1_three': 0, 'both_h1_two_att': 0,
+                         'both_h1_two': 0, 'both_h1_free_att': 0, 'both_h1_free': 0, 'both_h1_off_rebounds': 0}},
+    {'away': 'Arizona', 'home': 'Oregon',
+     'half_time_stats': {'both_h1_points': 0, 'both_h1_three_att': 0, 'both_h1_three': 0, 'both_h1_two_att': 0,
+                         'both_h1_two': 0, 'both_h1_free_att': 0, 'both_h1_free': 0, 'both_h1_off_rebounds': 0}},
+    {'away': 'Villanova', 'home': 'Creighton',
+     'half_time_stats': {'both_h1_points': 0, 'both_h1_three_att': 0, 'both_h1_three': 0, 'both_h1_two_att': 0,
+                         'both_h1_two': 0, 'both_h1_free_att': 0, 'both_h1_free': 0, 'both_h1_off_rebounds': 0}},
+    {'away': 'Kansas', 'home': 'Texas Tech',
+     'half_time_stats': {'both_h1_points': 0, 'both_h1_three_att': 0, 'both_h1_three': 0, 'both_h1_two_att': 0,
+                         'both_h1_two': 0, 'both_h1_free_att': 0, 'both_h1_free': 0, 'both_h1_off_rebounds': 0}},
 ]
+
+labels = ['total_three_points', 'h_three_points_made', 'a_three_points_made',
+          'total_three_points_att', 'h_three_points_att', 'a_three_points_att',
+          'h_three_points_pct', 'a_three_points_pct',
+          'total_free_throws', 'h_free_throws_made', 'a_free_throws_made',
+          'h_free_throws_pct', 'a_free_throws_pct',
+          'total_rebounds', 'h_rebounds', 'a_rebounds',
+          'total_offensive_rebounds', 'h_offensive_rebounds', 'a_offensive_rebounds',
+          'total_assists', 'h_assists', 'a_assists',
+          'total_field_goals_att', 'h_field_goals_att', 'a_field_goals_att',
+          'h_field_goals_pct', 'a_field_goals_pct',
+          'total_possessions', 'h_possessions', 'a_possessions']
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('PREDICTIONS')
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-print('BOTH teams: Full-time 3-pointers (NO half-time measures)')
-for idx, game in enumerate(games):
-    print('\t' + game['away'] + ' x ' + game['home'] + ': ' +
-          str(make_prediction(away_name=game['away'], home_name=game['home'],
-                              path='3-points/full_time_3_pts_model.pkl',
-                              season_stats_names=predictions.feature_sets.features_1)))
+for label in labels:
+    print('-----------------------------------')
+    print('LABEL: ' + label)
+    for idx, game in enumerate(games):
+        print('\t' + game['away'] + ' x ' + game['home'] + ': ' +
+              str(make_prediction(away_name=game['away'], home_name=game['home'],
+                                  path='models/' + label + '.pkl',
+                                  season_stats_names=predictions.feature_sets.features_1)))
 
-# print('\nBOTH teams: Full-time 3-pointers (WITH half-time measures)')
+# print('BOTH teams: Full-time 3-pointers (WITH half-time measures)')
 # for idx, game in enumerate(games):
 #     print('\t' + game['away'] + ' x ' + game['home'] + ': ' +
 #           str(make_prediction(away_name=game['away'], home_name=game['home'],
-#                               path='3-points/full_time_ht_3_pts_model.pkl',
+#                               path='models/full_time_ht_3_pts_model.pkl',
 #                               season_stats_names=predictions.feature_sets.features_1,
 #                               extra_features=game['half_time_stats'])))
 
-print('\nBOTH teams: 2nd-half 3-pointers')
+# print('BOTH teams: 2nd-half 3-pointers')
+# for idx, game in enumerate(games):
+#     print('\t' + game['away'] + ' x ' + game['home'] + ': ' +
+#           str(make_prediction(away_name=game['away'], home_name=game['home'],
+#                               path='models/2nd_half_3_pts_model.pkl',
+#                               season_stats_names=predictions.feature_sets.features_1,
+#                               extra_features=game['half_time_stats'])))
+
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('PREDICTIONS (SPREADSHEET-FRIENDLY FORMAT')
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 for idx, game in enumerate(games):
-    print('\t' + game['away'] + ' x ' + game['home'] + ': ' +
-          str(make_prediction(away_name=game['away'], home_name=game['home'],
-                              path='3-points/2nd_half_3_pts_model.pkl',
-                              season_stats_names=predictions.feature_sets.features_1,
-                              extra_features=game['half_time_stats'])))
+    print('\t' + game['away'] + ' x ' + game['home'])
+    for label in labels:
+        print(str(make_prediction(away_name=game['away'], home_name=game['home'],
+                                                       path='models/' + label + '.pkl',
+                                                       season_stats_names=predictions.feature_sets.features_1)[0]))

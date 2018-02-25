@@ -56,7 +56,7 @@ def score_on_test_set(features, label, df_train_eval, df_test, normalize=False, 
     for e in range(3, 7):
         print('Accuracy (error = ' + str(e) + '): %.7f' % linear_regression_accuracy(
             df_test_clean[[label]].values.ravel(), y_pred, error_threshold=e))
-    for e in range(0, 6):
+    for e in range(0, 8):
         print('Accuracy (greater or equal than, error = ' + str(
             e) + '): %.7f' % linear_regression_accuracy_greater_or_equal_than(
             df_test_clean[[label]].values.ravel(), y_pred, error_threshold=e))

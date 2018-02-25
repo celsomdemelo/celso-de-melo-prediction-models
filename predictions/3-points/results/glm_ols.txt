@@ -1,199 +1,1788 @@
+Creating CSV files...
+Created sets:
+	Train + eval: 17432
+	Train: 13945
+	Eval: 3487
+	Test: 4358
+Saving files...
+Done.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 TRAINING
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-BOTH teams: Full-time 3-pointers (NO half-time measures)
+-----------------------------------
+LABEL: total_three_points
 **************************************************************************
-Ordinary Least Squares: normalize = False Eval R2: 0.151513273022
-	Training R2: 0.166184855958
-	Evaluation R2: 0.151513273022
+Ordinary Least Squares: normalize = False Eval R2: 0.157681455042
+	Training R2: 0.160834631407
+	Evaluation R2: 0.157681455042
 **************************************************************************
-Ordinary Least Squares: normalize = True Eval R2: 0.151513273022
-	Training R2: 0.166184855958
-	Evaluation R2: 0.151513273022
-
-BOTH teams: Full-time 3-pointers (WITH half-time measures)
+Ordinary Least Squares: normalize = True Eval R2: 0.157681455042
+	Training R2: 0.160834631407
+	Evaluation R2: 0.157681455042
+-----------------------------------
+LABEL: h_three_points_made
 **************************************************************************
-Ordinary Least Squares: normalize = False Eval R2: 0.641234791382
-	Training R2: 0.649549730579
-	Evaluation R2: 0.641234791382
+Ordinary Least Squares: normalize = False Eval R2: 0.520106559083
+	Training R2: 0.515942829043
+	Evaluation R2: 0.520106559083
 **************************************************************************
-Ordinary Least Squares: normalize = True Eval R2: 0.641234791382
-	Training R2: 0.649549730579
-	Evaluation R2: 0.641234791382
-
-BOTH teams: 2nd-half 3-pointers
+Ordinary Least Squares: normalize = True Eval R2: 0.520106559083
+	Training R2: 0.515942829043
+	Evaluation R2: 0.520106559083
+-----------------------------------
+LABEL: a_three_points_made
 **************************************************************************
-Ordinary Least Squares: normalize = False Eval R2: 0.641234791382
-	Training R2: 0.649549730579
-	Evaluation R2: 0.641234791382
+Ordinary Least Squares: normalize = False Eval R2: 0.511022097712
+	Training R2: 0.520289925808
+	Evaluation R2: 0.511022097712
 **************************************************************************
-Ordinary Least Squares: normalize = True Eval R2: 0.641234791382
-	Training R2: 0.649549730579
-	Evaluation R2: 0.641234791382
+Ordinary Least Squares: normalize = True Eval R2: 0.511022097712
+	Training R2: 0.520289925808
+	Evaluation R2: 0.511022097712
+-----------------------------------
+LABEL: total_three_points_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.259172296398
+	Training R2: 0.281627773424
+	Evaluation R2: 0.259172296398
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.259172296398
+	Training R2: 0.281627773424
+	Evaluation R2: 0.259172296398
+-----------------------------------
+LABEL: h_three_points_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.647560265621
+	Training R2: 0.653943614764
+	Evaluation R2: 0.647560265621
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.647560265621
+	Training R2: 0.653943614764
+	Evaluation R2: 0.647560265621
+-----------------------------------
+LABEL: a_three_points_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.630064905004
+	Training R2: 0.651691304598
+	Evaluation R2: 0.630064905004
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.630064905004
+	Training R2: 0.651691304598
+	Evaluation R2: 0.630064905004
+-----------------------------------
+LABEL: h_three_points_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.546757361933
+	Training R2: 0.540334560028
+	Evaluation R2: 0.546757361933
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.546757361933
+	Training R2: 0.540334560028
+	Evaluation R2: 0.546757361933
+-----------------------------------
+LABEL: a_three_points_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.537407531382
+	Training R2: 0.538089541159
+	Evaluation R2: 0.537407531382
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.537407531382
+	Training R2: 0.538089541159
+	Evaluation R2: 0.537407531382
+-----------------------------------
+LABEL: total_free_throws
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.0659162842323
+	Training R2: 0.0883458281581
+	Evaluation R2: 0.0659162842323
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.0659162842323
+	Training R2: 0.0883458281581
+	Evaluation R2: 0.0659162842323
+-----------------------------------
+LABEL: h_free_throws_made
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.476728850445
+	Training R2: 0.49214327019
+	Evaluation R2: 0.476728850445
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.476728850445
+	Training R2: 0.49214327019
+	Evaluation R2: 0.476728850445
+-----------------------------------
+LABEL: a_free_throws_made
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.452745723743
+	Training R2: 0.477373946858
+	Evaluation R2: 0.452745723743
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.452745723743
+	Training R2: 0.477373946858
+	Evaluation R2: 0.452745723743
+-----------------------------------
+LABEL: h_free_throws_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.770425627201
+	Training R2: 0.768715161242
+	Evaluation R2: 0.770425627201
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.770425627201
+	Training R2: 0.768715161242
+	Evaluation R2: 0.770425627201
+-----------------------------------
+LABEL: a_free_throws_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.735180888142
+	Training R2: 0.743691236068
+	Evaluation R2: 0.735180888142
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.735180888142
+	Training R2: 0.743691236068
+	Evaluation R2: 0.735180888142
+-----------------------------------
+LABEL: total_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.795306519068
+	Training R2: 0.805219488844
+	Evaluation R2: 0.795306519068
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.795306519068
+	Training R2: 0.805219488844
+	Evaluation R2: 0.795306519068
+-----------------------------------
+LABEL: h_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.710837429781
+	Training R2: 0.724772608955
+	Evaluation R2: 0.710837429781
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.710837429781
+	Training R2: 0.724772608955
+	Evaluation R2: 0.710837429781
+-----------------------------------
+LABEL: a_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.731957906063
+	Training R2: 0.740442947559
+	Evaluation R2: 0.731957906063
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.731957906063
+	Training R2: 0.740442947559
+	Evaluation R2: 0.731957906063
+-----------------------------------
+LABEL: total_offensive_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.637439345486
+	Training R2: 0.643106940486
+	Evaluation R2: 0.637439345486
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.637439345486
+	Training R2: 0.643106940486
+	Evaluation R2: 0.637439345486
+-----------------------------------
+LABEL: h_offensive_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.499591678111
+	Training R2: 0.508212417744
+	Evaluation R2: 0.499591678111
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.499591678111
+	Training R2: 0.508212417744
+	Evaluation R2: 0.499591678111
+-----------------------------------
+LABEL: a_offensive_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.503611054631
+	Training R2: 0.512594708308
+	Evaluation R2: 0.503611054631
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.503611054631
+	Training R2: 0.512594708308
+	Evaluation R2: 0.503611054631
+-----------------------------------
+LABEL: total_assists
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.704614286842
+	Training R2: 0.696883962546
+	Evaluation R2: 0.704614286842
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.704614286842
+	Training R2: 0.696883962546
+	Evaluation R2: 0.704614286842
+-----------------------------------
+LABEL: h_assists
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.586849116983
+	Training R2: 0.586687508515
+	Evaluation R2: 0.586849116983
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.586849116983
+	Training R2: 0.586687508515
+	Evaluation R2: 0.586849116983
+-----------------------------------
+LABEL: a_assists
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.602946880356
+	Training R2: 0.595557209601
+	Evaluation R2: 0.602946880356
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.602946880356
+	Training R2: 0.595557209601
+	Evaluation R2: 0.602946880356
+-----------------------------------
+LABEL: total_field_goals_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.844258318277
+	Training R2: 0.84656128809
+	Evaluation R2: 0.844258318277
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.844258318277
+	Training R2: 0.84656128809
+	Evaluation R2: 0.844258318277
+-----------------------------------
+LABEL: h_field_goals_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.81635218998
+	Training R2: 0.819676071632
+	Evaluation R2: 0.81635218998
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.81635218998
+	Training R2: 0.819676071632
+	Evaluation R2: 0.81635218998
+-----------------------------------
+LABEL: a_field_goals_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.817630688705
+	Training R2: 0.820044603993
+	Evaluation R2: 0.817630688705
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.817630688705
+	Training R2: 0.820044603993
+	Evaluation R2: 0.817630688705
+-----------------------------------
+LABEL: h_field_goals_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.75904374329
+	Training R2: 0.76040840916
+	Evaluation R2: 0.75904374329
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.75904374329
+	Training R2: 0.76040840916
+	Evaluation R2: 0.75904374329
+-----------------------------------
+LABEL: a_field_goals_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.766572100295
+	Training R2: 0.769752356182
+	Evaluation R2: 0.766572100295
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.766572100295
+	Training R2: 0.769752356182
+	Evaluation R2: 0.766572100295
+-----------------------------------
+LABEL: total_possessions
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.852850534761
+	Training R2: 0.852808636789
+	Evaluation R2: 0.852850534761
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.852850534761
+	Training R2: 0.852808636789
+	Evaluation R2: 0.852850534761
+-----------------------------------
+LABEL: h_possessions
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.85201399637
+	Training R2: 0.851901877009
+	Evaluation R2: 0.85201399637
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.85201399637
+	Training R2: 0.851901877009
+	Evaluation R2: 0.85201399637
+-----------------------------------
+LABEL: a_possessions
+**************************************************************************
+Ordinary Least Squares: normalize = False Eval R2: 0.85078927264
+	Training R2: 0.850593486391
+	Evaluation R2: 0.85078927264
+**************************************************************************
+Ordinary Least Squares: normalize = True Eval R2: 0.85078927264
+	Training R2: 0.850593486391
+	Evaluation R2: 0.85078927264
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 SCORE ON TEST SET
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-BOTH teams: Full-time 3-pointers (NO half-time measures)
+-----------------------------------
+LABEL: total_three_points
 **************************************************************************
-Ordinary Least Squares: normalize = False Test R2: 0.150873932434
-	Training + Eval R2: 0.163524664913
-	Test R2: 0.150873932434
-Mean squared error: 15.6982860
-Variance score: 0.1508739
-Accuracy (error = 3): 0.5484167
-Accuracy (error = 4): 0.6877008
-Accuracy (error = 5): 0.7985314
-Accuracy (error = 6): 0.8760899
-Accuracy (greater or equal than, error = 0): 0.4970170
-Accuracy (greater or equal than, error = 1): 0.6046352
-Accuracy (greater or equal than, error = 2): 0.7010096
-Accuracy (greater or equal than, error = 3): 0.7808628
-Accuracy (greater or equal than, error = 4): 0.8497017
-Accuracy (greater or equal than, error = 5): 0.9068380
-**************************************************************************
-COEFFICIENTS
-**************************************************************************
-Intercept: 12.8067123317
-both_avg_points_game:	-0.0912985984
-both_avg_field_goals_made:	0.500383166682
-both_avg_field_goals_att:	0.0351016424038
-both_avg_field_goals_pct:	-0.23621758662
-both_avg_three_points_made:	0.487895179239
-both_avg_three_points_att:	0.193555989152
-both_avg_three_points_pct:	-0.0118431896565
-both_avg_two_points_made:	-0.024423236704
-both_avg_two_points_att:	-0.197190242123
-both_avg_two_points_pct:	0.000237200482342
-both_avg_blocked_att:	-0.00502250516318
-both_avg_free_throws_made:	0.25475688085
-both_avg_free_throws_att:	-0.109335923545
-both_avg_free_throws_pct:	-0.0321552768361
-both_avg_offensive_rebounds:	-0.115184030741
-both_avg_defensive_rebounds:	0.240540027584
-both_avg_rebounds:	-0.129118516463
-both_avg_assists:	-0.00463083234058
-both_avg_turnovers:	-0.0509899756452
-both_avg_blocks:	-0.264285944066
-both_avg_personal_fouls:	-0.209258729805
-both_avg_score_margin:	0.0299045950173
-both_avg_opp_points:	0.0837438150968
-both_avg_opp_off_rebounds:	0.19362545513
-both_avg_opp_def_rebounds:	-0.125528250909
-both_avg_opp_blocks:	0.0524467274163
-both_avg_possessions:	0.0801241686295
- 
-BOTH teams: Full-time 3-pointers (WITH half-time measures)
-**************************************************************************
-Ordinary Least Squares: normalize = False Test R2: 0.643649940186
-	Training + Eval R2: 0.648048977247
-	Test R2: 0.643649940186
-Mean squared error: 6.5880502
-Variance score: 0.6436499
-Accuracy (error = 3): 0.7560808
-Accuracy (error = 4): 0.8850390
-Accuracy (error = 5): 0.9460762
-Accuracy (error = 6): 0.9793483
-Accuracy (greater or equal than, error = 0): 0.4949518
-Accuracy (greater or equal than, error = 1): 0.6415787
-Accuracy (greater or equal than, error = 2): 0.7755851
-Accuracy (greater or equal than, error = 3): 0.8804497
-Accuracy (greater or equal than, error = 4): 0.9527306
-Accuracy (greater or equal than, error = 5): 0.9839376
+Ordinary Least Squares: normalize = False Test R2: 0.16069087164
+	Training + Eval R2: 0.160695309244
+	Test R2: 0.16069087164
+Mean squared error: 15.8675559
+Variance score: 0.1606909
+Accuracy (error = 3): 0.5442864
+Accuracy (error = 4): 0.6812758
+Accuracy (error = 5): 0.7969252
+Accuracy (error = 6): 0.8754016
+Accuracy (greater or equal than, error = 0): 0.5048187
+Accuracy (greater or equal than, error = 1): 0.5966039
+Accuracy (greater or equal than, error = 2): 0.6968793
+Accuracy (greater or equal than, error = 3): 0.7799449
+Accuracy (greater or equal than, error = 4): 0.8513079
+Accuracy (greater or equal than, error = 5): 0.9095916
 **************************************************************************
 COEFFICIENTS
 **************************************************************************
-Intercept: 3.17033270552
-both_avg_points_game:	-0.0516041720715
-both_avg_field_goals_made:	0.0579100050615
-both_avg_field_goals_att:	-0.00240402591074
-both_avg_field_goals_pct:	-0.0709191820463
-both_avg_three_points_made:	0.131921192886
-both_avg_three_points_att:	0.130786316013
-both_avg_three_points_pct:	0.0239037965417
-both_avg_two_points_made:	0.0840448716836
-both_avg_two_points_att:	-0.0281651317407
-both_avg_two_points_pct:	-0.00117466566218
-both_avg_blocked_att:	-0.0235806181891
-both_avg_free_throws_made:	0.0656395714154
-both_avg_free_throws_att:	-0.0281512251095
-both_avg_free_throws_pct:	-0.00717089328736
-both_avg_offensive_rebounds:	-0.0346728017779
-both_avg_defensive_rebounds:	0.123617783606
-both_avg_rebounds:	-0.0787201658162
-both_avg_assists:	-0.0147683300967
-both_avg_turnovers:	-0.00464895780503
-both_avg_blocks:	-0.0424657635427
-both_avg_personal_fouls:	-0.0653321692495
-both_avg_score_margin:	0.037265986048
-both_avg_opp_points:	0.0527928440445
-both_avg_opp_off_rebounds:	0.0147120994654
-both_avg_opp_def_rebounds:	-0.0477966215167
-both_avg_opp_blocks:	0.0924238176116
-both_avg_possessions:	-0.00164723356949
-both_h1_points:	0.209449714118
-both_h1_three_att:	0.115555320309
-both_h1_three:	0.392300340412
-both_h1_two_att:	0.00718502341987
-both_h1_two:	-0.399945697912
-both_h1_free_att:	-0.0219836369578
-both_h1_free:	-0.167559911295
-both_h1_off_rebounds:	-0.0201369465763
+Intercept: 12.5847458322
+both_avg_points_game:	0.0153839253045
+both_avg_field_goals_made:	0.471200121615
+both_avg_field_goals_att:	0.0076289135074
+both_avg_field_goals_pct:	-0.239217124249
+both_avg_three_points_made:	0.453358286272
+both_avg_three_points_att:	0.212591340911
+both_avg_three_points_pct:	0.00537397796299
+both_avg_two_points_made:	-0.00846022264478
+both_avg_two_points_att:	-0.186527796814
+both_avg_two_points_pct:	-0.000162476160616
+both_avg_blocked_att:	0.0105326508654
+both_avg_free_throws_made:	0.271954522762
+both_avg_free_throws_att:	-0.122130321471
+both_avg_free_throws_pct:	-0.0382163955431
+both_avg_offensive_rebounds:	-0.0575464166261
+both_avg_defensive_rebounds:	0.253045229032
+both_avg_rebounds:	-0.159270588691
+both_avg_assists:	0.00871139574429
+both_avg_turnovers:	-0.0308384112961
+both_avg_blocks:	-0.306388992352
+both_avg_personal_fouls:	-0.203043015916
+both_avg_score_margin:	-0.0632288551075
+both_avg_opp_points:	-0.0188468774952
+both_avg_opp_off_rebounds:	0.202322218714
+both_avg_opp_def_rebounds:	-0.0886703548099
+both_avg_opp_blocks:	-0.00801038195762
+both_avg_possessions:	0.0856975521925
+-----------------------------------
+LABEL: h_three_points_made
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.502247057758
+	Training + Eval R2: 0.516983622442
+	Test R2: 0.502247057758
+Mean squared error: 8.3538331
+Variance score: 0.5022471
+Accuracy (error = 3): 0.7290041
+Accuracy (error = 4): 0.8421294
+Accuracy (error = 5): 0.9116567
+Accuracy (error = 6): 0.9564020
+Accuracy (greater or equal than, error = 0): 0.4655805
+Accuracy (greater or equal than, error = 1): 0.6489215
+Accuracy (greater or equal than, error = 2): 0.7824690
+Accuracy (greater or equal than, error = 3): 0.8809087
+Accuracy (greater or equal than, error = 4): 0.9403396
+Accuracy (greater or equal than, error = 5): 0.9713171
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 5.44970263349
+both_avg_points_game:	-0.0111049543679
+both_avg_field_goals_made:	0.315750085876
+both_avg_field_goals_att:	0.0285664915
+both_avg_field_goals_pct:	-0.095430003697
+both_avg_three_points_made:	0.243316718029
+both_avg_three_points_att:	0.150688109721
+both_avg_three_points_pct:	0.0362614257484
+both_avg_two_points_made:	0.0391592337509
+both_avg_two_points_att:	-0.0573541977685
+both_avg_two_points_pct:	0.00364429739188
+both_avg_blocked_att:	-0.0608633237125
+both_avg_free_throws_made:	0.257186970553
+both_avg_free_throws_att:	-0.053221954637
+both_avg_free_throws_pct:	-0.0374949816718
+both_avg_offensive_rebounds:	-0.0510150755475
+both_avg_defensive_rebounds:	0.114763252884
+both_avg_rebounds:	-0.0937064595771
+both_avg_assists:	-0.0209373509484
+both_avg_turnovers:	0.00117452627495
+both_avg_blocks:	-0.191197187235
+both_avg_personal_fouls:	-0.10414858345
+both_avg_score_margin:	-0.0784694348404
+both_avg_opp_points:	-0.0946413387484
+both_avg_opp_off_rebounds:	0.112908086126
+both_avg_opp_def_rebounds:	-0.0487919194468
+both_avg_opp_blocks:	0.0415551629045
+both_avg_possessions:	0.045532981269
+-----------------------------------
+LABEL: a_three_points_made
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.511391928477
+	Training + Eval R2: 0.518675847732
+	Test R2: 0.511391928477
+Mean squared error: 7.5868236
+Variance score: 0.5113919
+Accuracy (error = 3): 0.7388710
+Accuracy (error = 4): 0.8584213
+Accuracy (error = 5): 0.9261129
+Accuracy (error = 6): 0.9664984
+Accuracy (greater or equal than, error = 0): 0.4669573
+Accuracy (greater or equal than, error = 1): 0.6443323
+Accuracy (greater or equal than, error = 2): 0.7845342
+Accuracy (greater or equal than, error = 3): 0.8795319
+Accuracy (greater or equal than, error = 4): 0.9451583
+Accuracy (greater or equal than, error = 5): 0.9779715
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 5.33370132787
+both_avg_points_game:	-0.0784724117966
+both_avg_field_goals_made:	0.291515151622
+both_avg_field_goals_att:	0.013909185739
+both_avg_field_goals_pct:	-0.0697107549018
+both_avg_three_points_made:	0.309257176926
+both_avg_three_points_att:	0.095421276783
+both_avg_three_points_pct:	-0.0115429092648
+both_avg_two_points_made:	0.000138636899043
+both_avg_two_points_att:	-0.0938654319722
+both_avg_two_points_pct:	0.00196378985459
+both_avg_blocked_att:	-0.0420344605315
+both_avg_free_throws_made:	0.179338068694
+both_avg_free_throws_att:	-0.0242424865171
+both_avg_free_throws_pct:	-0.0125035500053
+both_avg_offensive_rebounds:	-0.00652683077602
+both_avg_defensive_rebounds:	0.12068095896
+both_avg_rebounds:	-0.0921657105345
+both_avg_assists:	0.00818456553466
+both_avg_turnovers:	-0.0722788996057
+both_avg_blocks:	-0.120499552123
+both_avg_personal_fouls:	-0.125691150309
+both_avg_score_margin:	-0.0131208271006
+both_avg_opp_points:	-0.024539343029
+both_avg_opp_off_rebounds:	0.0927596459132
+both_avg_opp_def_rebounds:	-0.0543275121855
+both_avg_opp_blocks:	-0.0314307124505
+both_avg_possessions:	0.102630394121
+-----------------------------------
+LABEL: total_three_points_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.279896059145
+	Training + Eval R2: 0.277442941732
+	Test R2: 0.279896059145
+Mean squared error: 50.8074960
+Variance score: 0.2798961
+Accuracy (error = 3): 0.3389169
+Accuracy (error = 4): 0.4446994
+Accuracy (error = 5): 0.5302891
+Accuracy (error = 6): 0.6138137
+Accuracy (greater or equal than, error = 0): 0.5000000
+Accuracy (greater or equal than, error = 1): 0.5624140
+Accuracy (greater or equal than, error = 2): 0.6184029
+Accuracy (greater or equal than, error = 3): 0.6698027
+Accuracy (greater or equal than, error = 4): 0.7234970
+Accuracy (greater or equal than, error = 5): 0.7693896
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 39.4176105443
+both_avg_points_game:	-0.0225348332281
+both_avg_field_goals_made:	1.23206060535
+both_avg_field_goals_att:	0.103998998461
+both_avg_field_goals_pct:	-0.678570364347
+both_avg_three_points_made:	1.03941625084
+both_avg_three_points_att:	0.586360358012
+both_avg_three_points_pct:	-0.0792118230353
+both_avg_two_points_made:	-0.156557497172
+both_avg_two_points_att:	-0.484615695698
+both_avg_two_points_pct:	0.00099895041989
+both_avg_blocked_att:	-0.0418519016157
+both_avg_free_throws_made:	0.432096497992
+both_avg_free_throws_att:	-0.124876958725
+both_avg_free_throws_pct:	-0.104273036122
+both_avg_offensive_rebounds:	-0.200877336195
+both_avg_defensive_rebounds:	0.569641639382
+both_avg_rebounds:	-0.234323964514
+both_avg_assists:	-0.101480400641
+both_avg_turnovers:	-0.0245290753752
+both_avg_blocks:	-0.608162955915
+both_avg_personal_fouls:	-0.521116766253
+both_avg_score_margin:	-0.0939024806944
+both_avg_opp_points:	-0.0351553784481
+both_avg_opp_off_rebounds:	0.664133536902
+both_avg_opp_def_rebounds:	-0.319664706294
+both_avg_opp_blocks:	-0.0540663957215
+both_avg_possessions:	0.252976676958
+-----------------------------------
+LABEL: h_three_points_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.642309937405
+	Training + Eval R2: 0.652838110898
+	Test R2: 0.642309937405
+Mean squared error: 31.3141740
+Variance score: 0.6423099
+Accuracy (error = 3): 0.4582377
+Accuracy (error = 4): 0.5709041
+Accuracy (error = 5): 0.6686553
+Accuracy (error = 6): 0.7524094
+Accuracy (greater or equal than, error = 0): 0.4763653
+Accuracy (greater or equal than, error = 1): 0.5697568
+Accuracy (greater or equal than, error = 2): 0.6523635
+Accuracy (greater or equal than, error = 3): 0.7225792
+Accuracy (greater or equal than, error = 4): 0.7868288
+Accuracy (greater or equal than, error = 5): 0.8414410
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 16.624966763
+both_avg_points_game:	0.00546373843884
+both_avg_field_goals_made:	0.86282375509
+both_avg_field_goals_att:	0.0769551705585
+both_avg_field_goals_pct:	-0.252149883165
+both_avg_three_points_made:	0.535862359026
+both_avg_three_points_att:	0.38241267157
+both_avg_three_points_pct:	0.0188129717875
+both_avg_two_points_made:	-0.0473094047333
+both_avg_two_points_att:	-0.13908413598
+both_avg_two_points_pct:	0.00684634529971
+both_avg_blocked_att:	-0.201407822797
+both_avg_free_throws_made:	0.445480607642
+both_avg_free_throws_att:	-0.0129843517368
+both_avg_free_throws_pct:	-0.067206502268
+both_avg_offensive_rebounds:	-0.1192176998
+both_avg_defensive_rebounds:	0.249103246848
+both_avg_rebounds:	-0.156634273404
+both_avg_assists:	-0.113415582492
+both_avg_turnovers:	0.00865742356456
+both_avg_blocks:	-0.416145219039
+both_avg_personal_fouls:	-0.281229149902
+both_avg_score_margin:	-0.217951094773
+both_avg_opp_points:	-0.292389877039
+both_avg_opp_off_rebounds:	0.310278166751
+both_avg_opp_def_rebounds:	-0.0944853667946
+both_avg_opp_blocks:	0.0647099772537
+both_avg_possessions:	0.139652249831
+-----------------------------------
+LABEL: a_three_points_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.627409258499
+	Training + Eval R2: 0.647618979
+	Test R2: 0.627409258499
+Mean squared error: 33.1331379
+Variance score: 0.6274093
+Accuracy (error = 3): 0.4515833
+Accuracy (error = 4): 0.5670032
+Accuracy (error = 5): 0.6590179
+Accuracy (error = 6): 0.7391005
+Accuracy (greater or equal than, error = 0): 0.4621386
+Accuracy (greater or equal than, error = 1): 0.5569068
+Accuracy (greater or equal than, error = 2): 0.6424966
+Accuracy (greater or equal than, error = 3): 0.7129417
+Accuracy (greater or equal than, error = 4): 0.7801744
+Accuracy (greater or equal than, error = 5): 0.8347866
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 17.845791171
+both_avg_points_game:	-0.237047456154
+both_avg_field_goals_made:	0.624783179826
+both_avg_field_goals_att:	0.207535706536
+both_avg_field_goals_pct:	-0.214904841816
+both_avg_three_points_made:	0.770803255057
+both_avg_three_points_att:	0.2799347426
+both_avg_three_points_pct:	-0.0435473289005
+both_avg_two_points_made:	0.0843468844048
+both_avg_two_points_att:	-0.288494869934
+both_avg_two_points_pct:	0.00771222529129
+both_avg_blocked_att:	-0.132387046066
+both_avg_free_throws_made:	0.433119401355
+both_avg_free_throws_att:	0.00375680405931
+both_avg_free_throws_pct:	-0.0745556258163
+both_avg_offensive_rebounds:	-0.0860194569092
+both_avg_defensive_rebounds:	0.310218431216
+both_avg_rebounds:	-0.201006226971
+both_avg_assists:	-0.0449730253744
+both_avg_turnovers:	-0.0928450035111
+both_avg_blocks:	-0.232068920202
+both_avg_personal_fouls:	-0.304531232675
+both_avg_score_margin:	0.000173691245235
+both_avg_opp_points:	-0.0649554835936
+both_avg_opp_off_rebounds:	0.334591810966
+both_avg_opp_def_rebounds:	-0.253674844693
+both_avg_opp_blocks:	-0.0727165374825
+both_avg_possessions:	0.236761675122
+-----------------------------------
+LABEL: h_three_points_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.531746772095
+	Training + Eval R2: 0.541841686547
+	Test R2: 0.531746772095
+Mean squared error: 132.3773207
+Variance score: 0.5317468
+Accuracy (error = 3): 0.2606700
+Accuracy (error = 4): 0.3352455
+Accuracy (error = 5): 0.3930702
+Accuracy (error = 6): 0.4586966
+Accuracy (greater or equal than, error = 0): 0.4896742
+Accuracy (greater or equal than, error = 1): 0.5357962
+Accuracy (greater or equal than, error = 2): 0.5816888
+Accuracy (greater or equal than, error = 3): 0.6250574
+Accuracy (greater or equal than, error = 4): 0.6691143
+Accuracy (greater or equal than, error = 5): 0.7035337
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 28.2117146522
+both_avg_points_game:	-0.192322866051
+both_avg_field_goals_made:	0.376687771945
+both_avg_field_goals_att:	0.188092552632
+both_avg_field_goals_pct:	0.0940479346957
+both_avg_three_points_made:	0.274090771384
+both_avg_three_points_att:	0.171406900611
+both_avg_three_points_pct:	0.254963657691
+both_avg_two_points_made:	0.44766023249
+both_avg_two_points_att:	-0.0925055073193
+both_avg_two_points_pct:	0.0154403747307
+both_avg_blocked_att:	-0.211080531649
+both_avg_free_throws_made:	0.855843513048
+both_avg_free_throws_att:	-0.136926390911
+both_avg_free_throws_pct:	-0.0872696841436
+both_avg_offensive_rebounds:	0.0176396761228
+both_avg_defensive_rebounds:	0.171604575192
+both_avg_rebounds:	-0.322015101104
+both_avg_assists:	0.0383726173094
+both_avg_turnovers:	-0.0750490305074
+both_avg_blocks:	-0.241027576022
+both_avg_personal_fouls:	-0.0498552896297
+both_avg_score_margin:	-0.157493635177
+both_avg_opp_points:	-0.267985575875
+both_avg_opp_off_rebounds:	0.0293225496703
+both_avg_opp_def_rebounds:	-0.105917064036
+both_avg_opp_blocks:	0.136154602317
+both_avg_possessions:	0.0560032749674
+-----------------------------------
+LABEL: a_three_points_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.536078367837
+	Training + Eval R2: 0.538189312506
+	Test R2: 0.536078367837
+Mean squared error: 121.2011475
+Variance score: 0.5360784
+Accuracy (error = 3): 0.2592933
+Accuracy (error = 4): 0.3297384
+Accuracy (error = 5): 0.3946765
+Accuracy (error = 6): 0.4550252
+Accuracy (greater or equal than, error = 0): 0.4816430
+Accuracy (greater or equal than, error = 1): 0.5273061
+Accuracy (greater or equal than, error = 2): 0.5720514
+Accuracy (greater or equal than, error = 3): 0.6170262
+Accuracy (greater or equal than, error = 4): 0.6548876
+Accuracy (greater or equal than, error = 5): 0.6929784
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 26.1593013973
+both_avg_points_game:	-0.127032257388
+both_avg_field_goals_made:	0.668832780024
+both_avg_field_goals_att:	-0.125674907374
+both_avg_field_goals_pct:	0.116816680377
+both_avg_three_points_made:	0.228532424267
+both_avg_three_points_att:	0.16234223692
+both_avg_three_points_pct:	0.124265471875
+both_avg_two_points_made:	0.0328677487633
+both_avg_two_points_att:	0.0242542003112
+both_avg_two_points_pct:	0.00751878288839
+both_avg_blocked_att:	-0.272184699376
+both_avg_free_throws_made:	0.501555419328
+both_avg_free_throws_att:	-0.0209702069375
+both_avg_free_throws_pct:	0.0402948672676
+both_avg_offensive_rebounds:	0.165492486228
+both_avg_defensive_rebounds:	0.177407567989
+both_avg_rebounds:	-0.291198059909
+both_avg_assists:	0.0104618140898
+both_avg_turnovers:	-0.256153626478
+both_avg_blocks:	-0.154306277523
+both_avg_personal_fouls:	-0.151875901178
+both_avg_score_margin:	-0.194808152688
+both_avg_opp_points:	-0.302849485668
+both_avg_opp_off_rebounds:	-0.085987627636
+both_avg_opp_def_rebounds:	0.121964506035
+both_avg_opp_blocks:	-0.0206291685905
+both_avg_possessions:	0.186792926753
+-----------------------------------
+LABEL: total_free_throws
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.075250055002
+	Training + Eval R2: 0.0841573716458
+	Test R2: 0.075250055002
+Mean squared error: 81.7079129
+Variance score: 0.0752501
+Accuracy (error = 3): 0.2620468
+Accuracy (error = 4): 0.3435062
+Accuracy (error = 5): 0.4295548
+Accuracy (error = 6): 0.5066544
+Accuracy (greater or equal than, error = 0): 0.4743001
+Accuracy (greater or equal than, error = 1): 0.5236347
+Accuracy (greater or equal than, error = 2): 0.5725103
+Accuracy (greater or equal than, error = 3): 0.6145021
+Accuracy (greater or equal than, error = 4): 0.6558054
+Accuracy (greater or equal than, error = 5): 0.7014686
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 31.0595642549
+both_avg_points_game:	0.0542560947876
+both_avg_field_goals_made:	0.785879260352
+both_avg_field_goals_att:	-0.0462578928912
+both_avg_field_goals_pct:	-0.76742272919
+both_avg_three_points_made:	0.327596012826
+both_avg_three_points_att:	-0.270812356808
+both_avg_three_points_pct:	0.0107911167783
+both_avg_two_points_made:	0.383004239127
+both_avg_two_points_att:	-0.200800490449
+both_avg_two_points_pct:	-0.000423712968407
+both_avg_blocked_att:	-0.26162272889
+both_avg_free_throws_made:	0.51538161201
+both_avg_free_throws_att:	0.153386316323
+both_avg_free_throws_pct:	-0.0533725595214
+both_avg_offensive_rebounds:	-0.165307774616
+both_avg_defensive_rebounds:	-0.410065748949
+both_avg_rebounds:	-0.0106584124689
+both_avg_assists:	-0.0435477697255
+both_avg_turnovers:	0.0630363370144
+both_avg_blocks:	0.517732274318
+both_avg_personal_fouls:	0.758567965662
+both_avg_score_margin:	-0.0284056706185
+both_avg_opp_points:	-0.0534718077419
+both_avg_opp_off_rebounds:	-0.102445430267
+both_avg_opp_def_rebounds:	-0.137352036755
+both_avg_opp_blocks:	0.309132601763
+both_avg_possessions:	0.120140833203
+-----------------------------------
+LABEL: h_free_throws_made
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.461546249251
+	Training + Eval R2: 0.489307543703
+	Test R2: 0.461546249251
+Mean squared error: 38.0845693
+Variance score: 0.4615462
+Accuracy (error = 3): 0.4343736
+Accuracy (error = 4): 0.5380909
+Accuracy (error = 5): 0.6184029
+Accuracy (error = 6): 0.6938963
+Accuracy (greater or equal than, error = 0): 0.4619091
+Accuracy (greater or equal than, error = 1): 0.5474989
+Accuracy (greater or equal than, error = 2): 0.6271225
+Accuracy (greater or equal than, error = 3): 0.6982561
+Accuracy (greater or equal than, error = 4): 0.7579165
+Accuracy (greater or equal than, error = 5): 0.8067921
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 15.3030868953
+both_avg_points_game:	-0.165326216345
+both_avg_field_goals_made:	0.560337985714
+both_avg_field_goals_att:	0.102849434806
+both_avg_field_goals_pct:	-0.35663453447
+both_avg_three_points_made:	0.210906499492
+both_avg_three_points_att:	-0.0619922825601
+both_avg_three_points_pct:	0.0545274768393
+both_avg_two_points_made:	0.427136202193
+both_avg_two_points_att:	-0.134066320001
+both_avg_two_points_pct:	0.00508098296015
+both_avg_blocked_att:	-0.172371793697
+both_avg_free_throws_made:	0.442218956203
+both_avg_free_throws_att:	0.193873296212
+both_avg_free_throws_pct:	-0.0321346677077
+both_avg_offensive_rebounds:	-0.0616639352363
+both_avg_defensive_rebounds:	-0.18040849653
+both_avg_rebounds:	-0.102433635753
+both_avg_assists:	-0.0469406021568
+both_avg_turnovers:	0.121129706615
+both_avg_blocks:	0.333897289777
+both_avg_personal_fouls:	0.371223127761
+both_avg_score_margin:	0.01881605109
+both_avg_opp_points:	-0.0918677827336
+both_avg_opp_off_rebounds:	-0.0665004798145
+both_avg_opp_def_rebounds:	-0.0533359680987
+both_avg_opp_blocks:	0.0388743592202
+both_avg_possessions:	0.0268260569555
+-----------------------------------
+LABEL: a_free_throws_made
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.455216520366
+	Training + Eval R2: 0.472543628203
+	Test R2: 0.455216520366
+Mean squared error: 30.5477010
+Variance score: 0.4552165
+Accuracy (error = 3): 0.4655805
+Accuracy (error = 4): 0.5759523
+Accuracy (error = 5): 0.6654429
+Accuracy (error = 6): 0.7439192
+Accuracy (greater or equal than, error = 0): 0.4559431
+Accuracy (greater or equal than, error = 1): 0.5587425
+Accuracy (greater or equal than, error = 2): 0.6402019
+Accuracy (greater or equal than, error = 3): 0.7140890
+Accuracy (greater or equal than, error = 4): 0.7783387
+Accuracy (greater or equal than, error = 5): 0.8354750
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 11.0660388569
+both_avg_points_game:	0.0538736090267
+both_avg_field_goals_made:	0.520262565349
+both_avg_field_goals_att:	0.0224345679075
+both_avg_field_goals_pct:	-0.231838734181
+both_avg_three_points_made:	0.204915004924
+both_avg_three_points_att:	-0.0834560967693
+both_avg_three_points_pct:	0.0300415671134
+both_avg_two_points_made:	0.110256305812
+both_avg_two_points_att:	-0.0412130345744
+both_avg_two_points_pct:	0.00586803154858
+both_avg_blocked_att:	-0.345467864601
+both_avg_free_throws_made:	0.432984505652
+both_avg_free_throws_att:	0.0977945593619
+both_avg_free_throws_pct:	-0.0280332159446
+both_avg_offensive_rebounds:	-0.0757716172851
+both_avg_defensive_rebounds:	-0.181923117681
+both_avg_rebounds:	-0.0620281305375
+both_avg_assists:	-0.0854131891989
+both_avg_turnovers:	-0.0489589117393
+both_avg_blocks:	0.177886373884
+both_avg_personal_fouls:	0.285568821195
+both_avg_score_margin:	-0.167302455735
+both_avg_opp_points:	-0.250513353516
+both_avg_opp_off_rebounds:	-0.0625309416952
+both_avg_opp_def_rebounds:	-0.0642026229324
+both_avg_opp_blocks:	0.260025072581
+both_avg_possessions:	0.129293596001
+-----------------------------------
+LABEL: h_free_throws_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.752358254435
+	Training + Eval R2: 0.769150126693
+	Test R2: 0.752358254435
+Mean squared error: 192.9813443
+Variance score: 0.7523583
+Accuracy (error = 3): 0.2248738
+Accuracy (error = 4): 0.2948600
+Accuracy (error = 5): 0.3570445
+Accuracy (error = 6): 0.4134924
+Accuracy (greater or equal than, error = 0): 0.5075723
+Accuracy (greater or equal than, error = 1): 0.5468105
+Accuracy (greater or equal than, error = 2): 0.5835246
+Accuracy (greater or equal than, error = 3): 0.6218449
+Accuracy (greater or equal than, error = 4): 0.6553465
+Accuracy (greater or equal than, error = 5): 0.6865535
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 57.8095434694
+both_avg_points_game:	-0.550676879058
+both_avg_field_goals_made:	1.10731207495
+both_avg_field_goals_att:	0.577860818938
+both_avg_field_goals_pct:	0.18471713446
+both_avg_three_points_made:	0.679926589789
+both_avg_three_points_att:	0.225124946371
+both_avg_three_points_pct:	0.0916796123411
+both_avg_two_points_made:	0.195780102596
+both_avg_two_points_att:	0.13576070848
+both_avg_two_points_pct:	0.0264382791965
+both_avg_blocked_att:	-0.538795282811
+both_avg_free_throws_made:	1.1543604759
+both_avg_free_throws_att:	0.270753474927
+both_avg_free_throws_pct:	0.155133818541
+both_avg_offensive_rebounds:	-0.479081572946
+both_avg_defensive_rebounds:	0.0875648396567
+both_avg_rebounds:	-0.411391102329
+both_avg_assists:	-0.135820271292
+both_avg_turnovers:	0.0962425250309
+both_avg_blocks:	-0.0467736505997
+both_avg_personal_fouls:	-0.0926355406506
+both_avg_score_margin:	-0.0729796601706
+both_avg_opp_points:	-0.387913044652
+both_avg_opp_off_rebounds:	0.0149046245351
+both_avg_opp_def_rebounds:	-0.11598372547
+both_avg_opp_blocks:	0.0971281300514
+both_avg_possessions:	-0.338011377083
+-----------------------------------
+LABEL: a_free_throws_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.729296331166
+	Training + Eval R2: 0.742100170247
+	Test R2: 0.729296331166
+Mean squared error: 210.9294365
+Variance score: 0.7292963
+Accuracy (error = 3): 0.2134006
+Accuracy (error = 4): 0.2746673
+Accuracy (error = 5): 0.3359339
+Accuracy (error = 6): 0.3921524
+Accuracy (greater or equal than, error = 0): 0.5096374
+Accuracy (greater or equal than, error = 1): 0.5447453
+Accuracy (greater or equal than, error = 2): 0.5803121
+Accuracy (greater or equal than, error = 3): 0.6135842
+Accuracy (greater or equal than, error = 4): 0.6438733
+Accuracy (greater or equal than, error = 5): 0.6725562
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 56.0718638998
+both_avg_points_game:	-0.0542039141237
+both_avg_field_goals_made:	0.836613731444
+both_avg_field_goals_att:	0.141225936444
+both_avg_field_goals_pct:	0.226059792458
+both_avg_three_points_made:	0.502493533947
+both_avg_three_points_att:	0.591800715825
+both_avg_three_points_pct:	0.138258083834
+both_avg_two_points_made:	0.390959163872
+both_avg_two_points_att:	0.358058924978
+both_avg_two_points_pct:	0.0326636741574
+both_avg_blocked_att:	-0.796042500764
+both_avg_free_throws_made:	1.56385148727
+both_avg_free_throws_att:	-0.0773290073054
+both_avg_free_throws_pct:	0.0991694653457
+both_avg_offensive_rebounds:	-0.242182228876
+both_avg_defensive_rebounds:	0.193243946676
+both_avg_rebounds:	-0.457394665241
+both_avg_assists:	-0.131081490508
+both_avg_turnovers:	-0.139606839493
+both_avg_blocks:	0.000925925727585
+both_avg_personal_fouls:	-0.161639561033
+both_avg_score_margin:	-0.540216454559
+both_avg_opp_points:	-0.857695571665
+both_avg_opp_off_rebounds:	0.015143502296
+both_avg_opp_def_rebounds:	-0.0417363976043
+both_avg_opp_blocks:	0.640479172954
+both_avg_possessions:	-0.158547859073
+-----------------------------------
+LABEL: total_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.800530491836
+	Training + Eval R2: 0.803358848351
+	Test R2: 0.800530491836
+Mean squared error: 125.1682552
+Variance score: 0.8005305
+Accuracy (error = 3): 0.2854520
+Accuracy (error = 4): 0.3703534
+Accuracy (error = 5): 0.4426342
+Accuracy (error = 6): 0.5130794
+Accuracy (greater or equal than, error = 0): 0.4749885
+Accuracy (greater or equal than, error = 1): 0.5220285
+Accuracy (greater or equal than, error = 2): 0.5656264
+Accuracy (greater or equal than, error = 3): 0.6195503
+Accuracy (greater or equal than, error = 4): 0.6661313
+Accuracy (greater or equal than, error = 5): 0.7053694
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 57.8932879055
+both_avg_points_game:	-0.291045591448
+both_avg_field_goals_made:	1.7708841303
+both_avg_field_goals_att:	0.522143261761
+both_avg_field_goals_pct:	-1.01080563713
+both_avg_three_points_made:	1.11127145048
+both_avg_three_points_att:	-0.0991132403933
+both_avg_three_points_pct:	0.180789743976
+both_avg_two_points_made:	0.926793881654
+both_avg_two_points_att:	-0.250212560211
+both_avg_two_points_pct:	0.00853642678362
+both_avg_blocked_att:	-0.879630429532
+both_avg_free_throws_made:	1.15473415057
+both_avg_free_throws_att:	0.240352339689
+both_avg_free_throws_pct:	-0.251283266684
+both_avg_offensive_rebounds:	-0.246275224026
+both_avg_defensive_rebounds:	0.365236929145
+both_avg_rebounds:	-0.106731013574
+both_avg_assists:	-0.182113472164
+both_avg_turnovers:	0.142901469774
+both_avg_blocks:	0.575245474252
+both_avg_personal_fouls:	-0.360517563763
+both_avg_score_margin:	-0.346770263817
+both_avg_opp_points:	-0.646761453167
+both_avg_opp_off_rebounds:	0.482641148976
+both_avg_opp_def_rebounds:	-0.0669934916001
+both_avg_opp_blocks:	-0.209928141946
+both_avg_possessions:	0.315338488905
+-----------------------------------
+LABEL: h_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.718024101366
+	Training + Eval R2: 0.722145068668
+	Test R2: 0.718024101366
+Mean squared error: 53.7176647
+Variance score: 0.7180241
+Accuracy (error = 3): 0.3829738
+Accuracy (error = 4): 0.4804956
+Accuracy (error = 5): 0.5706746
+Accuracy (error = 6): 0.6587884
+Accuracy (greater or equal than, error = 0): 0.4743001
+Accuracy (greater or equal than, error = 1): 0.5431391
+Accuracy (greater or equal than, error = 2): 0.6167967
+Accuracy (greater or equal than, error = 3): 0.6815053
+Accuracy (greater or equal than, error = 4): 0.7319872
+Accuracy (greater or equal than, error = 5): 0.7833869
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 31.7092059165
+both_avg_points_game:	-0.260740908513
+both_avg_field_goals_made:	0.925506734952
+both_avg_field_goals_att:	0.303968453924
+both_avg_field_goals_pct:	-0.572424676978
+both_avg_three_points_made:	0.471218896626
+both_avg_three_points_att:	-0.00445031227635
+both_avg_three_points_pct:	0.0852556918365
+both_avg_two_points_made:	0.502678542856
+both_avg_two_points_att:	-0.130122584679
+both_avg_two_points_pct:	0.00323197569588
+both_avg_blocked_att:	-0.387748701874
+both_avg_free_throws_made:	0.598068959588
+both_avg_free_throws_att:	0.158365262135
+both_avg_free_throws_pct:	-0.151823947127
+both_avg_offensive_rebounds:	-0.180207996701
+both_avg_defensive_rebounds:	0.1712434589
+both_avg_rebounds:	-0.0144024168161
+both_avg_assists:	-0.0031331449351
+both_avg_turnovers:	0.0494693472226
+both_avg_blocks:	0.297149396412
+both_avg_personal_fouls:	-0.140370000605
+both_avg_score_margin:	-0.0920392038648
+both_avg_opp_points:	-0.253965321197
+both_avg_opp_off_rebounds:	0.343100306303
+both_avg_opp_def_rebounds:	-0.112847593981
+both_avg_opp_blocks:	-0.213617389101
+both_avg_possessions:	0.156739145499
+-----------------------------------
+LABEL: a_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.729808600119
+	Training + Eval R2: 0.738888482131
+	Test R2: 0.729808600119
+Mean squared error: 45.3367071
+Variance score: 0.7298086
+Accuracy (error = 3): 0.4015603
+Accuracy (error = 4): 0.5018357
+Accuracy (error = 5): 0.5922441
+Accuracy (error = 6): 0.6668196
+Accuracy (greater or equal than, error = 0): 0.4648922
+Accuracy (greater or equal than, error = 1): 0.5442864
+Accuracy (greater or equal than, error = 2): 0.6193208
+Accuracy (greater or equal than, error = 3): 0.6805874
+Accuracy (greater or equal than, error = 4): 0.7354291
+Accuracy (greater or equal than, error = 5): 0.7898118
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 26.0392603024
+both_avg_points_game:	-0.0351469573164
+both_avg_field_goals_made:	0.854296687893
+both_avg_field_goals_att:	0.22340706268
+both_avg_field_goals_pct:	-0.434129088999
+both_avg_three_points_made:	0.644661010353
+both_avg_three_points_att:	-0.0915735474538
+both_avg_three_points_pct:	0.0977844001016
+both_avg_two_points_made:	0.427933076854
+both_avg_two_points_att:	-0.118688804641
+both_avg_two_points_pct:	0.00565201052035
+both_avg_blocked_att:	-0.499937153877
+both_avg_free_throws_made:	0.567551600335
+both_avg_free_throws_att:	0.0861755367568
+both_avg_free_throws_pct:	-0.100074455999
+both_avg_offensive_rebounds:	-0.066310179649
+both_avg_defensive_rebounds:	0.194910929108
+both_avg_rebounds:	-0.0964099499896
+both_avg_assists:	-0.181309703087
+both_avg_turnovers:	0.0929459517038
+both_avg_blocks:	0.278007874695
+both_avg_personal_fouls:	-0.221726114894
+both_avg_score_margin:	-0.258321501049
+both_avg_opp_points:	-0.40171365387
+both_avg_opp_off_rebounds:	0.139800698336
+both_avg_opp_def_rebounds:	0.0447908996628
+both_avg_opp_blocks:	0.00464178183295
+both_avg_possessions:	0.160554450355
+-----------------------------------
+LABEL: total_offensive_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.646551485249
+	Training + Eval R2: 0.642212986069
+	Test R2: 0.646551485249
+Mean squared error: 24.9639043
+Variance score: 0.6465515
+Accuracy (error = 3): 0.5151446
+Accuracy (error = 4): 0.6319413
+Accuracy (error = 5): 0.7239559
+Accuracy (error = 6): 0.7987609
+Accuracy (greater or equal than, error = 0): 0.4658100
+Accuracy (greater or equal than, error = 1): 0.5679211
+Accuracy (greater or equal than, error = 2): 0.6631482
+Accuracy (greater or equal than, error = 3): 0.7478201
+Accuracy (greater or equal than, error = 4): 0.8173474
+Accuracy (greater or equal than, error = 5): 0.8715007
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 16.6980567426
+both_avg_points_game:	-0.0542967002011
+both_avg_field_goals_made:	0.398299633228
+both_avg_field_goals_att:	0.372923673187
+both_avg_field_goals_pct:	-0.365059773047
+both_avg_three_points_made:	0.357214376806
+both_avg_three_points_att:	-0.0957077467122
+both_avg_three_points_pct:	0.0463714617427
+both_avg_two_points_made:	0.419268022394
+both_avg_two_points_att:	-0.0698395181032
+both_avg_two_points_pct:	-0.00245236385558
+both_avg_blocked_att:	-0.39280323575
+both_avg_free_throws_made:	0.248901416976
+both_avg_free_throws_att:	0.208899401314
+both_avg_free_throws_pct:	-0.0936358894213
+both_avg_offensive_rebounds:	0.245054296825
+both_avg_defensive_rebounds:	-0.17957653996
+both_avg_rebounds:	0.0228153453946
+both_avg_assists:	-0.0602044653557
+both_avg_turnovers:	0.205040894246
+both_avg_blocks:	0.405790933947
+both_avg_personal_fouls:	-0.111308714461
+both_avg_score_margin:	-0.128538147055
+both_avg_opp_points:	-0.226342686148
+both_avg_opp_off_rebounds:	0.432601053164
+both_avg_opp_def_rebounds:	-0.313587455342
+both_avg_opp_blocks:	0.0500825790595
+both_avg_possessions:	0.0167272474496
+-----------------------------------
+LABEL: h_offensive_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.504767624855
+	Training + Eval R2: 0.506744960389
+	Test R2: 0.504767624855
+Mean squared error: 12.8089971
+Variance score: 0.5047676
+Accuracy (error = 3): 0.6381368
+Accuracy (error = 4): 0.7661771
+Accuracy (error = 5): 0.8565856
+Accuracy (error = 6): 0.9102799
+Accuracy (greater or equal than, error = 0): 0.4451583
+Accuracy (greater or equal than, error = 1): 0.5927031
+Accuracy (greater or equal than, error = 2): 0.7152363
+Accuracy (greater or equal than, error = 3): 0.8171179
+Accuracy (greater or equal than, error = 4): 0.8967416
+Accuracy (greater or equal than, error = 5): 0.9440110
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 9.06062692935
+both_avg_points_game:	-0.0290404875328
+both_avg_field_goals_made:	0.237438233175
+both_avg_field_goals_att:	0.15433297764
+both_avg_field_goals_pct:	-0.206994453853
+both_avg_three_points_made:	0.136347357131
+both_avg_three_points_att:	-0.0597582606616
+both_avg_three_points_pct:	0.0145496354164
+both_avg_two_points_made:	0.21381601522
+both_avg_two_points_att:	-0.0606238777723
+both_avg_two_points_pct:	-0.00250797372341
+both_avg_blocked_att:	-0.19943754043
+both_avg_free_throws_made:	0.135015174938
+both_avg_free_throws_att:	0.0843111818005
+both_avg_free_throws_pct:	-0.0498455594259
+both_avg_offensive_rebounds:	0.143194565233
+both_avg_defensive_rebounds:	-0.130854389015
+both_avg_rebounds:	0.0703044160485
+both_avg_assists:	0.0247404485709
+both_avg_turnovers:	0.0654532762724
+both_avg_blocks:	0.163683289834
+both_avg_personal_fouls:	-0.0286286369747
+both_avg_score_margin:	-0.0669893970965
+both_avg_opp_points:	-0.128635501204
+both_avg_opp_off_rebounds:	0.248908951566
+both_avg_opp_def_rebounds:	-0.133300956325
+both_avg_opp_blocks:	0.0171791971249
+both_avg_possessions:	0.0425907941585
+-----------------------------------
+LABEL: a_offensive_rebounds
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.512969526895
+	Training + Eval R2: 0.511172331429
+	Test R2: 0.512969526895
+Mean squared error: 11.4716338
+Variance score: 0.5129695
+Accuracy (error = 3): 0.6555760
+Accuracy (error = 4): 0.7769619
+Accuracy (error = 5): 0.8655346
+Accuracy (error = 6): 0.9201469
+Accuracy (greater or equal than, error = 0): 0.4591556
+Accuracy (greater or equal than, error = 1): 0.6087655
+Accuracy (greater or equal than, error = 2): 0.7296925
+Accuracy (greater or equal than, error = 3): 0.8288206
+Accuracy (greater or equal than, error = 4): 0.8997246
+Accuracy (greater or equal than, error = 5): 0.9490592
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 7.49260812665
+both_avg_points_game:	-0.0300984870491
+both_avg_field_goals_made:	0.169780692599
+both_avg_field_goals_att:	0.223822950391
+both_avg_field_goals_pct:	-0.153813448039
+both_avg_three_points_made:	0.225475476177
+both_avg_three_points_att:	-0.0328601053874
+both_avg_three_points_pct:	0.0340721742883
+both_avg_two_points_made:	0.209269745229
+both_avg_two_points_att:	-0.00781446944055
+both_avg_two_points_pct:	0.000403169300451
+both_avg_blocked_att:	-0.20142112154
+both_avg_free_throws_made:	0.124772651392
+both_avg_free_throws_att:	0.128776678716
+both_avg_free_throws_pct:	-0.0444054664377
+both_avg_offensive_rebounds:	0.101616779267
+both_avg_defensive_rebounds:	-0.0478046920832
+both_avg_rebounds:	-0.0515704238859
+both_avg_assists:	-0.0872742897854
+both_avg_turnovers:	0.139101447126
+both_avg_blocks:	0.242019440968
+both_avg_personal_fouls:	-0.0842586292219
+both_avg_score_margin:	-0.0651391910551
+both_avg_opp_points:	-0.106624706846
+both_avg_opp_off_rebounds:	0.183951957261
+both_avg_opp_def_rebounds:	-0.181349701735
+both_avg_opp_blocks:	0.0338559166125
+both_avg_possessions:	-0.0239084397609
+-----------------------------------
+LABEL: total_assists
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.694441808454
+	Training + Eval R2: 0.698457885729
+	Test R2: 0.694441808454
+Mean squared error: 40.3239085
+Variance score: 0.6944418
+Accuracy (error = 3): 0.4242772
+Accuracy (error = 4): 0.5291418
+Accuracy (error = 5): 0.6216154
+Accuracy (error = 6): 0.7007802
+Accuracy (greater or equal than, error = 0): 0.4924277
+Accuracy (greater or equal than, error = 1): 0.5697568
+Accuracy (greater or equal than, error = 2): 0.6418082
+Accuracy (greater or equal than, error = 3): 0.7088114
+Accuracy (greater or equal than, error = 4): 0.7620468
+Accuracy (greater or equal than, error = 5): 0.8152822
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 21.5760070273
+both_avg_points_game:	-0.0851100393764
+both_avg_field_goals_made:	0.694738429209
+both_avg_field_goals_att:	0.0704679613347
+both_avg_field_goals_pct:	-0.445206773086
+both_avg_three_points_made:	0.498952033126
+both_avg_three_points_att:	0.0513127358375
+both_avg_three_points_pct:	0.01190721891
+both_avg_two_points_made:	0.417366428962
+both_avg_two_points_att:	-0.0124947600086
+both_avg_two_points_pct:	0.00600302592159
+both_avg_blocked_att:	-0.173881808875
+both_avg_free_throws_made:	0.477186440297
+both_avg_free_throws_att:	0.13233221581
+both_avg_free_throws_pct:	-0.0505841798785
+both_avg_offensive_rebounds:	-0.141146661885
+both_avg_defensive_rebounds:	0.107974963099
+both_avg_rebounds:	-0.322887468769
+both_avg_assists:	1.2856410459
+both_avg_turnovers:	0.202935787926
+both_avg_blocks:	-0.291808981095
+both_avg_personal_fouls:	-0.274457806021
+both_avg_score_margin:	-0.259593739754
+both_avg_opp_points:	-0.280306887609
+both_avg_opp_off_rebounds:	0.307523854833
+both_avg_opp_def_rebounds:	-0.0656379812777
+both_avg_opp_blocks:	-0.0187941452034
+both_avg_possessions:	0.0826279372826
+-----------------------------------
+LABEL: h_assists
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.582321709016
+	Training + Eval R2: 0.586806264972
+	Test R2: 0.582321709016
+Mean squared error: 19.9509260
+Variance score: 0.5823217
+Accuracy (error = 3): 0.5566774
+Accuracy (error = 4): 0.6693437
+Accuracy (error = 5): 0.7675539
+Accuracy (error = 6): 0.8432767
+Accuracy (greater or equal than, error = 0): 0.4671868
+Accuracy (greater or equal than, error = 1): 0.5855897
+Accuracy (greater or equal than, error = 2): 0.6895365
+Accuracy (greater or equal than, error = 3): 0.7767324
+Accuracy (greater or equal than, error = 4): 0.8423589
+Accuracy (greater or equal than, error = 5): 0.8958238
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 12.3768505033
+both_avg_points_game:	-0.050125739255
+both_avg_field_goals_made:	0.357970922448
+both_avg_field_goals_att:	0.108976436421
+both_avg_field_goals_pct:	-0.29709060933
+both_avg_three_points_made:	0.224394692712
+both_avg_three_points_att:	0.0287723579488
+both_avg_three_points_pct:	0.0381146935603
+both_avg_two_points_made:	0.301502991881
+both_avg_two_points_att:	-0.0249425953107
+both_avg_two_points_pct:	0.00372536518136
+both_avg_blocked_att:	-0.0942876916668
+both_avg_free_throws_made:	0.244737137177
+both_avg_free_throws_att:	0.104677332037
+both_avg_free_throws_pct:	-0.0399275337798
+both_avg_offensive_rebounds:	-0.0650696475605
+both_avg_defensive_rebounds:	0.0791468478451
+both_avg_rebounds:	-0.231175474326
+both_avg_assists:	0.692596680255
+both_avg_turnovers:	0.126481976551
+both_avg_blocks:	-0.0987787481327
+both_avg_personal_fouls:	-0.139704977959
+both_avg_score_margin:	-0.146328430773
+both_avg_opp_points:	-0.163748239477
+both_avg_opp_off_rebounds:	0.200434771565
+both_avg_opp_def_rebounds:	-0.0791642757475
+both_avg_opp_blocks:	-0.037160378487
+both_avg_possessions:	0.0378621861978
+-----------------------------------
+LABEL: a_assists
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.601266224621
+	Training + Eval R2: 0.597198990274
+	Test R2: 0.601266224621
+Mean squared error: 14.2994162
+Variance score: 0.6012662
+Accuracy (error = 3): 0.6193208
+Accuracy (error = 4): 0.7400184
+Accuracy (error = 5): 0.8308857
+Accuracy (error = 6): 0.8912345
+Accuracy (greater or equal than, error = 0): 0.4770537
+Accuracy (greater or equal than, error = 1): 0.6147315
+Accuracy (greater or equal than, error = 2): 0.7228086
+Accuracy (greater or equal than, error = 3): 0.8113814
+Accuracy (greater or equal than, error = 4): 0.8779257
+Accuracy (greater or equal than, error = 5): 0.9290959
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 9.05433483741
+both_avg_points_game:	-0.0398265745021
+both_avg_field_goals_made:	0.345686799307
+both_avg_field_goals_att:	-0.0332762202429
+both_avg_field_goals_pct:	-0.143864292601
+both_avg_three_points_made:	0.279165796916
+both_avg_three_points_att:	0.0256297585519
+both_avg_three_points_pct:	-0.0239571266883
+both_avg_two_points_made:	0.119681175137
+both_avg_two_points_att:	0.0138490061925
+both_avg_two_points_pct:	0.00262522017284
+both_avg_blocked_att:	-0.0876495434284
+both_avg_free_throws_made:	0.243335712474
+both_avg_free_throws_att:	0.0318433429763
+both_avg_free_throws_pct:	-0.011271782541
+both_avg_offensive_rebounds:	-0.0763199666478
+both_avg_defensive_rebounds:	0.0297455741162
+both_avg_rebounds:	-0.0957933476757
+both_avg_assists:	0.590714989784
+both_avg_turnovers:	0.0759676405267
+both_avg_blocks:	-0.193118436108
+both_avg_personal_fouls:	-0.136331379798
+both_avg_score_margin:	-0.116855750077
+both_avg_opp_points:	-0.125476170033
+both_avg_opp_off_rebounds:	0.107348938931
+both_avg_opp_def_rebounds:	0.0124630917518
+both_avg_opp_blocks:	0.0193187679616
+both_avg_possessions:	0.0467208580327
+-----------------------------------
+LABEL: total_field_goals_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.843203102298
+	Training + Eval R2: 0.846164081987
+	Test R2: 0.843203102298
+Mean squared error: 291.6027566
+Variance score: 0.8432031
+Accuracy (error = 3): 0.2212024
+Accuracy (error = 4): 0.2930243
+Accuracy (error = 5): 0.3554383
+Accuracy (error = 6): 0.4167049
+Accuracy (greater or equal than, error = 0): 0.4690225
+Accuracy (greater or equal than, error = 1): 0.5029830
+Accuracy (greater or equal than, error = 2): 0.5435980
+Accuracy (greater or equal than, error = 3): 0.5821478
+Accuracy (greater or equal than, error = 4): 0.6248279
+Accuracy (greater or equal than, error = 5): 0.6597063
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 98.7778620359
+both_avg_points_game:	-0.508613544132
+both_avg_field_goals_made:	3.63613760338
+both_avg_field_goals_att:	0.806163949151
+both_avg_field_goals_pct:	-1.84411228313
+both_avg_three_points_made:	2.37608429598
+both_avg_three_points_att:	0.161204107575
+both_avg_three_points_pct:	0.284678195294
+both_avg_two_points_made:	1.85235092537
+both_avg_two_points_att:	-0.192975235866
+both_avg_two_points_pct:	0.0171051141426
+both_avg_blocked_att:	-1.43107269273
+both_avg_free_throws_made:	2.31787133083
+both_avg_free_throws_att:	0.32592256416
+both_avg_free_throws_pct:	-0.387234291076
+both_avg_offensive_rebounds:	-0.664676984365
+both_avg_defensive_rebounds:	0.77653280383
+both_avg_rebounds:	-0.743044311884
+both_avg_assists:	-0.149023092972
+both_avg_turnovers:	0.120467663484
+both_avg_blocks:	0.455455314638
+both_avg_personal_fouls:	-1.16760670306
+both_avg_score_margin:	-0.717825141246
+both_avg_opp_points:	-1.08895930168
+both_avg_opp_off_rebounds:	0.953549552702
+both_avg_opp_def_rebounds:	-0.688719271485
+both_avg_opp_blocks:	-0.226090249212
+both_avg_possessions:	0.696714120157
+-----------------------------------
+LABEL: h_field_goals_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.816530756979
+	Training + Eval R2: 0.819105188849
+	Test R2: 0.816530756979
+Mean squared error: 88.9816521
+Variance score: 0.8165308
+Accuracy (error = 3): 0.3379991
+Accuracy (error = 4): 0.4428637
+Accuracy (error = 5): 0.5243231
+Accuracy (error = 6): 0.6018816
+Accuracy (greater or equal than, error = 0): 0.4612207
+Accuracy (greater or equal than, error = 1): 0.5213401
+Accuracy (greater or equal than, error = 2): 0.5867370
+Accuracy (greater or equal than, error = 3): 0.6447912
+Accuracy (greater or equal than, error = 4): 0.7042221
+Accuracy (greater or equal than, error = 5): 0.7512620
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 49.320878323
+both_avg_points_game:	-0.184244137381
+both_avg_field_goals_made:	1.88642599956
+both_avg_field_goals_att:	0.30795370198
+both_avg_field_goals_pct:	-0.964840344941
+both_avg_three_points_made:	1.14751934709
+both_avg_three_points_att:	0.017626290572
+both_avg_three_points_pct:	0.14189523576
+both_avg_two_points_made:	0.927785921713
+both_avg_two_points_att:	-0.150805128793
+both_avg_two_points_pct:	0.00811467033449
+both_avg_blocked_att:	-0.754370342854
+both_avg_free_throws_made:	1.09945723496
+both_avg_free_throws_att:	0.13337899961
+both_avg_free_throws_pct:	-0.173547289747
+both_avg_offensive_rebounds:	-0.201948772045
+both_avg_defensive_rebounds:	0.32034169284
+both_avg_rebounds:	-0.329770317225
+both_avg_assists:	-0.00981165483885
+both_avg_turnovers:	-0.0285115174496
+both_avg_blocks:	0.129913934172
+both_avg_personal_fouls:	-0.591236972907
+both_avg_score_margin:	-0.409513996885
+both_avg_opp_points:	-0.6208819738
+both_avg_opp_off_rebounds:	0.511357497111
+both_avg_opp_def_rebounds:	-0.245307911539
+both_avg_opp_blocks:	-0.104731382243
+both_avg_possessions:	0.451416119461
+-----------------------------------
+LABEL: a_field_goals_att
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.816659601944
+	Training + Eval R2: 0.819624181248
+	Test R2: 0.816659601944
+Mean squared error: 90.1674407
+Variance score: 0.8166596
+Accuracy (error = 3): 0.3357045
+Accuracy (error = 4): 0.4302432
+Accuracy (error = 5): 0.5167508
+Accuracy (error = 6): 0.5943093
+Accuracy (greater or equal than, error = 0): 0.4855438
+Accuracy (greater or equal than, error = 1): 0.5433685
+Accuracy (greater or equal than, error = 2): 0.6011932
+Accuracy (greater or equal than, error = 3): 0.6567233
+Accuracy (greater or equal than, error = 4): 0.7092703
+Accuracy (greater or equal than, error = 5): 0.7524094
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 49.3121620263
+both_avg_points_game:	-0.329211681132
+both_avg_field_goals_made:	1.75863089637
+both_avg_field_goals_att:	0.503442502014
+both_avg_field_goals_pct:	-0.875020067038
+both_avg_three_points_made:	1.23317340539
+both_avg_three_points_att:	0.146667197667
+both_avg_three_points_pct:	0.145033307496
+both_avg_two_points_made:	0.928382741709
+both_avg_two_points_att:	-0.0407689361827
+both_avg_two_points_pct:	0.00933800324075
+both_avg_blocked_att:	-0.684757776092
+both_avg_free_throws_made:	1.22930050522
+both_avg_free_throws_att:	0.196732023753
+both_avg_free_throws_pct:	-0.214302137771
+both_avg_offensive_rebounds:	-0.462971164644
+both_avg_defensive_rebounds:	0.457108569852
+both_avg_rebounds:	-0.417355347891
+both_avg_assists:	-0.141540813992
+both_avg_turnovers:	0.148493010085
+both_avg_blocks:	0.325453177321
+both_avg_personal_fouls:	-0.577948281889
+both_avg_score_margin:	-0.311901585457
+both_avg_opp_points:	-0.476994849777
+both_avg_opp_off_rebounds:	0.442451911254
+both_avg_opp_def_rebounds:	-0.444474562665
+both_avg_opp_blocks:	-0.120406332292
+both_avg_possessions:	0.247253107644
+-----------------------------------
+LABEL: h_field_goals_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.754323533192
+	Training + Eval R2: 0.760223650415
+	Test R2: 0.754323533192
+Mean squared error: 78.6972041
+Variance score: 0.7543235
+Accuracy (error = 3): 0.3203304
+Accuracy (error = 4): 0.4137219
+Accuracy (error = 5): 0.5018357
+Accuracy (error = 6): 0.5722809
+Accuracy (greater or equal than, error = 0): 0.4882974
+Accuracy (greater or equal than, error = 1): 0.5417623
+Accuracy (greater or equal than, error = 2): 0.5986691
+Accuracy (greater or equal than, error = 3): 0.6463974
+Accuracy (greater or equal than, error = 4): 0.6989445
+Accuracy (greater or equal than, error = 5): 0.7459844
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 39.2159540416
+both_avg_points_game:	-0.326110588687
+both_avg_field_goals_made:	0.875191375704
+both_avg_field_goals_att:	0.265949334486
+both_avg_field_goals_pct:	0.117734260746
+both_avg_three_points_made:	0.284682460985
+both_avg_three_points_att:	0.220313575075
+both_avg_three_points_pct:	0.134498821779
+both_avg_two_points_made:	0.465213630116
+both_avg_two_points_att:	0.0177760694808
+both_avg_two_points_pct:	0.0185719961444
+both_avg_blocked_att:	-0.296550642958
+both_avg_free_throws_made:	0.706964256934
+both_avg_free_throws_att:	0.253609860445
+both_avg_free_throws_pct:	-0.0729752377351
+both_avg_offensive_rebounds:	-0.174493970902
+both_avg_defensive_rebounds:	-0.00399219033956
+both_avg_rebounds:	-0.374930690793
+both_avg_assists:	0.10350074465
+both_avg_turnovers:	0.120795092957
+both_avg_blocks:	-0.305821845038
+both_avg_personal_fouls:	-0.168570344526
+both_avg_score_margin:	-0.141215225205
+both_avg_opp_points:	-0.304085029817
+both_avg_opp_off_rebounds:	0.107309895722
+both_avg_opp_def_rebounds:	-0.0503314681032
+both_avg_opp_blocks:	0.0960271572243
+both_avg_possessions:	-0.0993019193824
+-----------------------------------
+LABEL: a_field_goals_pct
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.766585181959
+	Training + Eval R2: 0.769239653327
+	Test R2: 0.766585181959
+Mean squared error: 66.8048966
+Variance score: 0.7665852
+Accuracy (error = 3): 0.3329509
+Accuracy (error = 4): 0.4387334
+Accuracy (error = 5): 0.5215695
+Accuracy (error = 6): 0.5993575
+Accuracy (greater or equal than, error = 0): 0.4839376
+Accuracy (greater or equal than, error = 1): 0.5438274
+Accuracy (greater or equal than, error = 2): 0.6011932
+Accuracy (greater or equal than, error = 3): 0.6519045
+Accuracy (greater or equal than, error = 4): 0.7104176
+Accuracy (greater or equal than, error = 5): 0.7533272
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 32.7774314669
+both_avg_points_game:	-0.107775640149
+both_avg_field_goals_made:	0.871572622828
+both_avg_field_goals_att:	-0.0542624305585
+both_avg_field_goals_pct:	0.195018786484
+both_avg_three_points_made:	0.45358369833
+both_avg_three_points_att:	0.102752448695
+both_avg_three_points_pct:	0.0570556793426
+both_avg_two_points_made:	0.366406733085
+both_avg_two_points_att:	-0.00507243066268
+both_avg_two_points_pct:	0.0123015843123
+both_avg_blocked_att:	-0.440872859271
+both_avg_free_throws_made:	0.626687679166
+both_avg_free_throws_att:	0.0837456790692
+both_avg_free_throws_pct:	0.0226754557372
+both_avg_offensive_rebounds:	-0.0426490230894
+both_avg_defensive_rebounds:	-0.13682410291
+both_avg_rebounds:	-0.202287528352
+both_avg_assists:	0.0444008695064
+both_avg_turnovers:	0.0252076999303
+both_avg_blocks:	-0.460812158769
+both_avg_personal_fouls:	-0.193930680884
+both_avg_score_margin:	-0.278656068159
+both_avg_opp_points:	-0.43205151176
+both_avg_opp_off_rebounds:	-0.122007022549
+both_avg_opp_def_rebounds:	0.188705502125
+both_avg_opp_blocks:	0.348324318068
+both_avg_possessions:	0.089918633571
+-----------------------------------
+LABEL: total_possessions
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.847105755908
+	Training + Eval R2: 0.852873600422
+	Test R2: 0.847105755908
+Mean squared error: 379.0020517
+Variance score: 0.8471058
+Accuracy (error = 3): 0.1991739
+Accuracy (error = 4): 0.2654888
+Accuracy (error = 5): 0.3235429
+Accuracy (error = 6): 0.3914640
+Accuracy (greater or equal than, error = 0): 0.4699403
+Accuracy (greater or equal than, error = 1): 0.5064250
+Accuracy (greater or equal than, error = 2): 0.5378614
+Accuracy (greater or equal than, error = 3): 0.5697568
+Accuracy (greater or equal than, error = 4): 0.6055530
+Accuracy (greater or equal than, error = 5): 0.6379073
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 116.608124208
+both_avg_points_game:	-0.510202729081
+both_avg_field_goals_made:	3.99284045876
+both_avg_field_goals_att:	0.307432014344
+both_avg_field_goals_pct:	-2.0949806121
+both_avg_three_points_made:	2.49922287329
+both_avg_three_points_att:	0.160737195912
+both_avg_three_points_pct:	0.269432779293
+both_avg_two_points_made:	2.27724368012
+both_avg_two_points_att:	-0.220353757836
+both_avg_two_points_pct:	0.0364575708286
+both_avg_blocked_att:	-1.62941326476
+both_avg_free_throws_made:	2.7475988381
+both_avg_free_throws_att:	0.386732473292
+both_avg_free_throws_pct:	-0.449821801538
+both_avg_offensive_rebounds:	-0.760030541247
+both_avg_defensive_rebounds:	0.188942436965
+both_avg_rebounds:	-0.953746613437
+both_avg_assists:	-0.0288119603187
+both_avg_turnovers:	0.71638413818
+both_avg_blocks:	0.406988532974
+both_avg_personal_fouls:	-0.381481752671
+both_avg_score_margin:	-0.716171701995
+both_avg_opp_points:	-1.37677466128
+both_avg_opp_off_rebounds:	0.467786817388
+both_avg_opp_def_rebounds:	-0.236695468585
+both_avg_opp_blocks:	-0.0560924259699
+both_avg_possessions:	1.1750805174
+-----------------------------------
+LABEL: h_possessions
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.846468261311
+	Training + Eval R2: 0.851984060928
+	Test R2: 0.846468261311
+Mean squared error: 96.1765421
+Variance score: 0.8464683
+Accuracy (error = 3): 0.3900872
+Accuracy (error = 4): 0.4965581
+Accuracy (error = 5): 0.5832951
+Accuracy (error = 6): 0.6603947
+Accuracy (greater or equal than, error = 0): 0.4701698
+Accuracy (greater or equal than, error = 1): 0.5335016
+Accuracy (greater or equal than, error = 2): 0.6044057
+Accuracy (greater or equal than, error = 3): 0.6725562
+Accuracy (greater or equal than, error = 4): 0.7335934
+Accuracy (greater or equal than, error = 5): 0.7852226
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 57.9952653891
+both_avg_points_game:	-0.226837444155
+both_avg_field_goals_made:	2.00076092671
+both_avg_field_goals_att:	0.14025820032
+both_avg_field_goals_pct:	-1.05441087494
+both_avg_three_points_made:	1.25606157565
+both_avg_three_points_att:	0.0835615833282
+both_avg_three_points_pct:	0.133280653208
+both_avg_two_points_made:	1.12049960472
+both_avg_two_points_att:	-0.0896791386209
+both_avg_two_points_pct:	0.018424483234
+both_avg_blocked_att:	-0.822451644334
+both_avg_free_throws_made:	1.31682681991
+both_avg_free_throws_att:	0.228338578345
+both_avg_free_throws_pct:	-0.215398393698
+both_avg_offensive_rebounds:	-0.390720101913
+both_avg_defensive_rebounds:	0.0949593133504
+both_avg_rebounds:	-0.487831069996
+both_avg_assists:	-0.0180159364741
+both_avg_turnovers:	0.341952569579
+both_avg_blocks:	0.197467273346
+both_avg_personal_fouls:	-0.209925877541
+both_avg_score_margin:	-0.383917948102
+both_avg_opp_points:	-0.720135023043
+both_avg_opp_off_rebounds:	0.242493833049
+both_avg_opp_def_rebounds:	-0.129684015055
+both_avg_opp_blocks:	-0.0414884672238
+both_avg_possessions:	0.612754194968
+-----------------------------------
+LABEL: a_possessions
+**************************************************************************
+Ordinary Least Squares: normalize = False Test R2: 0.844999498223
+	Training + Eval R2: 0.850686927361
+	Test R2: 0.844999498223
+Mean squared error: 98.1973899
+Variance score: 0.8449995
+Accuracy (error = 3): 0.3783846
+Accuracy (error = 4): 0.4825608
+Accuracy (error = 5): 0.5761817
+Accuracy (error = 6): 0.6525929
+Accuracy (greater or equal than, error = 0): 0.4756769
+Accuracy (greater or equal than, error = 1): 0.5374025
+Accuracy (greater or equal than, error = 2): 0.6039468
+Accuracy (greater or equal than, error = 3): 0.6753098
+Accuracy (greater or equal than, error = 4): 0.7301514
+Accuracy (greater or equal than, error = 5): 0.7815512
+**************************************************************************
+COEFFICIENTS
+**************************************************************************
+Intercept: 58.4680371323
+both_avg_points_game:	-0.288207559306
+both_avg_field_goals_made:	2.0009988246
+both_avg_field_goals_att:	0.172406068868
+both_avg_field_goals_pct:	-1.03631786601
+both_avg_three_points_made:	1.24776975415
+both_avg_three_points_att:	0.0802649932472
+both_avg_three_points_pct:	0.138402474047
+both_avg_two_points_made:	1.16056181346
+both_avg_two_points_att:	-0.129273448324
+both_avg_two_points_pct:	0.0183806470272
+both_avg_blocked_att:	-0.815017046643
+both_avg_free_throws_made:	1.44165842754
+both_avg_free_throws_att:	0.162582354151
+both_avg_free_throws_pct:	-0.235038544282
+both_avg_offensive_rebounds:	-0.369553391657
+both_avg_defensive_rebounds:	0.0949005824769
+both_avg_rebounds:	-0.469996896673
+both_avg_assists:	-0.0131253997034
+both_avg_turnovers:	0.373945397754
+both_avg_blocks:	0.209433056483
+both_avg_personal_fouls:	-0.173134426866
+both_avg_score_margin:	-0.335844194989
+both_avg_opp_points:	-0.66555716014
+both_avg_opp_off_rebounds:	0.225552840001
+both_avg_opp_def_rebounds:	-0.108074656248
+both_avg_opp_blocks:	-0.0136514240681
+both_avg_possessions:	0.564281429381
 
-BOTH teams: 2nd-half 3-pointers
-**************************************************************************
-Ordinary Least Squares: normalize = False Test R2: 0.102549881395
-	Training + Eval R2: 0.121813844594
-	Test R2: 0.102549881395
-Mean squared error: 6.5880502
-Variance score: 0.1025499
-Accuracy (error = 3): 0.7560808
-Accuracy (error = 4): 0.8850390
-Accuracy (error = 5): 0.9460762
-Accuracy (error = 6): 0.9793483
-Accuracy (greater or equal than, error = 0): 0.4949518
-Accuracy (greater or equal than, error = 1): 0.6415787
-Accuracy (greater or equal than, error = 2): 0.7755851
-Accuracy (greater or equal than, error = 3): 0.8804497
-Accuracy (greater or equal than, error = 4): 0.9527306
-Accuracy (greater or equal than, error = 5): 0.9839376
-**************************************************************************
-COEFFICIENTS
-**************************************************************************
-Intercept: 3.17033270552
-both_avg_points_game:	-0.0516041720715
-both_avg_field_goals_made:	0.0579100050615
-both_avg_field_goals_att:	-0.00240402591074
-both_avg_field_goals_pct:	-0.0709191820463
-both_avg_three_points_made:	0.131921192886
-both_avg_three_points_att:	0.130786316013
-both_avg_three_points_pct:	0.0239037965417
-both_avg_two_points_made:	0.0840448716836
-both_avg_two_points_att:	-0.0281651317407
-both_avg_two_points_pct:	-0.00117466566218
-both_avg_blocked_att:	-0.0235806181891
-both_avg_free_throws_made:	0.0656395714154
-both_avg_free_throws_att:	-0.0281512251095
-both_avg_free_throws_pct:	-0.00717089328736
-both_avg_offensive_rebounds:	-0.0346728017779
-both_avg_defensive_rebounds:	0.123617783606
-both_avg_rebounds:	-0.0787201658162
-both_avg_assists:	-0.0147683300967
-both_avg_turnovers:	-0.00464895780503
-both_avg_blocks:	-0.0424657635427
-both_avg_personal_fouls:	-0.0653321692495
-both_avg_score_margin:	0.037265986048
-both_avg_opp_points:	0.0527928440445
-both_avg_opp_off_rebounds:	0.0147120994654
-both_avg_opp_def_rebounds:	-0.0477966215167
-both_avg_opp_blocks:	0.0924238176116
-both_avg_possessions:	-0.00164723356949
-both_h1_points:	0.00944971411817
-both_h1_three_att:	0.115555320309
-both_h1_three:	-0.00769965958787
-both_h1_two_att:	0.00718502341987
-both_h1_two:	5.43020881574e-05
-both_h1_free_att:	-0.0219836369578
-both_h1_free:	0.0324400887055
-both_h1_off_rebounds:	-0.0201369465763
+Process finished with exit code 0
