@@ -39,7 +39,12 @@ features_ht_1 = features_1[:] + [
     'both_h1_two',
     'both_h1_free_att',
     'both_h1_free',
-    'both_h1_off_rebounds'
+    'both_h1_off_rebounds',
+    'both_h1_rebounds',
+    'both_h1_assists',
+    'both_h1_blocks',
+    'both_h1_turnovers',
+    'both_h1_fouls'
 ]
 
 

@@ -8,7 +8,7 @@ __email__ = "celsodemelo@eleveninc.com"
 import pandas as pd
 import features
 
-df = pd.read_csv('games_wide_v9_feb_11_2018.csv')
+df = pd.read_csv('games_wide_v10_feb_27_2018.csv')
 
 print('Adding game stats...')
 features.add_game_stats(df)

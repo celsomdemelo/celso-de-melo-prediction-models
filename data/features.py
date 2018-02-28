@@ -26,7 +26,7 @@ def add_game_stats(df):
     df['a_opp_def_rebounds'] = -1
     df['a_opp_blocks'] = -1
     df['a_3pt_shot_selection'] = -1.0
-    df['a_possessions'] = -1  # Formula: https://www.nbastuffer.com/analytics101/possession/
+    df['a_possessions'] = -1  # Formula: https://www.sports-reference.com/cbb/about/glossary.html#poss
 
     decimal_places = 5
 
@@ -44,8 +44,8 @@ def add_game_stats(df):
         if row['h_field_goals_att'] == -1:
             df.set_value(index, 'h_possessions', -1)
         else:
-            df.set_value(index, 'h_possessions', 0.96 * (
-                row['h_field_goals_att'] + row['h_turnovers'] + 0.44 * row['h_free_throws_att'] -
+            df.set_value(index, 'h_possessions', (
+                row['h_field_goals_att'] + row['h_turnovers'] + 0.475 * row['h_free_throws_att'] -
                 row['h_offensive_rebounds']))
 
         df.set_value(index, 'a_score_margin', row['a_points_game'] - row['h_points_game'])
@@ -61,8 +61,8 @@ def add_game_stats(df):
         if row['a_field_goals_att'] == -1:
             df.set_value(index, 'a_possessions', -1)
         else:
-            df.set_value(index, 'a_possessions', 0.96 * (
-                row['a_field_goals_att'] + row['a_turnovers'] + 0.44 * row['a_free_throws_att'] -
+            df.set_value(index, 'a_possessions', (
+                row['a_field_goals_att'] + row['a_turnovers'] + 0.475 * row['a_free_throws_att'] -
                 row['a_offensive_rebounds']))
 
 

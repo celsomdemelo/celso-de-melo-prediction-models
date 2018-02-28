@@ -239,6 +239,90 @@ SELECT
         THEN -1 ELSE (splits.h2_1_off_rebounds + splits.h2_2_off_rebounds + splits.h2_3_off_rebounds + splits.h2_4_off_rebounds) END) AS h_h2_off_rebounds,
     IFNULL(splits.ot_off_rebounds, -1) AS h_ot_off_rebounds,
 
+    IFNULL(splits.h1_1_def_rebounds, -1) AS h_h1_1_def_rebounds,
+    IFNULL(splits.h1_2_def_rebounds, -1) AS h_h1_2_def_rebounds,
+    IFNULL(splits.h1_3_def_rebounds, -1) AS h_h1_3_def_rebounds,
+    IFNULL(splits.h1_4_def_rebounds, -1) AS h_h1_4_def_rebounds,
+    (CASE WHEN splits.h1_1_def_rebounds IS NULL OR splits.h1_2_def_rebounds IS NULL OR splits.h1_3_def_rebounds IS NULL OR splits.h1_4_def_rebounds IS NULL
+        THEN -1 ELSE (splits.h1_1_def_rebounds + splits.h1_2_def_rebounds + splits.h1_3_def_rebounds + splits.h1_4_def_rebounds) END) AS h_h1_def_rebounds,
+    IFNULL(splits.h2_1_def_rebounds, -1) AS h_h2_1_def_rebounds,
+    IFNULL(splits.h2_2_def_rebounds, -1) AS h_h2_2_def_rebounds,
+    IFNULL(splits.h2_3_def_rebounds, -1) AS h_h2_3_def_rebounds,
+    IFNULL(splits.h2_4_def_rebounds, -1) AS h_h2_4_def_rebounds,
+    (CASE WHEN splits.h2_1_def_rebounds IS NULL OR splits.h2_2_def_rebounds IS NULL OR splits.h2_3_def_rebounds IS NULL OR splits.h2_4_def_rebounds IS NULL
+        THEN -1 ELSE (splits.h2_1_def_rebounds + splits.h2_2_def_rebounds + splits.h2_3_def_rebounds + splits.h2_4_def_rebounds) END) AS h_h2_def_rebounds,
+    IFNULL(splits.ot_def_rebounds, -1) AS h_ot_def_rebounds,
+
+    IFNULL(splits.h1_1_rebounds, -1) AS h_h1_1_rebounds,
+    IFNULL(splits.h1_2_rebounds, -1) AS h_h1_2_rebounds,
+    IFNULL(splits.h1_3_rebounds, -1) AS h_h1_3_rebounds,
+    IFNULL(splits.h1_4_rebounds, -1) AS h_h1_4_rebounds,
+    (CASE WHEN splits.h1_1_rebounds IS NULL OR splits.h1_2_rebounds IS NULL OR splits.h1_3_rebounds IS NULL OR splits.h1_4_rebounds IS NULL
+        THEN -1 ELSE (splits.h1_1_rebounds + splits.h1_2_rebounds + splits.h1_3_rebounds + splits.h1_4_rebounds) END) AS h_h1_rebounds,
+    IFNULL(splits.h2_1_rebounds, -1) AS h_h2_1_rebounds,
+    IFNULL(splits.h2_2_rebounds, -1) AS h_h2_2_rebounds,
+    IFNULL(splits.h2_3_rebounds, -1) AS h_h2_3_rebounds,
+    IFNULL(splits.h2_4_rebounds, -1) AS h_h2_4_rebounds,
+    (CASE WHEN splits.h2_1_rebounds IS NULL OR splits.h2_2_rebounds IS NULL OR splits.h2_3_rebounds IS NULL OR splits.h2_4_rebounds IS NULL
+        THEN -1 ELSE (splits.h2_1_rebounds + splits.h2_2_rebounds + splits.h2_3_rebounds + splits.h2_4_rebounds) END) AS h_h2_rebounds,
+    IFNULL(splits.ot_rebounds, -1) AS h_ot_rebounds,
+
+    IFNULL(splits.h1_1_assists, -1) AS h_h1_1_assists,
+    IFNULL(splits.h1_2_assists, -1) AS h_h1_2_assists,
+    IFNULL(splits.h1_3_assists, -1) AS h_h1_3_assists,
+    IFNULL(splits.h1_4_assists, -1) AS h_h1_4_assists,
+    (CASE WHEN splits.h1_1_assists IS NULL OR splits.h1_2_assists IS NULL OR splits.h1_3_assists IS NULL OR splits.h1_4_assists IS NULL
+        THEN -1 ELSE (splits.h1_1_assists + splits.h1_2_assists + splits.h1_3_assists + splits.h1_4_assists) END) AS h_h1_assists,
+    IFNULL(splits.h2_1_assists, -1) AS h_h2_1_assists,
+    IFNULL(splits.h2_2_assists, -1) AS h_h2_2_assists,
+    IFNULL(splits.h2_3_assists, -1) AS h_h2_3_assists,
+    IFNULL(splits.h2_4_assists, -1) AS h_h2_4_assists,
+    (CASE WHEN splits.h2_1_assists IS NULL OR splits.h2_2_assists IS NULL OR splits.h2_3_assists IS NULL OR splits.h2_4_assists IS NULL
+        THEN -1 ELSE (splits.h2_1_assists + splits.h2_2_assists + splits.h2_3_assists + splits.h2_4_assists) END) AS h_h2_assists,
+    IFNULL(splits.ot_assists, -1) AS h_ot_assists,
+
+    IFNULL(splits.h1_1_turnovers, -1) AS h_h1_1_turnovers,
+    IFNULL(splits.h1_2_turnovers, -1) AS h_h1_2_turnovers,
+    IFNULL(splits.h1_3_turnovers, -1) AS h_h1_3_turnovers,
+    IFNULL(splits.h1_4_turnovers, -1) AS h_h1_4_turnovers,
+    (CASE WHEN splits.h1_1_turnovers IS NULL OR splits.h1_2_turnovers IS NULL OR splits.h1_3_turnovers IS NULL OR splits.h1_4_turnovers IS NULL
+        THEN -1 ELSE (splits.h1_1_turnovers + splits.h1_2_turnovers + splits.h1_3_turnovers + splits.h1_4_turnovers) END) AS h_h1_turnovers,
+    IFNULL(splits.h2_1_turnovers, -1) AS h_h2_1_turnovers,
+    IFNULL(splits.h2_2_turnovers, -1) AS h_h2_2_turnovers,
+    IFNULL(splits.h2_3_turnovers, -1) AS h_h2_3_turnovers,
+    IFNULL(splits.h2_4_turnovers, -1) AS h_h2_4_turnovers,
+    (CASE WHEN splits.h2_1_turnovers IS NULL OR splits.h2_2_turnovers IS NULL OR splits.h2_3_turnovers IS NULL OR splits.h2_4_turnovers IS NULL
+        THEN -1 ELSE (splits.h2_1_turnovers + splits.h2_2_turnovers + splits.h2_3_turnovers + splits.h2_4_turnovers) END) AS h_h2_turnovers,
+    IFNULL(splits.ot_turnovers, -1) AS h_ot_turnovers,
+
+    IFNULL(splits.h1_1_blocks, -1) AS h_h1_1_blocks,
+    IFNULL(splits.h1_2_blocks, -1) AS h_h1_2_blocks,
+    IFNULL(splits.h1_3_blocks, -1) AS h_h1_3_blocks,
+    IFNULL(splits.h1_4_blocks, -1) AS h_h1_4_blocks,
+    (CASE WHEN splits.h1_1_blocks IS NULL OR splits.h1_2_blocks IS NULL OR splits.h1_3_blocks IS NULL OR splits.h1_4_blocks IS NULL
+        THEN -1 ELSE (splits.h1_1_blocks + splits.h1_2_blocks + splits.h1_3_blocks + splits.h1_4_blocks) END) AS h_h1_blocks,
+    IFNULL(splits.h2_1_blocks, -1) AS h_h2_1_blocks,
+    IFNULL(splits.h2_2_blocks, -1) AS h_h2_2_blocks,
+    IFNULL(splits.h2_3_blocks, -1) AS h_h2_3_blocks,
+    IFNULL(splits.h2_4_blocks, -1) AS h_h2_4_blocks,
+    (CASE WHEN splits.h2_1_blocks IS NULL OR splits.h2_2_blocks IS NULL OR splits.h2_3_blocks IS NULL OR splits.h2_4_blocks IS NULL
+        THEN -1 ELSE (splits.h2_1_blocks + splits.h2_2_blocks + splits.h2_3_blocks + splits.h2_4_blocks) END) AS h_h2_blocks,
+    IFNULL(splits.ot_blocks, -1) AS h_ot_blocks,
+
+    IFNULL(splits.h1_1_fouls, -1) AS h_h1_1_fouls,
+    IFNULL(splits.h1_2_fouls, -1) AS h_h1_2_fouls,
+    IFNULL(splits.h1_3_fouls, -1) AS h_h1_3_fouls,
+    IFNULL(splits.h1_4_fouls, -1) AS h_h1_4_fouls,
+    (CASE WHEN splits.h1_1_fouls IS NULL OR splits.h1_2_fouls IS NULL OR splits.h1_3_fouls IS NULL OR splits.h1_4_fouls IS NULL
+        THEN -1 ELSE (splits.h1_1_fouls + splits.h1_2_fouls + splits.h1_3_fouls + splits.h1_4_fouls) END) AS h_h1_fouls,
+    IFNULL(splits.h2_1_fouls, -1) AS h_h2_1_fouls,
+    IFNULL(splits.h2_2_fouls, -1) AS h_h2_2_fouls,
+    IFNULL(splits.h2_3_fouls, -1) AS h_h2_3_fouls,
+    IFNULL(splits.h2_4_fouls, -1) AS h_h2_4_fouls,
+    (CASE WHEN splits.h2_1_fouls IS NULL OR splits.h2_2_fouls IS NULL OR splits.h2_3_fouls IS NULL OR splits.h2_4_fouls IS NULL
+        THEN -1 ELSE (splits.h2_1_fouls + splits.h2_2_fouls + splits.h2_3_fouls + splits.h2_4_fouls) END) AS h_h2_fouls,
+    IFNULL(splits.ot_fouls, -1) AS h_ot_fouls,
+
 
     IFNULL(opp_splits.h1_1_points, -1) AS a_h1_1_points,
     IFNULL(opp_splits.h1_2_points, -1) AS a_h1_2_points,
@@ -350,6 +434,90 @@ SELECT
     IFNULL(opp_splits.h2_4_off_rebounds, -1) AS a_h2_4_off_rebounds,
     (CASE WHEN opp_splits.h2_1_off_rebounds IS NULL OR opp_splits.h2_2_off_rebounds IS NULL OR opp_splits.h2_3_off_rebounds IS NULL OR opp_splits.h2_4_off_rebounds IS NULL
         THEN -1 ELSE (opp_splits.h2_1_off_rebounds + opp_splits.h2_2_off_rebounds + opp_splits.h2_3_off_rebounds + opp_splits.h2_4_off_rebounds) END) AS a_h2_off_rebounds,
-    IFNULL(opp_splits.ot_off_rebounds, -1) AS a_ot_off_rebounds
-FROM `stardust-development.stardust.teams_games_wide_v9_dump_021118`
+    IFNULL(opp_splits.ot_off_rebounds, -1) AS a_ot_off_rebounds,
+
+    IFNULL(opp_splits.h1_1_def_rebounds, -1) AS a_h1_1_def_rebounds,
+    IFNULL(opp_splits.h1_2_def_rebounds, -1) AS a_h1_2_def_rebounds,
+    IFNULL(opp_splits.h1_3_def_rebounds, -1) AS a_h1_3_def_rebounds,
+    IFNULL(opp_splits.h1_4_def_rebounds, -1) AS a_h1_4_def_rebounds,
+    (CASE WHEN opp_splits.h1_1_def_rebounds IS NULL OR opp_splits.h1_2_def_rebounds IS NULL OR opp_splits.h1_3_def_rebounds IS NULL OR opp_splits.h1_4_def_rebounds IS NULL
+        THEN -1 ELSE (opp_splits.h1_1_def_rebounds + opp_splits.h1_2_def_rebounds + opp_splits.h1_3_def_rebounds + opp_splits.h1_4_def_rebounds) END) AS a_h1_def_rebounds,
+    IFNULL(opp_splits.h2_1_def_rebounds, -1) AS a_h2_1_def_rebounds,
+    IFNULL(opp_splits.h2_2_def_rebounds, -1) AS a_h2_2_def_rebounds,
+    IFNULL(opp_splits.h2_3_def_rebounds, -1) AS a_h2_3_def_rebounds,
+    IFNULL(opp_splits.h2_4_def_rebounds, -1) AS a_h2_4_def_rebounds,
+    (CASE WHEN opp_splits.h2_1_def_rebounds IS NULL OR opp_splits.h2_2_def_rebounds IS NULL OR opp_splits.h2_3_def_rebounds IS NULL OR opp_splits.h2_4_def_rebounds IS NULL
+        THEN -1 ELSE (opp_splits.h2_1_def_rebounds + opp_splits.h2_2_def_rebounds + opp_splits.h2_3_def_rebounds + opp_splits.h2_4_def_rebounds) END) AS a_h2_def_rebounds,
+    IFNULL(opp_splits.ot_def_rebounds, -1) AS a_ot_def_rebounds,
+
+    IFNULL(opp_splits.h1_1_rebounds, -1) AS a_h1_1_rebounds,
+    IFNULL(opp_splits.h1_2_rebounds, -1) AS a_h1_2_rebounds,
+    IFNULL(opp_splits.h1_3_rebounds, -1) AS a_h1_3_rebounds,
+    IFNULL(opp_splits.h1_4_rebounds, -1) AS a_h1_4_rebounds,
+    (CASE WHEN opp_splits.h1_1_rebounds IS NULL OR opp_splits.h1_2_rebounds IS NULL OR opp_splits.h1_3_rebounds IS NULL OR opp_splits.h1_4_rebounds IS NULL
+        THEN -1 ELSE (opp_splits.h1_1_rebounds + opp_splits.h1_2_rebounds + opp_splits.h1_3_rebounds + opp_splits.h1_4_rebounds) END) AS a_h1_rebounds,
+    IFNULL(opp_splits.h2_1_rebounds, -1) AS a_h2_1_rebounds,
+    IFNULL(opp_splits.h2_2_rebounds, -1) AS a_h2_2_rebounds,
+    IFNULL(opp_splits.h2_3_rebounds, -1) AS a_h2_3_rebounds,
+    IFNULL(opp_splits.h2_4_rebounds, -1) AS a_h2_4_rebounds,
+    (CASE WHEN opp_splits.h2_1_rebounds IS NULL OR opp_splits.h2_2_rebounds IS NULL OR opp_splits.h2_3_rebounds IS NULL OR opp_splits.h2_4_rebounds IS NULL
+        THEN -1 ELSE (opp_splits.h2_1_rebounds + opp_splits.h2_2_rebounds + opp_splits.h2_3_rebounds + opp_splits.h2_4_rebounds) END) AS a_h2_rebounds,
+    IFNULL(opp_splits.ot_rebounds, -1) AS a_ot_rebounds,
+
+    IFNULL(opp_splits.h1_1_assists, -1) AS a_h1_1_assists,
+    IFNULL(opp_splits.h1_2_assists, -1) AS a_h1_2_assists,
+    IFNULL(opp_splits.h1_3_assists, -1) AS a_h1_3_assists,
+    IFNULL(opp_splits.h1_4_assists, -1) AS a_h1_4_assists,
+    (CASE WHEN opp_splits.h1_1_assists IS NULL OR opp_splits.h1_2_assists IS NULL OR opp_splits.h1_3_assists IS NULL OR opp_splits.h1_4_assists IS NULL
+        THEN -1 ELSE (opp_splits.h1_1_assists + opp_splits.h1_2_assists + opp_splits.h1_3_assists + opp_splits.h1_4_assists) END) AS a_h1_assists,
+    IFNULL(opp_splits.h2_1_assists, -1) AS a_h2_1_assists,
+    IFNULL(opp_splits.h2_2_assists, -1) AS a_h2_2_assists,
+    IFNULL(opp_splits.h2_3_assists, -1) AS a_h2_3_assists,
+    IFNULL(opp_splits.h2_4_assists, -1) AS a_h2_4_assists,
+    (CASE WHEN opp_splits.h2_1_assists IS NULL OR opp_splits.h2_2_assists IS NULL OR opp_splits.h2_3_assists IS NULL OR opp_splits.h2_4_assists IS NULL
+        THEN -1 ELSE (opp_splits.h2_1_assists + opp_splits.h2_2_assists + opp_splits.h2_3_assists + opp_splits.h2_4_assists) END) AS a_h2_assists,
+    IFNULL(opp_splits.ot_assists, -1) AS a_ot_assists,
+
+    IFNULL(opp_splits.h1_1_turnovers, -1) AS a_h1_1_turnovers,
+    IFNULL(opp_splits.h1_2_turnovers, -1) AS a_h1_2_turnovers,
+    IFNULL(opp_splits.h1_3_turnovers, -1) AS a_h1_3_turnovers,
+    IFNULL(opp_splits.h1_4_turnovers, -1) AS a_h1_4_turnovers,
+    (CASE WHEN opp_splits.h1_1_turnovers IS NULL OR opp_splits.h1_2_turnovers IS NULL OR opp_splits.h1_3_turnovers IS NULL OR opp_splits.h1_4_turnovers IS NULL
+        THEN -1 ELSE (opp_splits.h1_1_turnovers + opp_splits.h1_2_turnovers + opp_splits.h1_3_turnovers + opp_splits.h1_4_turnovers) END) AS a_h1_turnovers,
+    IFNULL(opp_splits.h2_1_turnovers, -1) AS a_h2_1_turnovers,
+    IFNULL(opp_splits.h2_2_turnovers, -1) AS a_h2_2_turnovers,
+    IFNULL(opp_splits.h2_3_turnovers, -1) AS a_h2_3_turnovers,
+    IFNULL(opp_splits.h2_4_turnovers, -1) AS a_h2_4_turnovers,
+    (CASE WHEN opp_splits.h2_1_turnovers IS NULL OR opp_splits.h2_2_turnovers IS NULL OR opp_splits.h2_3_turnovers IS NULL OR opp_splits.h2_4_turnovers IS NULL
+        THEN -1 ELSE (opp_splits.h2_1_turnovers + opp_splits.h2_2_turnovers + opp_splits.h2_3_turnovers + opp_splits.h2_4_turnovers) END) AS a_h2_turnovers,
+    IFNULL(opp_splits.ot_turnovers, -1) AS a_ot_turnovers,
+
+    IFNULL(opp_splits.h1_1_blocks, -1) AS a_h1_1_blocks,
+    IFNULL(opp_splits.h1_2_blocks, -1) AS a_h1_2_blocks,
+    IFNULL(opp_splits.h1_3_blocks, -1) AS a_h1_3_blocks,
+    IFNULL(opp_splits.h1_4_blocks, -1) AS a_h1_4_blocks,
+    (CASE WHEN opp_splits.h1_1_blocks IS NULL OR opp_splits.h1_2_blocks IS NULL OR opp_splits.h1_3_blocks IS NULL OR opp_splits.h1_4_blocks IS NULL
+        THEN -1 ELSE (opp_splits.h1_1_blocks + opp_splits.h1_2_blocks + opp_splits.h1_3_blocks + opp_splits.h1_4_blocks) END) AS a_h1_blocks,
+    IFNULL(opp_splits.h2_1_blocks, -1) AS a_h2_1_blocks,
+    IFNULL(opp_splits.h2_2_blocks, -1) AS a_h2_2_blocks,
+    IFNULL(opp_splits.h2_3_blocks, -1) AS a_h2_3_blocks,
+    IFNULL(opp_splits.h2_4_blocks, -1) AS a_h2_4_blocks,
+    (CASE WHEN opp_splits.h2_1_blocks IS NULL OR opp_splits.h2_2_blocks IS NULL OR opp_splits.h2_3_blocks IS NULL OR opp_splits.h2_4_blocks IS NULL
+        THEN -1 ELSE (opp_splits.h2_1_blocks + opp_splits.h2_2_blocks + opp_splits.h2_3_blocks + opp_splits.h2_4_blocks) END) AS a_h2_blocks,
+    IFNULL(opp_splits.ot_blocks, -1) AS a_ot_blocks,
+
+    IFNULL(opp_splits.h1_1_fouls, -1) AS a_h1_1_fouls,
+    IFNULL(opp_splits.h1_2_fouls, -1) AS a_h1_2_fouls,
+    IFNULL(opp_splits.h1_3_fouls, -1) AS a_h1_3_fouls,
+    IFNULL(opp_splits.h1_4_fouls, -1) AS a_h1_4_fouls,
+    (CASE WHEN opp_splits.h1_1_fouls IS NULL OR opp_splits.h1_2_fouls IS NULL OR opp_splits.h1_3_fouls IS NULL OR opp_splits.h1_4_fouls IS NULL
+        THEN -1 ELSE (opp_splits.h1_1_fouls + opp_splits.h1_2_fouls + opp_splits.h1_3_fouls + opp_splits.h1_4_fouls) END) AS a_h1_fouls,
+    IFNULL(opp_splits.h2_1_fouls, -1) AS a_h2_1_fouls,
+    IFNULL(opp_splits.h2_2_fouls, -1) AS a_h2_2_fouls,
+    IFNULL(opp_splits.h2_3_fouls, -1) AS a_h2_3_fouls,
+    IFNULL(opp_splits.h2_4_fouls, -1) AS a_h2_4_fouls,
+    (CASE WHEN opp_splits.h2_1_fouls IS NULL OR opp_splits.h2_2_fouls IS NULL OR opp_splits.h2_3_fouls IS NULL OR opp_splits.h2_4_fouls IS NULL
+        THEN -1 ELSE (opp_splits.h2_1_fouls + opp_splits.h2_2_fouls + opp_splits.h2_3_fouls + opp_splits.h2_4_fouls) END) AS a_h2_fouls,
+    IFNULL(opp_splits.ot_fouls, -1) AS a_ot_fouls
+FROM `stardust-development.temp.teams_games_wide_v10`
 WHERE games.home_game=true
