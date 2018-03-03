@@ -2,6 +2,7 @@ __author__ = "Celso M. de Melo"
 __email__ = "celsodemelo@eleveninc.com"
 
 from sklearn.externals import joblib
+import numpy as np
 import pickle
 
 import predictions.labels
@@ -22,7 +23,8 @@ def make_prediction(home_name, away_name, path, season_stats_names, extra_featur
         args.append((home_stats[stat] + away_stats[stat]) / 2.0)
 
     regr = joblib.load(path)
-    return regr.predict(args + list(extra_features.values()))
+    features = np.array(args + list(extra_features.values()))
+    return regr.predict(features.reshape(1, -1))
 
 
 games = [
@@ -31,6 +33,11 @@ games = [
                          'both_h1_two': 20, 'both_h1_free_att': 9, 'both_h1_free': 5, 'both_h1_off_rebounds': 7,
                          'both_h1_rebounds': 29, 'both_h1_assists': 8, 'both_h1_blocks': 1, 'both_h1_turnovers': 11,
                          'both_h1_fouls': 12}},
+    {'away': 'Wichita State', 'home': 'UCF',
+     'half_time_stats': {'both_h1_points': 55, 'both_h1_three_att': 18, 'both_h1_three': 7, 'both_h1_two_att': 40,
+                         'both_h1_two': 18, 'both_h1_free_att': 10, 'both_h1_free': 8, 'both_h1_off_rebounds': 5,
+                         'both_h1_rebounds': 27, 'both_h1_assists': 19, 'both_h1_blocks': 6, 'both_h1_turnovers': 15,
+                         'both_h1_fouls': 14}},
 ]
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
