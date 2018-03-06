@@ -1,7 +1,7 @@
 '''
 Functions to calculate relevant features
 
-Reference for bastketball stats: https://www.basketball-reference.com/about/glossary.html
+Reference for baskettball stats: https://www.basketball-reference.com/about/glossary.html
 '''
 
 __author__ = "Celso M. de Melo"

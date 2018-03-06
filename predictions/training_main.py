@@ -66,11 +66,11 @@ print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 for label in predictions.labels.labels_to_predict:
     print('-----------------------------------')
     print('LABEL: ' + label)
-    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_1, label, df_train, df_eval)
+    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_1_h_and_a, label, df_train, df_eval)
 for label in predictions.labels.labels_to_predict_2nd_half:
     print('-----------------------------------')
     print('LABEL: ' + label + ' (2nd-half)')
-    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1, label, df_train, df_eval)
+    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1_h_and_a, label, df_train, df_eval)
 
 print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('SCORE ON TEST SET')
@@ -78,10 +78,10 @@ print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 for label in predictions.labels.labels_to_predict:
     print('-----------------------------------')
     print('LABEL: ' + label)
-    predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_1, label, df_train_eval,
+    predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_1_h_and_a, label, df_train_eval,
                                                  df_test, path='models/full-time/' + label + '.pkl')
 for label in predictions.labels.labels_to_predict_2nd_half:
     print('-----------------------------------')
     print('LABEL: ' + label + ' (2nd-half)')
-    predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1, label, df_train_eval,
+    predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1_h_and_a, label, df_train_eval,
                                                  df_test, path='models/2nd-half/' + label + '.pkl')
