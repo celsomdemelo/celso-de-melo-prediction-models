@@ -59,6 +59,11 @@ else:
     df_test = pd.read_csv('../data/test.csv')
 print('Done.')
 
+def print_detailed_scores(scores):
+    for s in scores:
+        print(s['label'] + '\t' + str(s['r2']) + '\t' +
+              str(s['gt_acc']) + '\t'  + str(s['gt_err'])+ '\t' +
+              str(s['rg_acc']) + '\t' + str(s['rg_err']))
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('TRAINING')
@@ -70,18 +75,27 @@ for label in predictions.labels.labels_to_predict:
 for label in predictions.labels.labels_to_predict_2nd_half:
     print('-----------------------------------')
     print('LABEL: ' + label + ' (2nd-half)')
-    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1_h_and_a, label, df_train, df_eval)
+    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1_h_and_a_and_both, label, df_train,
+                                               df_eval)
 
 print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('SCORE ON TEST SET')
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+detailed_scores = []
 for label in predictions.labels.labels_to_predict:
     print('-----------------------------------')
     print('LABEL: ' + label)
-    predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_1_h_and_a, label, df_train_eval,
-                                                 df_test, path='models/full-time/' + label + '.pkl')
+    detailed_scores.append(
+        predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_1_h_and_a, label, df_train_eval,
+                                                     df_test, path='models/full-time/' + label + '.pkl'))
+print_detailed_scores(detailed_scores)
+
+detailed_scores = []
 for label in predictions.labels.labels_to_predict_2nd_half:
     print('-----------------------------------')
     print('LABEL: ' + label + ' (2nd-half)')
-    predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1_h_and_a, label, df_train_eval,
-                                                 df_test, path='models/2nd-half/' + label + '.pkl')
+    detailed_scores.append(
+        predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1_h_and_a_and_both, label,
+                                                 df_train_eval,
+                                                 df_test, path='models/2nd-half/' + label + '.pkl'))
+print_detailed_scores(detailed_scores)

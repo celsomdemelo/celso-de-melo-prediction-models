@@ -156,6 +156,22 @@ features_ht_1_h_and_a = features_1_h_and_a[:] + [
     'a_h1_fouls'
 ]
 
+features_ht_1_h_and_a_and_both = features_ht_1_h_and_a[:] + [
+    'both_h1_points',
+    'both_h1_three_att',
+    'both_h1_three',
+    'both_h1_two_att',
+    'both_h1_two',
+    'both_h1_free_att',
+    'both_h1_free',
+    'both_h1_off_rebounds',
+    'both_h1_rebounds',
+    'both_h1_assists',
+    'both_h1_blocks',
+    'both_h1_turnovers',
+    'both_h1_fouls',
+]
+
 
 def clean_df(df, vars):
     df = df[vars]
