@@ -25,20 +25,9 @@
 WITH games AS (
    SELECT
       *,
-      id as game_id,
-      DATE(DATETIME(`timestamp`, "America/Los_Angeles")) as game_date,
-      # 3 POINT ATT
-      ROUND(AVG(three_points_att) over (partition by season, team_id order by `timestamp`), 2) as three_points_att_avg_season,
-      ROUND(AVG(three_points_att) over (partition by season, team_id order by `timestamp` ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING), 2) as three_points_att_avg_last7,
-      ROUND(AVG(three_points_att) over (partition by season, team_id order by `timestamp` ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING), 2) as three_points_att_avg_last3,
-      MAX(three_points_att) over (partition by season, team_id order by `timestamp` ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING) as three_points_att_last,
-       # 3 POINT MADE
-      ROUND(AVG(three_points_made) over (partition by season, team_id order by `timestamp`), 2) as three_points_made_avg_season,
-      ROUND(AVG(three_points_made) over (partition by season, team_id order by `timestamp` ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING), 2) as three_points_made_avg_last7,
-      ROUND(AVG(three_points_made) over (partition by season, team_id order by `timestamp` ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING), 2) as three_points_made_avg_last3,
-      MAX(three_points_made) over (partition by season, team_id order by `timestamp` ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING) as three_points_made_last
+      DATE(DATETIME(`gametime`, "America/Los_Angeles")) as game_date
   FROM
-    `stardust-development.stardust.teams_games_v9`
+    `stardust-development.stardust.teams_games_v15`
    WHERE
     division_name = "NCAA Division I"
     AND opp_division_name = "NCAA Division I"
@@ -46,12 +35,12 @@ WITH games AS (
   SELECT
     *
   FROM
-    `stardust-development.temp.teams_games_v10`
+    `stardust-development.temp.teams_games_v11`
 ), opp_splits AS (
   SELECT
     *
   FROM
-    `stardust-development.temp.teams_games_v10`
+    `stardust-development.temp.teams_games_v11`
 )
 SELECT
   games,

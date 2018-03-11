@@ -8,7 +8,8 @@ __email__ = "celsodemelo@eleveninc.com"
 import pandas as pd
 import features
 
-df = pd.read_csv('games_wide_v10_feb_27_2018.csv')
+df = pd.read_csv('games_wide_v11_mar_10_2018c.csv')
+df = df[df.h_h1_points != -1]  # Assuming that if this is missing, the others in the NCAA pbp data are too (and vice-versa)
 
 print('Adding game stats...')
 features.add_game_stats(df)

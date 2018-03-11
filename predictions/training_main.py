@@ -14,16 +14,18 @@ import predictions.labels
 import predictions.models.glm_ols
 import predictions.feature_sets
 
-if not os.path.isfile('../data/games_with_labels.csv'):
-    df = pd.read_csv('../data/games.csv')
-
-    predictions.labels.add_numerical_label(df)
-    df = df[df.total_three_points != -1]  # Assuming that if 3-pts is missing, the others are too (and vice-versa)
-    predictions.labels.add_classification_labels(df)
-
-    df.to_csv('../data/games_with_labels.csv', index=False)
-else:
-    df = pd.read_csv('../data/games_with_labels.csv')
+# if not os.path.isfile('../data/games_with_labels.csv'):
+#     df = pd.read_csv('../data/games.csv')
+#
+#     predictions.labels.add_numerical_label(df)
+#     df = df[df.total_three_points != -1]  # Assuming that if this is missing, the others in the NCAA pbp data are too (and vice-versa)
+#     df = df[df.h_three_points_made != -1]  # Assuming that if this is missing, the others in the teams_games_v15 are too (and vice-versa)
+#     predictions.labels.add_classification_labels(df)
+#
+#     df.to_csv('../data/games_with_labels.csv', index=False)
+# else:
+#     df = pd.read_csv('../data/games_with_labels.csv')
+df = pd.read_csv('../data/games.csv')
 
 if not os.path.isfile('../data/train_eval.csv'):
     print('Creating CSV files...')

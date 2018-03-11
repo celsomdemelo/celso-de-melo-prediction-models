@@ -1,25 +1,25 @@
 '''
-Adds numerical and classification labels
+Numerical and classification labels
 '''
 
 __author__ = "Celso M. de Melo"
 __email__ = "celsodemelo@eleveninc.com"
 
-labels_for_feature_selection = ['total_three_points', 'h_three_points_made', 'a_three_points_made']
+labels_for_feature_selection = ['both_three_points_made', 'h_three_points_made', 'a_three_points_made']
 
-labels_to_predict = ['total_three_points', 'h_three_points_made', 'a_three_points_made',
-                     'total_three_points_att', 'h_three_points_att', 'a_three_points_att',
-                     'total_two_points', 'h_two_points_made', 'a_two_points_made',
-                     'total_two_points_att', 'h_two_points_att', 'a_two_points_att',
+labels_to_predict = ['both_three_points_made', 'h_three_points_made', 'a_three_points_made',
+                     'both_three_points_att', 'h_three_points_att', 'a_three_points_att',
+                     'both_two_points_made', 'h_two_points_made', 'a_two_points_made',
+                     'both_two_points_att', 'h_two_points_att', 'a_two_points_att',
                      'h_three_points_pct', 'a_three_points_pct',
-                     'total_free_throws', 'h_free_throws_made', 'a_free_throws_made',
+                     'both_free_throws_made', 'h_free_throws_made', 'a_free_throws_made',
                      'h_free_throws_pct', 'a_free_throws_pct',
-                     'total_rebounds', 'h_rebounds', 'a_rebounds',
-                     'total_offensive_rebounds', 'h_offensive_rebounds', 'a_offensive_rebounds',
-                     'total_assists', 'h_assists', 'a_assists',
-                     'total_field_goals_att', 'h_field_goals_att', 'a_field_goals_att',
+                     'both_rebounds', 'h_rebounds', 'a_rebounds',
+                     'both_offensive_rebounds', 'h_offensive_rebounds', 'a_offensive_rebounds',
+                     'both_assists', 'h_assists', 'a_assists',
+                     'both_field_goals_att', 'h_field_goals_att', 'a_field_goals_att',
                      'h_field_goals_pct', 'a_field_goals_pct',
-                     'total_possessions', 'h_possessions', 'a_possessions']
+                     'both_possessions', 'h_possessions', 'a_possessions']
 
 labels_to_predict_2nd_half = ['both_h2_three', 'h_h2_three', 'a_h2_three',
                               'both_h2_three_att', 'h_h2_three_att', 'a_h2_three_att',
@@ -38,25 +38,24 @@ labels_to_predict_2nd_half = ['both_h2_three', 'h_h2_three', 'a_h2_three',
 
 
 def add_numerical_label(df):
-    df['total_three_points'] = 0
-    df['total_three_points_att'] = 0
-    df['h_h2_free_throws_pct'] = 0
+    df['both_three_points_made'] = 0
+    df['both_three_points_att'] = 0
 
-    df['total_two_points'] = 0
-    df['total_two_points_att'] = 0
+    df['both_two_points_made'] = 0
+    df['both_two_points_att'] = 0
 
-    df['total_free_throws'] = 0
+    df['both_free_throws_made'] = 0
     df['avg_free_throws_pct'] = 0.0
 
-    df['total_rebounds'] = 0
-    df['total_offensive_rebounds'] = 0
+    df['both_rebounds'] = 0
+    df['both_offensive_rebounds'] = 0
 
-    df['total_assists'] = 0
+    df['both_assists'] = 0
 
-    df['total_field_goals_att'] = 0
+    df['both_field_goals_att'] = 0
     df['avg_field_goals_pct'] = 0.0
 
-    df['total_possessions'] = 0
+    df['both_possessions'] = 0
 
     df['h_h2_three_points_pct'] = 0.0
     df['a_h2_three_points_pct'] = 0.0
@@ -64,12 +63,10 @@ def add_numerical_label(df):
     df['a_h2_free_throws_pct'] = 0.0
     df['h_h2_field_goals_att'] = 0
     df['a_h2_field_goals_att'] = 0
-    df['both_h2_field_goals_att'] = 0
     df['h_h2_field_goals_pct'] = 0.0
     df['a_h2_field_goals_pct'] = 0.0
     df['h_h2_possessions'] = 0
     df['a_h2_possessions'] = 0
-    df['both_h2_possessions'] = 0
     
     stats_2nd_half = dict()
 
@@ -145,32 +142,32 @@ def add_numerical_label(df):
 
 
         if row['h_h1_three'] == -1 or row['h_h2_three'] == -1 or row['a_h1_three'] == -1 or row['a_h2_three'] == -1:
-            df.set_value(index, 'total_three_points', -1)
+            df.set_value(index, 'both_three_points_made', -1)
         else:
-            df.set_value(index, 'total_three_points',
+            df.set_value(index, 'both_three_points_made',
                          row['h_h1_three'] + row['h_h2_three'] + row['a_h1_three'] + row['a_h2_three'])
         if row['h_h1_three_att'] == -1 or row['h_h2_three_att'] == -1 or row['a_h1_three_att'] == -1 or row[
             'a_h2_three_att'] == -1:
-            df.set_value(index, 'total_three_points_att', -1)
+            df.set_value(index, 'both_three_points_att', -1)
         else:
-            df.set_value(index, 'total_three_points_att',
+            df.set_value(index, 'both_three_points_att',
                          row['h_h1_three_att'] + row['h_h2_three_att'] + row['a_h1_three_att'] + row['a_h2_three_att'])
 
         if row['h_two_points_made'] == -1 or row['a_two_points_made'] == -1:
-            df.set_value(index, 'total_two_points', -1)
+            df.set_value(index, 'both_two_points_made', -1)
         else:
-            df.set_value(index, 'total_two_points',
+            df.set_value(index, 'both_two_points_made',
                          row['h_two_points_made'] + row['a_two_points_made'])
         if row['h_two_points_att'] == -1 or row['a_two_points_att'] == -1:
-            df.set_value(index, 'total_two_points_att', -1)
+            df.set_value(index, 'both_two_points_att', -1)
         else:
-            df.set_value(index, 'total_two_points_att',
+            df.set_value(index, 'both_two_points_att',
                          row['h_two_points_att'] + row['a_two_points_att'])
 
         if row['h_h1_free'] == -1 or row['h_h2_free'] == -1 or row['a_h1_free'] == -1 or row['a_h2_free'] == -1:
-            df.set_value(index, 'total_free_throws', -1)
+            df.set_value(index, 'both_free_throws_made', -1)
         else:
-            df.set_value(index, 'total_free_throws',
+            df.set_value(index, 'both_free_throws_made',
                          row['h_h1_free'] + row['h_h2_free'] + row['a_h1_free'] + row['a_h2_free'])
         if row['h_free_throws_pct'] == -1 or row['a_free_throws_pct'] == -1:
             df.set_value(index, 'avg_free_throws_pct', -1)
@@ -179,23 +176,23 @@ def add_numerical_label(df):
                          round((row['h_free_throws_pct'] + row['a_free_throws_pct']) / 2.0), decimal_places)
 
         if row['h_rebounds'] == -1 or row['a_rebounds'] == -1:
-            df.set_value(index, 'total_rebounds', -1)
+            df.set_value(index, 'both_rebounds', -1)
         else:
-            df.set_value(index, 'total_rebounds', row['h_rebounds'] + row['a_rebounds'])
+            df.set_value(index, 'both_rebounds', row['h_rebounds'] + row['a_rebounds'])
         if row['h_offensive_rebounds'] == -1 or row['a_offensive_rebounds'] == -1:
-            df.set_value(index, 'total_offensive_rebounds', -1)
+            df.set_value(index, 'both_offensive_rebounds', -1)
         else:
-            df.set_value(index, 'total_offensive_rebounds', row['h_offensive_rebounds'] + row['a_offensive_rebounds'])
+            df.set_value(index, 'both_offensive_rebounds', row['h_offensive_rebounds'] + row['a_offensive_rebounds'])
 
         if row['h_assists'] == -1 or row['a_assists'] == -1:
-            df.set_value(index, 'total_assists', -1)
+            df.set_value(index, 'both_assists', -1)
         else:
-            df.set_value(index, 'total_assists', row['h_assists'] + row['a_assists'])
+            df.set_value(index, 'both_assists', row['h_assists'] + row['a_assists'])
 
         if row['h_field_goals_att'] == -1 or row['a_field_goals_att'] == -1:
-            df.set_value(index, 'total_field_goals_att', -1)
+            df.set_value(index, 'both_field_goals_att', -1)
         else:
-            df.set_value(index, 'total_field_goals_att', row['h_field_goals_att'] + row['a_field_goals_att'])
+            df.set_value(index, 'both_field_goals_att', row['h_field_goals_att'] + row['a_field_goals_att'])
         if row['h_field_goals_pct'] == -1 or row['a_field_goals_pct'] == -1:
             df.set_value(index, 'avg_field_goals_pct', -1)
         else:
@@ -203,14 +200,14 @@ def add_numerical_label(df):
                          round((row['h_field_goals_pct'] + row['a_field_goals_pct']) / 2.0), decimal_places)
 
         if row['h_possessions'] == -1 or row['a_possessions'] == -1:
-            df.set_value(index, 'total_possessions', -1)
+            df.set_value(index, 'both_possessions', -1)
         else:
-            df.set_value(index, 'total_possessions', row['h_possessions'] + row['a_possessions'])
+            df.set_value(index, 'both_possessions', row['h_possessions'] + row['a_possessions'])
 
 
 
 def add_classification_labels(df):
-    ranks = df.total_three_points.rank(pct=True)
+    ranks = df.both_three_points_made.rank(pct=True)
 
     percentiles = [15, 20, 25, 30]
 

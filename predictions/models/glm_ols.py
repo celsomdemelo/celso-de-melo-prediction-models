@@ -50,7 +50,7 @@ def find_best_model(features, label, df_train, df_eval, verbose=False, scale=Fal
         print("Mean squared error: %.7f" %
               mean_squared_error(df_eval_clean[[label]].values.ravel(), y_pred))
         print('Variance score: %.7f' % r2_score(df_eval_clean[[label]].values.ravel(), y_pred))
-        for e in range(1, 6):
+        for e in range(1, 7):
             print('Accuracy (error = ' + str(e) + '): %.7f' % linear_regression_accuracy(
                 df_eval_clean[[label]].values.ravel(), y_pred, error_threshold=e))
         for e in range(0, 8):
@@ -116,7 +116,7 @@ def score_on_test_set(features, label, df_train_eval, df_test, normalize=False, 
           mean_squared_error(df_test_clean[[label]].values.ravel(), y_pred))
     print('Variance score: %.7f' % r2_score(df_test_clean[[label]].values.ravel(), y_pred))
     rg_errors = []
-    for e in range(1, 6):
+    for e in range(1, 7):
         acc = linear_regression_accuracy(df_test_clean[[label]].values.ravel(), y_pred, error_threshold=e)
         rg_errors.append((e, acc))
         print('Accuracy (error = ' + str(e) + '): %.7f' % acc)

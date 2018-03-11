@@ -489,7 +489,7 @@ FROM(
              IF(fast_break_pt = "Y", points_scored, 0) as fast_break_pt,
              IF(event_type = "TIMEOUT", elapsed_time_sec, null) as timeout_time
             FROM
-             `stardust-development.play_by_play.ncaa_pbp_mbb`
+             `stardust-development.play_by_play.mbb_pbp_ncaa`
             WHERE
               away_division_alias = "D1"
               AND home_division_alias = "D1"
