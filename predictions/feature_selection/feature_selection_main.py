@@ -25,8 +25,14 @@ from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import f_regression
 from sklearn.feature_selection import mutual_info_regression
 from predictions.feature_sets import clean_df
+from predictions.utils import sort_coef, get_ordered_best_features
 
-from predictions.utils import sort_coef
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('BEST K FEATURES')
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+ordered_bfs = get_ordered_best_features(predictions.feature_sets.features_3_h_and_a, df_train)
+for of in ordered_bfs:
+    print(of)
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('TRAINING')
@@ -41,7 +47,7 @@ for label in predictions.labels.labels_for_feature_selection:
     print('-----------------------------------')
     print('LABEL: ' + label)
 
-    features = predictions.feature_sets.features_1_h_and_a
+    features = predictions.feature_sets.features_3_h_and_a
 
     df_train_clean = clean_df(df_train, features + [label])
     df_eval_clean = clean_df(df_eval, features + [label])
@@ -50,25 +56,24 @@ for label in predictions.labels.labels_for_feature_selection:
     for idx, func_label in enumerate(func_labels):
         print('----------------')
         print('func_label: ' + func_label)
-        for k in range(len(features), len(features) + 1):
+        for k in range(1, len(features) + 1):
             print('----------------')
             print('k: ' + str(k))
             selector = SelectKBest(funcs[idx], k=k)
             selector.fit(df_train_clean[features], df_train_clean[label])
             idxs_selected = selector.get_support(indices=True)
             df_train_selected = df_train_clean.iloc[:, idxs_selected]
-            df_eval_selected = df_eval_clean.iloc[:, idxs_selected]
             print(df_train_selected.columns)
 
             selected_features = list(df_train_selected.columns)
             result = predictions.models.glm_ols.find_best_model(selected_features, label, df_train, df_eval,
                                                                 verbose=True, scale=False)
             results.append(
-                'features_1_h_and_a (' + func_label + ', best ' + str(k) + ')\t' + str(result[1]) + '\t' + str(
+                'features_3_h_and_a (' + func_label + ', best ' + str(k) + ')\t' + str(result[1]) + '\t' + str(
                     result[2]))
-            sorted_coefs = sort_coef(features, result[0].coef_)
-            for k in sorted_coefs:
-                print(k[0] + '\t' + str(k[1]))
+            # sorted_coefs = sort_coef(features, result[0].coef_)
+            # for k in sorted_coefs:
+            #     print(k[0] + '\t' + str(k[1]))
     for r in results:
         print(r)
 

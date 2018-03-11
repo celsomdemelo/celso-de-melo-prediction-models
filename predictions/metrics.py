@@ -3,6 +3,7 @@ __email__ = "celsodemelo@eleveninc.com"
 
 import numpy as np
 
+
 def linear_regression_accuracy(ground_truth, predictions, error_threshold=5.0):
     abs_residuals = np.abs(np.subtract(ground_truth, predictions))
 
@@ -25,3 +26,4 @@ def linear_regression_accuracy_greater_or_equal_than(ground_truth, predictions, 
             accurate += 1
 
     return accurate / count
+

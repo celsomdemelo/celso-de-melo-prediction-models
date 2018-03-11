@@ -14,17 +14,6 @@ import predictions.labels
 import predictions.models.glm_ols
 import predictions.feature_sets
 
-# if not os.path.isfile('../data/games_with_labels.csv'):
-#     df = pd.read_csv('../data/games.csv')
-#
-#     predictions.labels.add_numerical_label(df)
-#     df = df[df.total_three_points != -1]  # Assuming that if this is missing, the others in the NCAA pbp data are too (and vice-versa)
-#     df = df[df.h_three_points_made != -1]  # Assuming that if this is missing, the others in the teams_games_v15 are too (and vice-versa)
-#     predictions.labels.add_classification_labels(df)
-#
-#     df.to_csv('../data/games_with_labels.csv', index=False)
-# else:
-#     df = pd.read_csv('../data/games_with_labels.csv')
 df = pd.read_csv('../data/games.csv')
 
 if not os.path.isfile('../data/train_eval.csv'):
@@ -61,24 +50,26 @@ else:
     df_test = pd.read_csv('../data/test.csv')
 print('Done.')
 
+
 def print_detailed_scores(scores):
     for s in scores:
         print(s['label'] + '\t' + str(s['r2']) + '\t' +
-              str(s['gt_acc']) + '\t'  + str(s['gt_err'])+ '\t' +
+              str(s['gt_acc']) + '\t' + str(s['gt_err']) + '\t' +
               str(s['rg_acc']) + '\t' + str(s['rg_err']))
+
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('TRAINING')
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-for label in predictions.labels.labels_to_predict:
-    print('-----------------------------------')
-    print('LABEL: ' + label)
-    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_1_h_and_a, label, df_train, df_eval)
-for label in predictions.labels.labels_to_predict_2nd_half:
-    print('-----------------------------------')
-    print('LABEL: ' + label + ' (2nd-half)')
-    predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1_h_and_a_and_both, label, df_train,
-                                               df_eval)
+# for label in predictions.labels.labels_to_predict:
+#     print('-----------------------------------')
+#     print('LABEL: ' + label)
+#     predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_1_h_and_a, label, df_train, df_eval)
+# for label in predictions.labels.labels_to_predict_2nd_half:
+#     print('-----------------------------------')
+#     print('LABEL: ' + label + ' (2nd-half)')
+#     predictions.models.glm_ols.find_best_model(predictions.feature_sets.features_ht_1_h_and_a_and_both, label, df_train,
+#                                                df_eval)
 
 print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('SCORE ON TEST SET')
@@ -98,6 +89,6 @@ for label in predictions.labels.labels_to_predict_2nd_half:
     print('LABEL: ' + label + ' (2nd-half)')
     detailed_scores.append(
         predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_1_h_and_a_and_both, label,
-                                                 df_train_eval,
-                                                 df_test, path='models/2nd-half/' + label + '.pkl'))
+                                                     df_train_eval,
+                                                     df_test, path='models/2nd-half/' + label + '.pkl'))
 print_detailed_scores(detailed_scores)

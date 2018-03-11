@@ -53,12 +53,12 @@ features_1_h = [
     'h_avg_turnovers',
     'h_avg_personal_fouls',
     'h_avg_score_margin',
-    'h_avg_opp_points',
-    'h_avg_opp_off_rebounds',
-    'h_avg_opp_def_rebounds',
-    'h_avg_opp_blocks',
     'h_avg_3pt_shot_selection',
-    'h_avg_possessions'
+    'h_avg_possessions',
+    # 'h_avg_opp_points',
+    # 'h_avg_opp_off_rebounds',
+    # 'h_avg_opp_def_rebounds',
+    # 'h_avg_opp_blocks'
 ]
 
 features_1_a = [
@@ -83,12 +83,12 @@ features_1_a = [
     'a_avg_turnovers',
     'a_avg_personal_fouls',
     'a_avg_score_margin',
-    'a_avg_opp_points',
-    'a_avg_opp_off_rebounds',
-    'a_avg_opp_def_rebounds',
-    'a_avg_opp_blocks',
     'a_avg_3pt_shot_selection',
-    'a_avg_possessions'
+    'a_avg_possessions',
+    # 'a_avg_opp_points',
+    # 'a_avg_opp_off_rebounds',
+    # 'a_avg_opp_def_rebounds',
+    # 'a_avg_opp_blocks'
 ]
 
 features_1_h_and_a = features_1_h[:] + features_1_a[:]
@@ -105,6 +105,106 @@ features_2 = [
     'both_wins',
     'both_losses'
 ]
+
+features_3_h = [
+    'h_avg_points_game',
+    'h_avg_field_goals_made',
+    'h_avg_field_goals_att',
+    'h_avg_field_goals_pct',
+    'h_avg_three_points_made',
+    'h_avg_three_points_att',
+    'h_avg_three_points_pct',
+    'h_avg_two_points_made',
+    'h_avg_two_points_att',
+    'h_avg_two_points_pct',
+    'h_avg_blocks',
+    'h_avg_free_throws_made',
+    'h_avg_free_throws_att',
+    'h_avg_free_throws_pct',
+    'h_avg_offensive_rebounds',
+    'h_avg_defensive_rebounds',
+    'h_avg_rebounds',
+    'h_avg_assists',
+    'h_avg_turnovers',
+    'h_avg_personal_fouls',
+    'h_avg_score_margin',
+    'h_avg_3pt_shot_selection',
+    'h_avg_possessions',
+    'h_avg_opp_points_game',
+    'h_avg_opp_field_goals_made',
+    'h_avg_opp_field_goals_att',
+    'h_avg_opp_field_goals_pct',
+    'h_avg_opp_three_points_made',
+    'h_avg_opp_three_points_att',
+    'h_avg_opp_three_points_pct',
+    'h_avg_opp_two_points_made',
+    'h_avg_opp_two_points_att',
+    'h_avg_opp_two_points_pct',
+    'h_avg_opp_blocks',
+    'h_avg_opp_free_throws_made',
+    'h_avg_opp_free_throws_att',
+    'h_avg_opp_free_throws_pct',
+    'h_avg_opp_offensive_rebounds',
+    'h_avg_opp_defensive_rebounds',
+    'h_avg_opp_rebounds',
+    'h_avg_opp_assists',
+    'h_avg_opp_turnovers',
+    'h_avg_opp_personal_fouls',
+    'h_avg_opp_score_margin',
+    'h_avg_opp_3pt_shot_selection',
+    'h_avg_opp_possessions',
+]
+
+features_3_a = [
+    'a_avg_points_game',
+    'a_avg_field_goals_made',
+    'a_avg_field_goals_att',
+    'a_avg_field_goals_pct',
+    'a_avg_three_points_made',
+    'a_avg_three_points_att',
+    'a_avg_three_points_pct',
+    'a_avg_two_points_made',
+    'a_avg_two_points_att',
+    'a_avg_two_points_pct',
+    'a_avg_blocks',
+    'a_avg_free_throws_made',
+    'a_avg_free_throws_att',
+    'a_avg_free_throws_pct',
+    'a_avg_offensive_rebounds',
+    'a_avg_defensive_rebounds',
+    'a_avg_rebounds',
+    'a_avg_assists',
+    'a_avg_turnovers',
+    'a_avg_personal_fouls',
+    'a_avg_score_margin',
+    'a_avg_3pt_shot_selection',
+    'a_avg_possessions',
+    'a_avg_opp_points_game',
+    'a_avg_opp_field_goals_made',
+    'a_avg_opp_field_goals_att',
+    'a_avg_opp_field_goals_pct',
+    'a_avg_opp_three_points_made',
+    'a_avg_opp_three_points_att',
+    'a_avg_opp_three_points_pct',
+    'a_avg_opp_two_points_made',
+    'a_avg_opp_two_points_att',
+    'a_avg_opp_two_points_pct',
+    'a_avg_opp_blocks',
+    'a_avg_opp_free_throws_made',
+    'a_avg_opp_free_throws_att',
+    'a_avg_opp_free_throws_pct',
+    'a_avg_opp_offensive_rebounds',
+    'a_avg_opp_defensive_rebounds',
+    'a_avg_opp_rebounds',
+    'a_avg_opp_assists',
+    'a_avg_opp_turnovers',
+    'a_avg_opp_personal_fouls',
+    'a_avg_opp_score_margin',
+    'a_avg_opp_3pt_shot_selection',
+    'a_avg_opp_possessions',
+]
+
+features_3_h_and_a = features_3_h[:] + features_3_a[:]
 
 features_1_both_h_and_a_and_2 = features_1_h_and_a[:] + features_2[:]
 
@@ -124,7 +224,7 @@ features_ht_1 = features_1[:] + [
     'both_h1_fouls'
 ]
 
-features_ht_1_h_and_a = features_1_h_and_a[:] + [
+features_ht_1_h_and_a = [
     'h_h1_points',
     'h_h1_three_att',
     'h_h1_three',
@@ -153,7 +253,7 @@ features_ht_1_h_and_a = features_1_h_and_a[:] + [
     'a_h1_fouls'
 ]
 
-features_ht_1_h_and_a_and_both = features_ht_1_h_and_a[:] + [
+features_ht_1_both = [
     'both_h1_points',
     'both_h1_three_att',
     'both_h1_three',
@@ -168,6 +268,9 @@ features_ht_1_h_and_a_and_both = features_ht_1_h_and_a[:] + [
     'both_h1_turnovers',
     'both_h1_fouls',
 ]
+
+features_ht_1_h_and_a_and_both = features_1_h_and_a[:] + features_ht_1_h_and_a[:] + features_ht_1_both
+features_ht_3_h_and_a_and_both = features_3_h_and_a[:] + features_ht_1_h_and_a[:] + features_ht_1_both
 
 
 def clean_df(df, vars):

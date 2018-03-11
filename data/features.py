@@ -1,7 +1,7 @@
 '''
 Functions to calculate relevant features
 
-Reference for baskettball stats: https://www.basketball-reference.com/about/glossary.html
+Reference for basketball stats: https://www.basketball-reference.com/about/glossary.html
 '''
 
 __author__ = "Celso M. de Melo"
@@ -78,20 +78,13 @@ def add_game_stats(df):
     df['a_h2_possessions'] = 0
 
     df['h_score_margin'] = -1
-    df['h_opp_points'] = -1
-    df['h_opp_off_rebounds'] = -1
-    df['h_opp_def_rebounds'] = -1
-    df['h_opp_blocks'] = -1
-    df['h_3pt_shot_selection'] = -1.0
-    df['h_possessions'] = -1
-
     df['a_score_margin'] = -1
-    df['a_opp_points'] = -1
-    df['a_opp_off_rebounds'] = -1
-    df['a_opp_def_rebounds'] = -1
-    df['a_opp_blocks'] = -1
+
+    df['h_3pt_shot_selection'] = -1.0
     df['a_3pt_shot_selection'] = -1.0
-    df['a_possessions'] = -1  # Formula: https://www.sports-reference.com/cbb/about/glossary.html#poss
+
+    df['h_possessions'] = -1  # Formula: https://www.sports-reference.com/cbb/about/glossary.html#poss
+    df['a_possessions'] = -1
 
     decimal_places = 5
 
@@ -332,39 +325,56 @@ def add_game_stats(df):
                 row['a_h2_off_rebounds']))
         df.set_value(index, stat, stats[stat])
 
-        df.set_value(index, 'h_score_margin', stats['h_points_game'] - stats['a_points_game'])
-        df.set_value(index, 'h_opp_points', stats['a_points_game'])
-        df.set_value(index, 'h_opp_off_rebounds', stats['a_offensive_rebounds'])
-        df.set_value(index, 'h_opp_def_rebounds', stats['a_defensive_rebounds'])
-        df.set_value(index, 'h_opp_blocks', stats['a_blocks'])
-        if stats['h_three_points_att'] == -1 or stats['h_field_goals_att'] == -1 or stats['h_field_goals_att'] == 0:
-            df.set_value(index, 'h_3pt_shot_selection', -1)
-        else:
-            df.set_value(index, 'h_3pt_shot_selection',
-                         round(float(stats['h_three_points_att']) / float(stats['h_field_goals_att']), decimal_places))
-        if stats['h_field_goals_att'] == -1:
-            df.set_value(index, 'h_possessions', -1)
-        else:
-            df.set_value(index, 'h_possessions', (
-                stats['h_field_goals_att'] + stats['h_turnovers'] + 0.475 * stats['h_free_throws_att'] -
-                stats['h_offensive_rebounds']))
+        stat = 'h_score_margin'
+        stats[stat]=stats['h_points_game'] - stats['a_points_game']
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_score_margin'
+        stats[stat] = stats['a_points_game'] - stats['h_points_game']
+        df.set_value(index, stat, stats[stat])
 
-        df.set_value(index, 'a_score_margin', stats['a_points_game'] - stats['h_points_game'])
-        df.set_value(index, 'a_opp_points', stats['h_points_game'])
-        df.set_value(index, 'a_opp_off_rebounds', stats['h_offensive_rebounds'])
-        df.set_value(index, 'a_opp_def_rebounds', stats['h_defensive_rebounds'])
-        df.set_value(index, 'a_opp_blocks', stats['h_blocks'])
+        stat = 'h_3pt_shot_selection'
+        if stats['h_three_points_att'] == -1 or stats['h_field_goals_att'] == -1 or stats['h_field_goals_att'] == 0:
+            stats[stat] =-1
+        else:
+            stats[stat] = round(float(stats['h_three_points_att']) / float(stats['h_field_goals_att']), decimal_places)
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_3pt_shot_selection'
         if stats['a_three_points_att'] == -1 or stats['a_field_goals_att'] == -1 or stats['a_field_goals_att'] == 0:
-            df.set_value(index, 'a_3pt_shot_selection', -1)
+            stats[stat] = -1
         else:
-            df.set_value(index, 'a_3pt_shot_selection',
-                         round(float(stats['a_three_points_att']) / float(stats['a_field_goals_att']), decimal_places))
+            stats[stat] = round(float(stats['a_three_points_att']) / float(stats['a_field_goals_att']), decimal_places)
+        df.set_value(index, stat, stats[stat])
+
+        stat = 'h_possessions'
+        if stats['h_field_goals_att'] == -1:
+            stats[stat] = -1
+        else:
+            stats[stat] = (
+                stats['h_field_goals_att'] + stats['h_turnovers'] + 0.475 * stats['h_free_throws_att'] -
+                stats['h_offensive_rebounds'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_possessions'
         if stats['a_field_goals_att'] == -1:
-            df.set_value(index, 'a_possessions', -1)
+            stats[stat] = -1
         else:
-            df.set_value(index, 'a_possessions', (
+            stats[stat] = (
                 stats['a_field_goals_att'] + stats['a_turnovers'] + 0.475 * stats['a_free_throws_att'] -
-                stats['a_offensive_rebounds']))
+                stats['a_offensive_rebounds'])
+        df.set_value(index, stat, stats[stat])
+
+    opp_vars = []
+    for v in list(stats.keys()):
+        if 'h_' in v[:2]:
+            opp_vars.append(v[2:])
+
+    for ov in opp_vars:
+        df['h_opp_' + ov] = -1.0
+        df['a_opp_' + ov] = -1.0
+
+    for index, row in df.iterrows():
+        for ov in opp_vars:
+            df.set_value(index, 'h_opp_' + ov, row['a_' + ov])
+            df.set_value(index, 'a_opp_' + ov, row['h_' + ov])
 
 
 def add_season_stats(df):
