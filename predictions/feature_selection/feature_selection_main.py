@@ -30,7 +30,7 @@ from predictions.utils import sort_coef, get_ordered_best_features
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('BEST K FEATURES')
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-ordered_bfs = get_ordered_best_features(predictions.feature_sets.features_3_h_and_a, df_train)
+ordered_bfs = get_ordered_best_features(predictions.feature_sets.features_5, df_train)
 for of in ordered_bfs:
     print(of)
 
@@ -47,7 +47,7 @@ for label in predictions.labels.labels_for_feature_selection:
     print('-----------------------------------')
     print('LABEL: ' + label)
 
-    features = predictions.feature_sets.features_3_h_and_a
+    features = predictions.feature_sets.features_5
 
     df_train_clean = clean_df(df_train, features + [label])
     df_eval_clean = clean_df(df_eval, features + [label])
@@ -62,6 +62,7 @@ for label in predictions.labels.labels_for_feature_selection:
             selector = SelectKBest(funcs[idx], k=k)
             selector.fit(df_train_clean[features], df_train_clean[label])
             idxs_selected = selector.get_support(indices=True)
+            idxs_selected = [i for i in idxs_selected if i < len(features)] # Prevent bug: Index out of bounds
             df_train_selected = df_train_clean.iloc[:, idxs_selected]
             print(df_train_selected.columns)
 
@@ -69,7 +70,7 @@ for label in predictions.labels.labels_for_feature_selection:
             result = predictions.models.glm_ols.find_best_model(selected_features, label, df_train, df_eval,
                                                                 verbose=True, scale=False)
             results.append(
-                'features_3_h_and_a (' + func_label + ', best ' + str(k) + ')\t' + str(result[1]) + '\t' + str(
+                'features_5 (' + func_label + ', best ' + str(k) + ')\t' + str(result[1]) + '\t' + str(
                     result[2]))
             # sorted_coefs = sort_coef(features, result[0].coef_)
             # for k in sorted_coefs:

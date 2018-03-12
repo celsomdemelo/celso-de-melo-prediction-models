@@ -83,8 +83,35 @@ def add_game_stats(df):
     df['h_3pt_shot_selection'] = -1.0
     df['a_3pt_shot_selection'] = -1.0
 
-    df['h_possessions'] = -1  # Formula: https://www.sports-reference.com/cbb/about/glossary.html#poss
-    df['a_possessions'] = -1
+    # https://www.sports-reference.com/cbb/about/glossary.html
+    df['h_possessions'] = -1.0
+    df['h_defensive_rating'] = -1.0
+    df['h_offensive_rating'] = -1.0
+    df['h_effective_field_goal_percentage'] = -1.0
+    df['h_net_rating'] = -1.0
+    df['h_turnover_percentage'] = -1.0
+    df['h_true_shooting_percentage'] = -1.0
+    df['a_possessions'] = -1.0
+    df['a_defensive_rating'] = -1.0
+    df['a_offensive_rating'] = -1.0
+    df['a_effective_field_goal_percentage'] = -1.0
+    df['a_net_rating'] = -1.0
+    df['a_turnover_percentage'] = -1.0
+    df['a_true_shooting_percentage'] = -1.0
+
+    # https://kenpom.com/blog/stats-explained/
+    df['h_offensive_rebounding_percentage'] = -1.0
+    df['h_defensive_rebounding_percentage'] = -1.0
+    df['h_turnover_percentage'] = -1.0
+    df['h_free_throw_rate'] = -1.0
+    df['h_assist_rate'] = -1.0
+    df['h_block_rate'] = -1.0
+    df['a_offensive_rebounding_percentage'] = -1.0
+    df['a_defensive_rebounding_percentage'] = -1.0
+    df['a_turnover_percentage'] = -1.0
+    df['a_free_throw_rate'] = -1.0
+    df['a_assist_rate'] = -1.0
+    df['a_block_rate'] = -1.0
 
     decimal_places = 5
 
@@ -113,14 +140,14 @@ def add_game_stats(df):
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['h_field_goals_made']) / float(stats['h_field_goals_att']), decimal_places))
+                round(100.0 * float(stats['h_field_goals_made']) / float(stats['h_field_goals_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'a_field_goals_pct'
         if stats['a_field_goals_att'] == 0:
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['a_field_goals_made']) / float(stats['a_field_goals_att']), decimal_places))
+                round(100.0 * float(stats['a_field_goals_made']) / float(stats['a_field_goals_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
 
         stat = 'h_three_points_made'
@@ -140,14 +167,14 @@ def add_game_stats(df):
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['h_three_points_made']) / float(stats['h_three_points_att']), decimal_places))
+                round(100.0 * float(stats['h_three_points_made']) / float(stats['h_three_points_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'a_three_points_pct'
         if stats['a_three_points_att'] == 0:
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['a_three_points_made']) / float(stats['a_three_points_att']), decimal_places))
+                round(100.0 * float(stats['a_three_points_made']) / float(stats['a_three_points_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
 
         stat = 'h_two_points_made'
@@ -167,14 +194,14 @@ def add_game_stats(df):
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['h_two_points_made']) / float(stats['h_two_points_att']), decimal_places))
+                round(100.0 * float(stats['h_two_points_made']) / float(stats['h_two_points_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'a_two_points_pct'
         if stats['a_two_points_att'] == 0:
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['a_two_points_made']) / float(stats['a_two_points_att']), decimal_places))
+                round(100.0 * float(stats['a_two_points_made']) / float(stats['a_two_points_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
 
         stat = 'h_blocks'
@@ -201,14 +228,14 @@ def add_game_stats(df):
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['h_free_throws_made']) / float(stats['h_free_throws_att']), decimal_places))
+                round(100.0 * float(stats['h_free_throws_made']) / float(stats['h_free_throws_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'a_free_throws_pct'
         if stats['a_free_throws_att'] == 0:
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(stats['a_free_throws_made']) / float(stats['a_free_throws_att']), decimal_places))
+                round(100.0 * float(stats['a_free_throws_made']) / float(stats['a_free_throws_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
 
         stat = 'h_offensive_rebounds'
@@ -276,7 +303,7 @@ def add_game_stats(df):
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(row['a_h2_free']) / float(row['a_h2_free_att']), decimal_places))
+                round(100.0 * float(row['a_h2_free']) / float(row['a_h2_free_att']), decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'h_h2_field_goals_att'
         if row['h_h2_three_att'] == -1 or row['h_h2_two_att'] == -1:
@@ -295,16 +322,16 @@ def add_game_stats(df):
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(row['h_h2_three'] + row['h_h2_two']) / float(stats['h_h2_field_goals_att']),
-                  decimal_places))
+                round(100.0 * float(row['h_h2_three'] + row['h_h2_two']) / float(stats['h_h2_field_goals_att']),
+                      decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'a_h2_field_goals_pct'
         if stats['a_h2_field_goals_att'] == -1 or stats['a_h2_field_goals_att'] == 0:
             stats[stat] = -1
         else:
             stats[stat] = (
-            round(100.0 * float(row['a_h2_three'] + row['a_h2_two']) / float(stats['a_h2_field_goals_att']),
-                  decimal_places))
+                round(100.0 * float(row['a_h2_three'] + row['a_h2_two']) / float(stats['a_h2_field_goals_att']),
+                      decimal_places))
         df.set_value(index, stat, stats[stat])
         stat = 'h_h2_possessions'
         if row['h_h2_field_goals_att'] == -1 or row['h_h2_turnovers'] == -1 or row['h_h2_free_att'] == -1 or row[
@@ -326,7 +353,7 @@ def add_game_stats(df):
         df.set_value(index, stat, stats[stat])
 
         stat = 'h_score_margin'
-        stats[stat]=stats['h_points_game'] - stats['a_points_game']
+        stats[stat] = stats['h_points_game'] - stats['a_points_game']
         df.set_value(index, stat, stats[stat])
         stat = 'a_score_margin'
         stats[stat] = stats['a_points_game'] - stats['h_points_game']
@@ -334,7 +361,7 @@ def add_game_stats(df):
 
         stat = 'h_3pt_shot_selection'
         if stats['h_three_points_att'] == -1 or stats['h_field_goals_att'] == -1 or stats['h_field_goals_att'] == 0:
-            stats[stat] =-1
+            stats[stat] = -1
         else:
             stats[stat] = round(float(stats['h_three_points_att']) / float(stats['h_field_goals_att']), decimal_places)
         df.set_value(index, stat, stats[stat])
@@ -349,17 +376,171 @@ def add_game_stats(df):
         if stats['h_field_goals_att'] == -1:
             stats[stat] = -1
         else:
-            stats[stat] = (
-                stats['h_field_goals_att'] + stats['h_turnovers'] + 0.475 * stats['h_free_throws_att'] -
-                stats['h_offensive_rebounds'])
+            stats[stat] = 0.5 * (
+            stats['h_field_goals_att'] + 0.475 * stats['h_free_throws_att'] - stats['h_offensive_rebounds'] + stats[
+                'h_turnovers']) + 0.5 * (
+            stats['a_field_goals_att'] + 0.475 * stats['a_free_throws_att'] - stats['a_offensive_rebounds'] + stats[
+                'a_turnovers'])
         df.set_value(index, stat, stats[stat])
+        stat = 'h_defensive_rating'
+        if stats['h_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * (stats['a_points_game'] / stats['h_possessions'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_offensive_rating'
+        if stats['h_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * (stats['h_points_game'] / stats['h_possessions'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_effective_field_goal_percentage'
+        if stats['h_field_goals_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = (stats['h_field_goals_made'] + 0.5 * stats['h_three_points_made']) / stats['h_field_goals_att']
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_net_rating'
+        if stats['h_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * ((stats['h_points_game'] - stats['a_points_game']) / stats['h_possessions'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_turnover_percentage'
+        if stats['h_field_goals_att'] == 0 and stats['a_free_throws_att'] == 0 and stats['h_turnovers'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * stats['h_turnovers'] / (stats['h_field_goals_att'] + 0.475 * stats['a_free_throws_att'] + stats['h_turnovers'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_true_shooting_percentage'
+        if stats['h_field_goals_att'] == 0 and stats['a_free_throws_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_points_game'] / (2 * (stats['h_field_goals_att'] + 0.475 * stats['a_free_throws_att']))
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_offensive_rebounding_percentage'
+        if stats['h_offensive_rebounds'] == 0 and stats['h_defensive_rebounds'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_offensive_rebounds'] / (stats['h_offensive_rebounds'] + stats['h_defensive_rebounds'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_defensive_rebounding_percentage'
+        if stats['h_offensive_rebounds'] == 0 and stats['h_defensive_rebounds'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_defensive_rebounds'] / (stats['h_offensive_rebounds'] + stats['h_defensive_rebounds'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_turnover_percentage'
+        if stats['h_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_turnovers'] / stats['h_possessions']
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_free_throw_rate'
+        if stats['h_field_goals_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_free_throws_att']/stats['h_field_goals_att']
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_assist_rate'
+        if stats['h_field_goals_made'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_assists'] / stats['h_field_goals_made']
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_block_rate'
+        if stats['a_two_points_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_blocks'] / stats['a_two_points_att']
+        df.set_value(index, stat, stats[stat])
+
         stat = 'a_possessions'
         if stats['a_field_goals_att'] == -1:
             stats[stat] = -1
         else:
-            stats[stat] = (
-                stats['a_field_goals_att'] + stats['a_turnovers'] + 0.475 * stats['a_free_throws_att'] -
-                stats['a_offensive_rebounds'])
+            stats[stat] = 0.5 * (
+                stats['a_field_goals_att'] + 0.475 * stats['a_free_throws_att'] - stats['a_offensive_rebounds'] + stats[
+                    'a_turnovers']) + 0.5 * (
+                stats['h_field_goals_att'] + 0.475 * stats['h_free_throws_att'] - stats['h_offensive_rebounds'] + stats[
+                    'h_turnovers'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_defensive_rating'
+        if stats['a_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * (stats['h_points_game'] / stats['a_possessions'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_offensive_rating'
+        if stats['a_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * (stats['a_points_game'] / stats['a_possessions'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_effective_field_goal_percentage'
+        if stats['a_field_goals_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = (stats['a_field_goals_made'] + 0.5 * stats['a_three_points_made']) / stats[
+                'a_field_goals_att']
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_net_rating'
+        if stats['a_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * ((stats['a_points_game'] - stats['h_points_game']) / stats['a_possessions'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_turnover_percentage'
+        if stats['a_field_goals_att'] == 0 and stats['h_free_throws_att'] == 0 and stats['a_turnovers'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = 100 * stats['a_turnovers'] / (
+            stats['a_field_goals_att'] + 0.475 * stats['h_free_throws_att'] + stats['a_turnovers'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_true_shooting_percentage'
+        if stats['a_field_goals_att'] == 0 and stats['h_free_throws_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_points_game'] / (
+            2 * (stats['a_field_goals_att'] + 0.475 * stats['h_free_throws_att']))
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_offensive_rebounding_percentage'
+        if stats['a_offensive_rebounds'] == 0 and stats['a_defensive_rebounds'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_offensive_rebounds'] / (
+            stats['a_offensive_rebounds'] + stats['a_defensive_rebounds'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_defensive_rebounding_percentage'
+        if stats['a_offensive_rebounds'] == 0 and stats['a_defensive_rebounds'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_defensive_rebounds'] / (
+            stats['a_offensive_rebounds'] + stats['a_defensive_rebounds'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_turnover_percentage'
+        if stats['a_possessions'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_turnovers'] / stats['a_possessions']
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_free_throw_rate'
+        if stats['a_field_goals_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['h_free_throws_att'] / stats['a_field_goals_att']
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_assist_rate'
+        if stats['a_field_goals_made'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_assists'] / stats['a_field_goals_made']
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_block_rate'
+        if stats['h_two_points_att'] == 0:
+            stats[stat] = -1
+        else:
+            stats[stat] = stats['a_blocks'] / stats['h_two_points_att']
         df.set_value(index, stat, stats[stat])
 
     opp_vars = []

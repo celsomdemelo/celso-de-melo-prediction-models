@@ -28,6 +28,7 @@ def get_ordered_best_features(features, df_train, label='both_three_points_made'
         selector = SelectKBest(f_regression, k=k)
         selector.fit(df_train_clean[features], df_train_clean[label])
         idxs_selected = selector.get_support(indices=True)
+        idxs_selected = [i for i in idxs_selected if i < len(features)] # Prevent bug: Index out of bounds
         df_train_selected = df_train_clean.iloc[:, idxs_selected]
         selected_features = list(df_train_selected.columns)
         for f in selected_features:
