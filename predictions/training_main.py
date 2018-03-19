@@ -14,9 +14,8 @@ import predictions.labels
 import predictions.models.glm_ols
 import predictions.feature_sets
 
-df = pd.read_csv('../data/games.csv')
 
-if not os.path.isfile('../data/train_eval.csv'):
+def save_train_eval_test_sets(df, train_eval_path, df_train_path, df_eval_path, df_test_path):
     print('Creating CSV files...')
     # Split into train+evaluation and test sets
     df_train_eval, df_test = np.split(df.sample(frac=1), [int(.8 * len(df))])
@@ -38,16 +37,44 @@ if not os.path.isfile('../data/train_eval.csv'):
 
     # Save CVS files
     print('Saving files...')
-    df_train_eval.to_csv('../data/train_eval.csv', index=False)
-    df_train.to_csv('../data/train.csv', index=False)
-    df_eval.to_csv('../data/eval.csv', index=False)
-    df_test.to_csv('../data/test.csv', index=False)
+    df_train_eval.to_csv(train_eval_path, index=False)
+    df_train.to_csv(df_train_path, index=False)
+    df_eval.to_csv(df_eval_path, index=False)
+    df_test.to_csv(df_test_path, index=False)
+
+    return df_train_eval, df_train, df_eval, df_test
+
+
+df = pd.read_csv('../data/games.csv')
+
+TOURNAMENT_DATA_ONLY = False
+
+train_eval_path = '../data/v2.1/train_eval.csv'
+df_train_path = '../data/v2.1/train.csv'
+df_eval_path = '../data/v2.1/eval.csv'
+df_test_path = '../data/v2.1/test.csv'
+# df_test_path = '../data/tournament/test.csv'
+full_time_models_path= 'models/full-time/'
+second_half_models_path = 'models/2nd-half/'
+
+if TOURNAMENT_DATA_ONLY:
+    df = df[df.tournament == 'NCAA']
+    train_eval_path = '../data/tournament/train_eval.csv'
+    df_train_path = '../data/tournament/train.csv'
+    df_eval_path = '../data/tournament/eval.csv'
+    df_test_path = '../data/tournament/test.csv'
+    full_time_models_path= 'models/tournament/full-time/'
+    second_half_models_path = 'models/tournament/2nd-half/'
+
+if not os.path.isfile(train_eval_path):
+    df_train_eval, df_train, df_eval, df_test = save_train_eval_test_sets(df, train_eval_path, df_train_path,
+                                                                          df_eval_path, df_test_path)
 else:
     print('Reading CSV files...')
-    df_train_eval = pd.read_csv('../data/train_eval.csv')
-    df_train = pd.read_csv('../data/train.csv')
-    df_eval = pd.read_csv('../data/eval.csv')
-    df_test = pd.read_csv('../data/test.csv')
+    df_train_eval = pd.read_csv(train_eval_path)
+    df_train = pd.read_csv(df_train_path)
+    df_eval = pd.read_csv(df_eval_path)
+    df_test = pd.read_csv(df_test_path)
 print('Done.')
 
 
@@ -80,7 +107,7 @@ for label in predictions.labels.labels_to_predict:
     print('LABEL: ' + label)
     detailed_scores.append(
         predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_6, label, df_train_eval,
-                                                     df_test, path='models/full-time/' + label + '.pkl'))
+                                                     df_test, path=full_time_models_path + label + '.pkl'))
 print_detailed_scores(detailed_scores)
 
 detailed_scores = []
@@ -90,5 +117,5 @@ for label in predictions.labels.labels_to_predict_2nd_half:
     detailed_scores.append(
         predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_6, label,
                                                      df_train_eval,
-                                                     df_test, path='models/2nd-half/' + label + '.pkl'))
+                                                     df_test, path=second_half_models_path + label + '.pkl'))
 print_detailed_scores(detailed_scores)

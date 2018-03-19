@@ -70,6 +70,8 @@ def add_game_stats(df):
     df['a_h2_three_points_pct'] = 0.0
     df['h_h2_free_throws_pct'] = 0.0
     df['a_h2_free_throws_pct'] = 0.0
+    df['h_h2_field_goals_made'] = 0
+    df['a_h2_field_goals_made'] = 0
     df['h_h2_field_goals_att'] = 0
     df['a_h2_field_goals_att'] = 0
     df['h_h2_field_goals_pct'] = 0.0
@@ -304,6 +306,18 @@ def add_game_stats(df):
         else:
             stats[stat] = (
                 round(100.0 * float(row['a_h2_free']) / float(row['a_h2_free_att']), decimal_places))
+        df.set_value(index, stat, stats[stat])
+        stat = 'h_h2_field_goals_made'
+        if row['h_h2_three'] == -1 or row['h_h2_two'] == -1:
+            stats[stat] = -1
+        else:
+            stats[stat] = (row['h_h2_three'] + row['h_h2_two'])
+        df.set_value(index, stat, stats[stat])
+        stat = 'a_h2_field_goals_made'
+        if row['a_h2_three'] == -1 or row['a_h2_two'] == -1:
+            stats[stat] = -1
+        else:
+            stats[stat] = (row['a_h2_three'] + row['a_h2_two'])
         df.set_value(index, stat, stats[stat])
         stat = 'h_h2_field_goals_att'
         if row['h_h2_three_att'] == -1 or row['h_h2_two_att'] == -1:
