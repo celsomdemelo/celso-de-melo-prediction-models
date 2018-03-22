@@ -54,7 +54,7 @@ df_train_path = '../data/v2.1/train.csv'
 df_eval_path = '../data/v2.1/eval.csv'
 df_test_path = '../data/v2.1/test.csv'
 # df_test_path = '../data/tournament/test.csv'
-full_time_models_path= 'models/full-time/'
+full_time_models_path = 'models/full-time/'
 second_half_models_path = 'models/2nd-half/'
 
 if TOURNAMENT_DATA_ONLY:
@@ -63,7 +63,7 @@ if TOURNAMENT_DATA_ONLY:
     df_train_path = '../data/tournament/train.csv'
     df_eval_path = '../data/tournament/eval.csv'
     df_test_path = '../data/tournament/test.csv'
-    full_time_models_path= 'models/tournament/full-time/'
+    full_time_models_path = 'models/tournament/full-time/'
     second_half_models_path = 'models/tournament/2nd-half/'
 
 if not os.path.isfile(train_eval_path):
