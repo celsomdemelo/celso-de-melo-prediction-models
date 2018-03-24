@@ -477,6 +477,51 @@ features_ht_3_h_and_a_and_both = features_3_h_and_a[:] + features_ht_1_h_and_a[:
 features_ht_4 = features_4[:] + features_ht_1_h_and_a[:] + features_ht_1_both
 features_ht_5 = features_5[:] + features_ht_1_h_and_a[:] + features_ht_1_both
 features_ht_6 = features_6[:] + features_ht_1_h_and_a[:] + features_ht_1_both
+features_ht_7 = features_ht_6 + [
+    'h_h1_three_pct',
+    'h_h1_two_pct',
+    'h_h1_field_goals_att',
+    'h_h1_field_goals',
+    'h_h1_field_goals_pct',
+    'h_h1_def_rebounds'
+    'h_h1_score_margin',
+    'h_h1_3pt_shot_selection',
+    'h_h1_possessions',
+    'h_h1_defensive_rating',
+    'h_h1_offensive_rating',
+    'h_h1_effective_field_goal_percentage',
+    'h_h1_net_rating',
+    'h_h1_turnover_percentage',
+    'h_h1_true_shooting_percentage',
+    'h_h1_offensive_rebounding_percentage',
+    'h_h1_defensive_rebounding_percentage',
+    'h_h1_turnover_percentage',
+    'h_h1_free_throw_rate',
+    'h_h1_assist_rate',
+    'h_h1_block_rate',
+
+    'a_h1_three_pct',
+    'a_h1_two_pct',
+    'a_h1_field_goals_att',
+    'a_h1_field_goals',
+    'a_h1_field_goals_pct',
+    'a_h1_def_rebounds'
+    'a_h1_score_margin',
+    'a_h1_3pt_shot_selection',
+    'a_h1_possessions',
+    'a_h1_defensive_rating',
+    'a_h1_offensive_rating',
+    'a_h1_effective_field_goal_percentage',
+    'a_h1_net_rating',
+    'a_h1_turnover_percentage',
+    'a_h1_true_shooting_percentage',
+    'a_h1_offensive_rebounding_percentage',
+    'a_h1_defensive_rebounding_percentage',
+    'a_h1_turnover_percentage',
+    'a_h1_free_throw_rate',
+    'a_h1_assist_rate',
+    'a_h1_block_rate',
+]
 
 
 def clean_df(df, vars):
