@@ -27,3 +27,14 @@ def linear_regression_accuracy_greater_or_equal_than(ground_truth, predictions, 
 
     return accurate / count
 
+def find_error_for_accuracy_target(ground_truth, predictions, desired_accuracy=0.70, error_step=0.10):
+    current_accuracy = 0.0
+    current_error = 0.0
+
+    while current_accuracy < desired_accuracy:
+        current_error += error_step
+        current_accuracy = linear_regression_accuracy_greater_or_equal_than(ground_truth, predictions, current_error)
+        if current_error >= 100.0:
+            break
+
+    return current_accuracy, current_error

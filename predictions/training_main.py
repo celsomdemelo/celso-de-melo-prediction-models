@@ -82,7 +82,9 @@ def print_detailed_scores(scores):
     for s in scores:
         print(s['label'] + '\t' + str(s['r2']) + '\t' +
               str(s['gt_acc']) + '\t' + str(s['gt_err']) + '\t' +
-              str(s['rg_acc']) + '\t' + str(s['rg_err']))
+              str(s['rg_acc']) + '\t' + str(s['rg_err']) + '\t' +
+              str(s['gt_70_acc']) + '\t' + str(s['gt_70_err']) + '\t' +
+              str(s['gt_75_acc']) + '\t' + str(s['gt_75_err']))
 
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')

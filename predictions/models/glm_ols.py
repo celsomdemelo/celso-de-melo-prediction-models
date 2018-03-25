@@ -10,7 +10,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.externals import joblib
 
 from predictions.feature_sets import clean_df
-from predictions.metrics import linear_regression_accuracy, linear_regression_accuracy_greater_or_equal_than
+from predictions.metrics import linear_regression_accuracy, linear_regression_accuracy_greater_or_equal_than, find_error_for_accuracy_target
 
 from sklearn.preprocessing import StandardScaler
 
@@ -132,6 +132,13 @@ def score_on_test_set(features, label, df_train_eval, df_test, normalize=False, 
     selected_gt_error = select_error(gt_errors)
     detailed_score['gt_err'] = selected_gt_error[0]
     detailed_score['gt_acc'] = selected_gt_error[1]
+
+    acc, err = find_error_for_accuracy_target(df_test_clean[[label]].values.ravel(), y_pred, desired_accuracy=0.70)
+    detailed_score['gt_70_acc'] = acc
+    detailed_score['gt_70_err'] = err
+    acc, err = find_error_for_accuracy_target(df_test_clean[[label]].values.ravel(), y_pred, desired_accuracy=0.75)
+    detailed_score['gt_75_acc'] = acc
+    detailed_score['gt_75_err'] = err
 
     print('**************************************************************************')
     print('COEFFICIENTS')
