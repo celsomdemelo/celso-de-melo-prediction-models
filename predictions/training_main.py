@@ -49,10 +49,10 @@ df = pd.read_csv('../data/games.csv')
 
 TOURNAMENT_DATA_ONLY = False
 
-train_eval_path = '../data/v2.1/train_eval.csv'
-df_train_path = '../data/v2.1/train.csv'
-df_eval_path = '../data/v2.1/eval.csv'
-df_test_path = '../data/v2.1/test.csv'
+train_eval_path = '../data/v2.2/train_eval.csv'
+df_train_path = '../data/v2.2/train.csv'
+df_eval_path = '../data/v2.2/eval.csv'
+df_test_path = '../data/v2.2/test.csv'
 # df_test_path = '../data/tournament/test.csv'
 full_time_models_path = 'models/full-time/'
 second_half_models_path = 'models/2nd-half/'

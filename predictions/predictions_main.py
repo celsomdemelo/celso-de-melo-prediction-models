@@ -277,6 +277,15 @@ second_half_models_path = 'models/2nd-half/'
 #     'TOTAL		11-23	3-8	11-12	3	14	4	3	6	8	4	36')
 
 games = [
+    {'away': 'Loyola (IL)', 'home': 'Michigan',
+         'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+         'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+         },
+    {'away': 'Villanova', 'home': 'Kansas',
+         'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+         'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+         },
+
     # {'away': 'Kansas State', 'home': 'Loyola (IL)',
     #      'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
     #      'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
@@ -285,13 +294,13 @@ games = [
     #      'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
     #      'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
     #      },
-    {'away': 'Villanova', 'home': 'Texas Tech',
-         'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
-         'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
-         },
-    # {'away': 'Kansas', 'home': 'Duke',
+    # {'away': 'Villanova', 'home': 'Texas Tech',
     #      'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
     #      'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+    #      },
+    # {'away': 'Kansas', 'home': 'Duke',
+    #      'away_ht_ncaa_string': 'TOTAL		13-35	4-14	3-4	10	24	6	1	0	10	5	33',
+    #      'home_ht_ncaa_string': 'TOTAL		15-36	3-15	3-4	6	12	7	6	3	5	6	36',
     #      },
 
     # {'away': 'Template 1', 'home': 'Template 2',

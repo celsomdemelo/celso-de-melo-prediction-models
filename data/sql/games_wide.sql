@@ -516,5 +516,5 @@ SELECT
     (CASE WHEN opp_splits.h2_1_fouls IS NULL OR opp_splits.h2_2_fouls IS NULL OR opp_splits.h2_3_fouls IS NULL OR opp_splits.h2_4_fouls IS NULL
         THEN -1 ELSE (opp_splits.h2_1_fouls + opp_splits.h2_2_fouls + opp_splits.h2_3_fouls + opp_splits.h2_4_fouls) END) AS a_h2_fouls,
     IFNULL(opp_splits.ot_fouls, -1) AS a_ot_fouls
-FROM `stardust-development.temp.teams_games_wide_v12`
+FROM `stardust-development.temp.teams_games_wide_v14`
 WHERE games.home_team=true
