@@ -7,6 +7,7 @@ import numpy as np
 import pickle
 import re
 
+from data.stats import three_points_pct, free_throws_pct
 import predictions.labels
 import predictions.feature_sets
 import predictions.models.glm_ols
@@ -29,7 +30,7 @@ def make_prediction_old(home_name, away_name, path, season_stats_names, extra_fe
     return regr.predict(features.reshape(1, -1))
 
 
-def make_prediction(home_name, away_name, path, features, extra_features={}):
+def make_prediction(home_name, away_name, path, features, ht_features=[]):
     home_stats = season_stats[home_name]
     away_stats = season_stats[away_name]
 
@@ -45,28 +46,28 @@ def make_prediction(home_name, away_name, path, features, extra_features={}):
             args.append(away_stats[stat])
 
     regr = joblib.load(path)
-    features = np.array(args + list(extra_features.values()))
+    features = np.array(args + ht_features)
     return regr.predict(features.reshape(1, -1))
 
 
-def make_prediction_neutral_ground(home_name, away_name, path, features, extra_features={}):
-    predictions_1 = make_prediction(home_name, away_name, path, features, extra_features)
-    predictions_2 = make_prediction(away_name, home_name, path, features, extra_features)
+def make_prediction_neutral_ground(home_name, away_name, path, features, ht_features=[]):
+    predictions_1 = make_prediction(home_name, away_name, path, features, ht_features)
+    predictions_2 = make_prediction(away_name, home_name, path, features, ht_features)
     decimal_places = 2
     return (predictions_1.round(decimal_places) + predictions_2.round(decimal_places)) / 2.0
 
 
-def make_weighted_predictions_neutral_ground(team1, team2, labels, path_base_dir, features, extra_features={},
+def make_weighted_predictions_neutral_ground(team1, team2, labels, path_base_dir, features, ht_features=[],
                                              home_weight=0.5):
     predictions_1 = []
     predictions_2 = []
     for label in labels:
         predictions_1.append(make_prediction(away_name=team1, home_name=team2,
-                                                            path=path_base_dir + label + '.pkl', features=features,
-                                                            extra_features=extra_features)[0])
+                                             path=path_base_dir + label + '.pkl', features=features,
+                                             ht_features=ht_features)[0])
         predictions_2.append(make_prediction(away_name=team2, home_name=team1,
-                                                            path=path_base_dir + label + '.pkl', features=features,
-                                                            extra_features=extra_features)[0])
+                                             path=path_base_dir + label + '.pkl', features=features,
+                                             ht_features=ht_features)[0])
 
     away_weight = 1.0 - home_weight
 
@@ -76,9 +77,11 @@ def make_weighted_predictions_neutral_ground(team1, team2, labels, path_base_dir
         if 'both_' in label[:5]:
             predictions.append(round((predictions_1[idx] + predictions_2[idx]) / 2.0, decimal_places))
         elif 'a_' in label[:2]:
-            predictions.append(round(away_weight * predictions_1[idx] + home_weight * predictions_2[idx + 1], decimal_places))
+            predictions.append(
+                round(away_weight * predictions_1[idx] + home_weight * predictions_2[idx + 1], decimal_places))
         elif 'h_' in label[:2]:
-            predictions.append(round(home_weight * predictions_1[idx] + away_weight * predictions_2[idx - 1], decimal_places))
+            predictions.append(
+                round(home_weight * predictions_1[idx] + away_weight * predictions_2[idx - 1], decimal_places))
 
     return predictions
 
@@ -106,22 +109,20 @@ def calculate_percentiles(df, labels):
     return percentile_25th, percentile_75th
 
 
-def calculate_first_half_stats(per_team_stats):
-    per_team_stats['both_h1_points'] = per_team_stats['h_h1_points'] + per_team_stats['a_h1_points']
-    per_team_stats['both_h1_three'] = per_team_stats['h_h1_three'] + per_team_stats['a_h1_three']
-    per_team_stats['both_h1_three_att'] = per_team_stats['h_h1_three_att'] + per_team_stats['a_h1_three_att']
-    per_team_stats['both_h1_two'] = per_team_stats['h_h1_two'] + per_team_stats['a_h1_two']
-    per_team_stats['both_h1_two_att'] = per_team_stats['h_h1_two_att'] + per_team_stats['a_h1_two_att']
-    per_team_stats['both_h1_free'] = per_team_stats['h_h1_free'] + per_team_stats['a_h1_free']
-    per_team_stats['both_h1_free_att'] = per_team_stats['h_h1_free_att'] + per_team_stats['a_h1_free_att']
-    per_team_stats['both_h1_off_rebounds'] = per_team_stats['h_h1_off_rebounds'] + per_team_stats['a_h1_off_rebounds']
-    per_team_stats['both_h1_rebounds'] = per_team_stats['h_h1_rebounds'] + per_team_stats['a_h1_rebounds']
-    per_team_stats['both_h1_assists'] = per_team_stats['h_h1_assists'] + per_team_stats['a_h1_assists']
-    per_team_stats['both_h1_blocks'] = per_team_stats['h_h1_blocks'] + per_team_stats['a_h1_blocks']
-    per_team_stats['both_h1_turnovers'] = per_team_stats['h_h1_turnovers'] + per_team_stats['a_h1_turnovers']
-    per_team_stats['both_h1_fouls'] = per_team_stats['h_h1_fouls'] + per_team_stats['a_h1_fouls']
+def calculate_first_half_stats(home_stats, away_stats, ht_feature_labels=[]):
+    ht_features = []
+    for f in ht_feature_labels:
+        if f[:5] == 'both_':
+            f_name = f[8:]
+            ht_features.append(home_stats[f_name] + away_stats[f_name])
+        elif f[:5] == 'h_h1_':
+            f_name = f[5:]
+            ht_features.append(home_stats[f_name])
+        elif f[:5] == 'a_h1_':
+            f_name = f[5:]
+            ht_features.append(away_stats[f_name])
 
-    return per_team_stats
+    return ht_features
 
 
 class NCAAStringConstants:
@@ -147,22 +148,32 @@ def get_numbers_from_ncaa_string(ncaa_string):
     return list(map(int, ns))
 
 
-def half_time_stats_from_ncaa_string(ncaa_string, prefix):
+def half_time_stats_from_ncaa_string(ncaa_string):
     ns = get_numbers_from_ncaa_string(ncaa_string)
 
-    return {prefix + '_h1_points': ns[NCAAStringConstants.PTS],
-            prefix + '_h1_three': ns[NCAAStringConstants.P3M],
-            prefix + '_h1_three_att': ns[NCAAStringConstants.P3A],
-            prefix + '_h1_two': ns[NCAAStringConstants.PTS] - ns[NCAAStringConstants.P3M],
-            prefix + '_h1_two_att': ns[NCAAStringConstants.FGA] - ns[NCAAStringConstants.P3A],
-            prefix + '_h1_free': ns[NCAAStringConstants.FTM],
-            prefix + '_h1_free_att': ns[NCAAStringConstants.FTA],
-            prefix + '_h1_off_rebounds': ns[NCAAStringConstants.OREB],
-            prefix + '_h1_rebounds': ns[NCAAStringConstants.REB],
-            prefix + '_h1_assists': ns[NCAAStringConstants.AST],
-            prefix + '_h1_blocks': ns[NCAAStringConstants.BLK],
-            prefix + '_h1_turnovers': ns[NCAAStringConstants.TO],
-            prefix + '_h1_fouls': ns[NCAAStringConstants.PF], }
+    stats = {'points': ns[NCAAStringConstants.PTS],
+             'three': ns[NCAAStringConstants.P3M],
+             'three_att': ns[NCAAStringConstants.P3A],
+             'two': ns[NCAAStringConstants.PTS] - ns[NCAAStringConstants.P3M],
+             'two_att': ns[NCAAStringConstants.FGA] - ns[NCAAStringConstants.P3A],
+             'free': ns[NCAAStringConstants.FTM],
+             'free_att': ns[NCAAStringConstants.FTA],
+             'off_rebounds': ns[NCAAStringConstants.OREB],
+             'rebounds': ns[NCAAStringConstants.REB],
+             'assists': ns[NCAAStringConstants.AST],
+             'blocks': ns[NCAAStringConstants.BLK],
+             'turnovers': ns[NCAAStringConstants.TO],
+             'fouls': ns[NCAAStringConstants.PF],
+
+             # 'three_points_pct': three_points_pct(ns[NCAAStringConstants.P3M], ns[NCAAStringConstants.P3A]),
+             # 'free_throws_pct': free_throws_pct(ns[NCAAStringConstants.FTM], ns[NCAAStringConstants.FTA]),
+             }
+    # stats['field_goals_made'] = stats['three'] + stats['two']
+    # stats['field_goals_att'] = stats['three_att'] + stats['two_att']
+
+    stats[''] = 0
+
+    return stats
 
 
 def ground_truth(away_ncaa_string, home_ncaa_string):
@@ -277,14 +288,14 @@ second_half_models_path = 'models/2nd-half/'
 #     'TOTAL		11-23	3-8	11-12	3	14	4	3	6	8	4	36')
 
 games = [
-    {'away': 'Loyola (IL)', 'home': 'Michigan',
-         'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
-         'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
-         },
-    {'away': 'Villanova', 'home': 'Kansas',
-         'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
-         'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
-         },
+    # {'away': 'Loyola (IL)', 'home': 'Michigan',
+    #  'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+    #  'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+    #  },
+    # {'away': 'Villanova', 'home': 'Kansas',
+    #  'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+    #  'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
+    #  },
 
     # {'away': 'Kansas State', 'home': 'Loyola (IL)',
     #      'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
@@ -298,10 +309,10 @@ games = [
     #      'away_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
     #      'home_ht_ncaa_string': 'TOTAL		0-0	0-0	0-0	0	0	0	0	0	0	0	0',
     #      },
-    # {'away': 'Kansas', 'home': 'Duke',
-    #      'away_ht_ncaa_string': 'TOTAL		13-35	4-14	3-4	10	24	6	1	0	10	5	33',
-    #      'home_ht_ncaa_string': 'TOTAL		15-36	3-15	3-4	6	12	7	6	3	5	6	36',
-    #      },
+    {'away': 'Kansas', 'home': 'Duke',
+         'away_ht_ncaa_string': 'TOTAL		13-35	4-14	3-4	10	24	6	1	0	10	5	33',
+         'home_ht_ncaa_string': 'TOTAL		15-36	3-15	3-4	6	12	7	6	3	5	6	36',
+         },
 
     # {'away': 'Template 1', 'home': 'Template 2',
     #  'half_time_stats': {'a_h1_points': 28,
@@ -335,15 +346,16 @@ games = [
 # percentile_25th, percentile_75th = calculate_percentiles(df, predictions.labels.labels_to_predict_2nd_half)
 # for l in predictions.labels.labels_to_predict_2nd_half:
 #     print(l + '\t' + str(percentile_25th[l]) + '\t' + str(percentile_75th[l]))
-
-for label in predictions.labels.labels_to_predict:
-    print(label)
-for label in predictions.labels.labels_to_predict_2nd_half:
-    print(label)
+#
+# for label in predictions.labels.labels_to_predict:
+#     print(label)
+# for label in predictions.labels.labels_to_predict_2nd_half:
+#     print(label)
 
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('PREDICTIONS (SPREADSHEET-FRIENDLY FORMAT')
 print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+home_weight=0.5
 print('**************************************************************************')
 print('FULL-TIME')
 print('**************************************************************************')
@@ -362,14 +374,8 @@ for idx, game in enumerate(games):
     print(game['home'])
 
     print('----------------- POINT ESTIMATES -----------------')
-    # for label in predictions.labels.labels_to_predict:
-    #     print(str(make_prediction_neutral_ground(away_name=game['away'], home_name=game['home'],
-    #                                              path=full_time_models_path + label + '.pkl',
-    #                                              features=predictions.feature_sets.features_6)[0]))
-    #
-    # print('----------------- POINT ESTIMATES (WEIGHTED) -----------------')
     weighted_predictions = make_weighted_predictions_neutral_ground(
-        team1=game['away'], team2=game['home'], home_weight=0.5,
+        team1=game['away'], team2=game['home'], home_weight=home_weight,
         labels=predictions.labels.labels_to_predict,
         path_base_dir=full_time_models_path,
         features=predictions.feature_sets.features_6)
@@ -394,25 +400,14 @@ for idx, game in enumerate(games):
     print(game['home'])
 
     print('----------------- POINT ESTIMATES -----------------')
-    # for label in predictions.labels.labels_to_predict_2nd_half:
-    #     print(str(make_prediction_neutral_ground(
-    #         away_name=game['away'], home_name=game['home'],
-    #         path=second_half_models_path + label + '.pkl',
-    #         features=predictions.feature_sets.features_ht_6,
-    #         extra_features=calculate_first_half_stats(  # game['half_time_stats']
-    #             {**half_time_stats_from_ncaa_string(game['away_ht_ncaa_string'], 'a'),
-    #              **half_time_stats_from_ncaa_string(game['home_ht_ncaa_string'], 'h')}
-    #         ))[0]))
-
     weighted_predictions = make_weighted_predictions_neutral_ground(
-        team1=game['away'], team2=game['home'], home_weight=0.5,
+        team1=game['away'], team2=game['home'], home_weight=home_weight,
         labels=predictions.labels.labels_to_predict_2nd_half,
         path_base_dir=second_half_models_path,
-        features=predictions.feature_sets.features_ht_6,
-        extra_features=calculate_first_half_stats(  # game['half_time_stats']
-            {**half_time_stats_from_ncaa_string(game['away_ht_ncaa_string'], 'a'),
-             **half_time_stats_from_ncaa_string(game['home_ht_ncaa_string'], 'h')}
-        )
+        features=predictions.feature_sets.features_6,
+        ht_features=calculate_first_half_stats(half_time_stats_from_ncaa_string(game['home_ht_ncaa_string']),
+                                               half_time_stats_from_ncaa_string(game['away_ht_ncaa_string']),
+                                               predictions.feature_sets.features_ht_6)
     )
     for p in weighted_predictions:
         print(str(p))

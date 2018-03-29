@@ -16,8 +16,8 @@ import predictions.feature_sets
 
 print('Reading CSV files...')
 # df_train_eval = pd.read_csv('../../data/train_eval.csv')
-df_train = pd.read_csv('../../data/train.csv')
-df_eval = pd.read_csv('../../data/eval.csv')
+df_train = pd.read_csv('../../data/v2.2/train.csv')
+df_eval = pd.read_csv('../../data/v2.2/eval.csv')
 # df_test = pd.read_csv('../../data/test.csv')
 print('Done.')
 
@@ -47,7 +47,7 @@ for label in predictions.labels.labels_for_feature_selection:
     print('-----------------------------------')
     print('LABEL: ' + label)
 
-    features = predictions.feature_sets.features_5
+    features = predictions.feature_sets.features_6 + predictions.feature_sets.features_ht_7
 
     df_train_clean = clean_df(df_train, features + [label])
     df_eval_clean = clean_df(df_eval, features + [label])
@@ -70,7 +70,7 @@ for label in predictions.labels.labels_for_feature_selection:
             result = predictions.models.glm_ols.find_best_model(selected_features, label, df_train, df_eval,
                                                                 verbose=True, scale=False)
             results.append(
-                'features_5 (' + func_label + ', best ' + str(k) + ')\t' + str(result[1]) + '\t' + str(
+                'features_ht_7 (' + func_label + ', best ' + str(k) + ')\t' + str(result[1]) + '\t' + str(
                     result[2]))
             # sorted_coefs = sort_coef(features, result[0].coef_)
             # for k in sorted_coefs:

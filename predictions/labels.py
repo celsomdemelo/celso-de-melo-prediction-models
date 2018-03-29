@@ -5,7 +5,7 @@ Numerical and classification labels
 __author__ = "Celso M. de Melo"
 __email__ = "celsodemelo@eleveninc.com"
 
-labels_for_feature_selection = ['both_three_points_made', 'h_three_points_made', 'a_three_points_made']
+labels_for_feature_selection = ['both_three_points_made', 'both_h2_three']
 
 labels_to_predict = ['both_three_points_made', 'a_three_points_made', 'h_three_points_made',
                      'both_three_points_att', 'a_three_points_att', 'h_three_points_att',
@@ -23,24 +23,23 @@ labels_to_predict = ['both_three_points_made', 'a_three_points_made', 'h_three_p
                      'a_field_goals_pct', 'h_field_goals_pct',
                      'both_possessions', 'a_possessions', 'h_possessions']
 
-labels_to_predict_2nd_half = ['both_h2_three', 'a_h2_three', 'h_h2_three',
-                              'both_h2_three_att', 'a_h2_three_att', 'h_h2_three_att',
-                              'both_h2_two', 'a_h2_two', 'h_h2_two',
-                              'both_h2_two_att', 'a_h2_two_att', 'h_h2_two_att',
-                              'a_h2_three_points_pct', 'h_h2_three_points_pct',
-                              'both_h2_free', 'a_h2_free', 'h_h2_free',
-                              'a_h2_free_throws_pct', 'h_h2_free_throws_pct',
-                              'both_h2_rebounds', 'a_h2_rebounds', 'h_h2_rebounds',
-                              'both_h2_off_rebounds', 'a_h2_off_rebounds', 'h_h2_off_rebounds',
-                              'both_h2_def_rebounds', 'a_h2_def_rebounds', 'h_h2_def_rebounds',
-                              'both_h2_assists', 'a_h2_assists', 'h_h2_assists',
-                              'both_h2_field_goals_att', 'a_h2_field_goals_att', 'h_h2_field_goals_att',
-                              'both_h2_field_goals_made', 'a_h2_field_goals_made', 'h_h2_field_goals_made',
-                              'a_h2_field_goals_pct', 'h_h2_field_goals_pct',
-                              'both_h2_possessions', 'a_h2_possessions', 'h_h2_possessions'
-                              ]
-
-
+labels_to_predict_2nd_half = [
+    'both_h2_three', 'a_h2_three', 'h_h2_three',
+    'both_h2_three_att', 'a_h2_three_att', 'h_h2_three_att',
+    'both_h2_two', 'a_h2_two', 'h_h2_two',
+    'both_h2_two_att', 'a_h2_two_att', 'h_h2_two_att',
+    'a_h2_three_points_pct', 'h_h2_three_points_pct',
+    'both_h2_free', 'a_h2_free', 'h_h2_free',
+    'a_h2_free_throws_pct', 'h_h2_free_throws_pct',
+    'both_h2_rebounds', 'a_h2_rebounds', 'h_h2_rebounds',
+    'both_h2_off_rebounds', 'a_h2_off_rebounds', 'h_h2_off_rebounds',
+    'both_h2_def_rebounds', 'a_h2_def_rebounds', 'h_h2_def_rebounds',
+    'both_h2_assists', 'a_h2_assists', 'h_h2_assists',
+    'both_h2_field_goals_att', 'a_h2_field_goals_att', 'h_h2_field_goals_att',
+    'both_h2_field_goals_made', 'a_h2_field_goals_made', 'h_h2_field_goals_made',
+    'a_h2_field_goals_pct', 'h_h2_field_goals_pct',
+    'both_h2_possessions', 'a_h2_possessions', 'h_h2_possessions'
+]
 
 
 def add_classification_labels(df):

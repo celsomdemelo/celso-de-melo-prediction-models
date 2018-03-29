@@ -117,7 +117,7 @@ for label in predictions.labels.labels_to_predict_2nd_half:
     print('-----------------------------------')
     print('LABEL: ' + label + ' (2nd-half)')
     detailed_scores.append(
-        predictions.models.glm_ols.score_on_test_set(predictions.feature_sets.features_ht_6, label,
-                                                     df_train_eval,
-                                                     df_test, path=second_half_models_path + label + '.pkl'))
+        predictions.models.glm_ols.score_on_test_set(
+            predictions.feature_sets.features_6 + predictions.feature_sets.features_ht_6,
+            label, df_train_eval, df_test, path=second_half_models_path + label + '.pkl'))
 print_detailed_scores(detailed_scores)
