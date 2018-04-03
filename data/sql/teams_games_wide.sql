@@ -27,7 +27,7 @@ WITH games AS (
       *,
       DATE(DATETIME(`gametime`, "America/Los_Angeles")) as game_date
   FROM
-    `stardust-development.temp.stardust_teams_games_v18`
+    `stardust-development.temp.stardust_teams_games_v19`
    WHERE
     division_name = "NCAA Division I"
     AND opp_division_name = "NCAA Division I"
@@ -35,12 +35,12 @@ WITH games AS (
   SELECT
     *
   FROM
-    `stardust-development.temp.teams_games_v14`
+    `stardust-development.temp.teams_games_v15`
 ), opp_splits AS (
   SELECT
     *
   FROM
-    `stardust-development.temp.teams_games_v14`
+    `stardust-development.temp.teams_games_v15`
 )
 SELECT
   games,
